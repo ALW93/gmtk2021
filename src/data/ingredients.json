@@ -2,36 +2,36 @@
   {
     "id": "swamp-water",
     "name": "Swamp Water",
-    "img-url": ""
+    "img-url": "images/ingredients/swamp-water.png"
   },
   {
     "id": "fairy-juice",
     "name": "Fairy Juice",
-    "img-url": ""
+    "img-url": "images/ingredients/fairy-juice.png"
   },
   {
     "id": "unicorn-horn",
     "name": "Unicorn Horn",
-    "img-url": ""
+    "img-url": "images/ingredients/unicorn-horn.png"
   },
   {
     "id": "rose-petals",
     "name": "Rose Petals",
-    "img-url": ""
+    "img-url": "images/ingredients/rose-petals.png"
   },
   {
     "id": "frog-kidney",
     "name": "Frog Kidney",
-    "img-url": ""
+    "img-url": "images/ingredients/frog-kidney.png"
   },
   {
     "id": "stardust",
     "name": "Stardust",
-    "img-url": ""
+    "img-url": "images/ingredients/stardust.png"
   },
   {
     "id": "phoenix-feather",
     "name": "Phoenix Feather",
-    "img-url": ""
+    "img-url": "images/ingredients/phoenix-feather.png"
   }
 ]

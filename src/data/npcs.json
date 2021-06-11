@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ghosty",
+    "name": "Ghosty",
+    "ailment": "death",
+    "img-url": ""
+  },
+  {
+    "id": "sad-loser", 
+    "name": "Sad Loser",
+    "ailment": "lovesickness",
+    "img-url": ""
+  },
+  {
+    "id": "wolfy",
+    "name": "Wolfy",
+    "ailment": "lycanthropy",
+    "img-url": ""
+  }
+]

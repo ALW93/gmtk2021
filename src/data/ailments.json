@@ -1,0 +1,21 @@
+
+[
+  {
+    "id": "lovesickness",
+    "name": "Lovesickness",
+    "cure": "love-potion",
+    "img-url": ""
+  },
+  {
+    "id": "lycanthropy",
+    "name": "Lycanthropy",
+    "cure": "shape-shift-potion",
+    "img-url": ""
+  },
+  {
+    "id": "death",
+    "name": "Death",
+    "cure": "phoenix-down",
+    "img-url": ""
+  }
+]

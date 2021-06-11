@@ -2,7 +2,13 @@ import React from "react";
 import { ingredients } from "../data/data";
 
 const Ingredients = (props) => {
-  return <div>{JSON.stringify(ingredients)}</div>;
+  return (
+    <div>
+      {ingredients.map((ingredient) => (
+        <span>{ingredient.name}</span>
+      ))}
+    </div>
+  );
 };
 
 export default Ingredients;

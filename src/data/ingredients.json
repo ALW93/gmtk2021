@@ -1,32 +1,38 @@
 
-// Ingredients
 [
   {
     "id": "swamp-water",
-    "name": "Swamp Water"
+    "name": "Swamp Water",
+    "img-url": ""
   },
   {
     "id": "fairy-juice",
-    "name": "Fairy Juice"
+    "name": "Fairy Juice",
+    "img-url": ""
   },
   {
     "id": "unicorn-horn",
-    "name": "Unicorn Horn"
+    "name": "Unicorn Horn",
+    "img-url": ""
   },
   {
     "id": "rose-petals",
-    "name": "Rose Petals"
+    "name": "Rose Petals",
+    "img-url": ""
   },
   {
     "id": "frog-kidney",
-    "name": "Frog Kidney"
+    "name": "Frog Kidney",
+    "img-url": ""
   },
   {
     "id": "stardust",
-    "name": "Stardust"
+    "name": "Stardust",
+    "img-url": ""
   },
   {
     "id": "phoenix-feather",
-    "name": "Phoenix Feather"
+    "name": "Phoenix Feather",
+    "img-url": ""
   }
 ]

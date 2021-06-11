@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ghosty",
+    "name": "Ghosty",
+    "ailment": "death",
+    "img-url": "images/npcs/ghosty.png",
+    "intro": "H-h-hello... I'm f-feeling... a little under the weather today, so... if you have something that could liven me up... thatwouldreallyhelp...",
+    "success": "Wow, this tastes amazing, and I feel so much better now! You're a real life-saver!",
+    "failure": "Oh... th-thanks... That's... nice, I guess... (If it's nice or not doesn't matter much when you're dead though...)"
+  },
+  {
+    "id": "sad-loser", 
+    "name": "Sad Loser",
+    "ailment": "lovesickness",
+    "img-url": "images/npcs/sad-loser.png",
+    "intro": "My desolate heart has been broken into a million pieces, and it shall never be repaired... unless... you're my last hope. Do you have something that can help me?",
+    "success": "Hm. I'm not sure how ethical it would be to magically manipulate someone's heart to fall in love with me against their will. But it's nice to have the option on the table, I guess. Thanks. I'll think on it.",
+    "failure": "I smell you for the charlatan you are! This putrid potion won't help me! Even you seek to drag me down! The world is against me!"
+  },
+  {
+    "id": "wolfy",
+    "name": "Wolfy",
+    "ailment": "lycanthropy",
+    "img-url": "images/inpcs/wolfy.png",
+    "intro": "Being a werewolf isn't so bad, but in the summer it's just so hot with all the fur, I can'st stand it! Global warming is killing me over here. Do you have anything that can fix that, or at least fix my fur problem??",
+    "success": "Wow, I never even thought about getting a cure for my lycanthropy! Way easier than fixing global warming! And grooming will become a breeze! Thanks.",
+    "failure": "Um, I don't know what you're giving me this for, but A for effort, I guess?"
+  }
+]

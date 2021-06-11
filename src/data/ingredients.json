@@ -1,0 +1,32 @@
+
+// Ingredients
+[
+  {
+    "id": "swamp-water",
+    "name": "Swamp Water"
+  },
+  {
+    "id": "fairy-juice",
+    "name": "Fairy Juice"
+  },
+  {
+    "id": "unicorn-horn",
+    "name": "Unicorn Horn"
+  },
+  {
+    "id": "rose-petals",
+    "name": "Rose Petals"
+  },
+  {
+    "id": "frog-kidney",
+    "name": "Frog Kidney"
+  },
+  {
+    "id": "stardust",
+    "name": "Stardust"
+  },
+  {
+    "id": "phoenix-feather",
+    "name": "Phoenix Feather"
+  }
+]

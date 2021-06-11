@@ -1,0 +1,20 @@
+
+
+// NPCs
+[
+  {
+    "id": "ghosty",
+    "name": "Ghosty",
+    "ailment": "death",
+  },
+  {
+    "id": "sad-loser", 
+    "name": "Sad Loser",
+    "ailment": "lovesickness"
+  },
+  {
+    "id": "wolfy",
+    "name": "Wolfy",
+    "ailment": "lycanthropy"
+  }
+]

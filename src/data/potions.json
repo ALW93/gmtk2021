@@ -4,7 +4,7 @@
     "name": "Love Potion",
     "ingredients": ["fairy-juice", "unicorn-horn", "rose-petals"],
     "img-url": ""
-},
+  },
   {
     "id": "shape-shift-potion",
     "name": "Shape-shift Potion",

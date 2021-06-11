@@ -1,20 +1,21 @@
 
-
-// Ailments
 [
   {
     "id": "lovesickness",
     "name": "Lovesickness",
-  "cure": "love-potion"
+    "cure": "love-potion",
+    "img-url": ""
   },
   {
     "id": "lycanthropy",
     "name": "Lycanthropy",
-    "cure": "shape-shift-potion"
+    "cure": "shape-shift-potion",
+    "img-url": ""
   },
   {
     "id": "death",
     "name": "Death",
-    "cure": "phoenix-down"
+    "cure": "phoenix-down",
+    "img-url": ""
   }
 ]

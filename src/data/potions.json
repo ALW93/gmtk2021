@@ -1,19 +1,20 @@
-
-// Potions
 [
   {
     "id": "love-potion",
     "name": "Love Potion",
-  "ingredients": ["fairy-juice", "unicorn-horn", "rose-petals"]
-  },
+    "ingredients": ["fairy-juice", "unicorn-horn", "rose-petals"],
+    "img-url": ""
+},
   {
     "id": "shape-shift-potion",
     "name": "Shape-shift Potion",
-    "ingredients": ["swamp-water", "unicorn-horn", "frog-kidney"]
+    "ingredients": ["swamp-water", "unicorn-horn", "frog-kidney"],
+    "img-url": ""
   },
   {
     "id": "phoenix-down",
     "name": "Phoenix Down",
-    "ingredients": ["phoenix-feather", "unicorn-horn", "stardust"]
+    "ingredients": ["phoenix-feather", "unicorn-horn", "stardust"],
+    "img-url": ""
   }
 ]

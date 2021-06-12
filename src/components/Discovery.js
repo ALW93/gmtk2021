@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import images from "../images/images";
+import Item from "./shared/Item";
 
 const Discovery = () => {
   const potion = useSelector((state) => state.result);
@@ -20,11 +20,12 @@ const Discovery = () => {
   return (
     <div className="discoveryContainer">
       <p>You've concocted a...</p>
-      <button className="discoveryBox" onClick={onContinue}>
-        <img
-          src={images[potion.id]}
-          alt={potion.name}
-          className="absoluteCenter"
+      <button className="discoveryBox">
+        <Item
+          id={potion.id}
+          type="potion"
+          name={potion.name}
+          onClick={onContinue}
         />
       </button>
       <p>{potion.name}!</p>

@@ -2,25 +2,4 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(6em, 1fr));
   gap: 0.2em;
-
-  .ingredient {
-    background-color: rgba(170, 200, 250, 0.2);
-    border-radius: 1em;
-
-    position: relative;
-    width: 7em;
-    height: 7em;
-    margin: 0.5em;
-    font-size: $font-size-small;
-    
-  p {
-    width: 100%;
-    text-align: center;
-  }
-    img {
-      margin: 0 auto;
-      height: 6em;
-      width: 6em;
-    }
-  }
 }

@@ -1,21 +1,29 @@
 .itemContainer {
   border-radius: 100%;
-  border: 10px solid rgba(196, 167, 167, 0.1);
-  background-color: rgba(196, 167, 167, 0.1);
+  display: flex;
+  border: 1px solid rgb(196, 167, 167);
+  background-color: $color-black;
   position: relative;
-  width: 7em;
-  height: 7em;
+  width: 5em;
+  height: 5em;
   margin: 0.5em;
 
-  p {
-    width: 100%;
-    text-align: center;
+  .itemCard {
+    position: relative;
+    top: 4.2em;
+    border: 2px ridge rgb(255, 255, 255);
+    background-color: rgb(213, 198, 198);
+    max-height: 2em;
+    p {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   img {
     margin: 0 auto;
-    height: 4.5em;
-    width: 4.5em;
+    height: 4em;
+    width: 4em;
   }
 }
 

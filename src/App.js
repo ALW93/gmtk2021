@@ -1,12 +1,17 @@
+import {BrowserRouter, Route} from "react-router-dom"
 import Game from "./components/Game";
+import StartMenu from "./components/startMenu/StartMenu"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Game />
-      </header>
-    </div>
+    <BrowserRouter>
+      <Route path="/game" exact={true}>
+        <Game/>
+      </Route>
+      <Route path="/" exact={true}>
+        <StartMenu/>
+      </Route>
+    </BrowserRouter>
   );
 }
 

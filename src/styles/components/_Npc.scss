@@ -1,9 +1,16 @@
 .Npc {
-  height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-;
+
+  .imageContainer {
+    background: skyblue;
+    height: 50rem;
+
+    img {
+      object-fit: cover;
+    }
+  }
 
   .name {
     background: rosybrown;

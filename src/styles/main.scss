@@ -1,11 +1,15 @@
-@import 'utils/variables';
-@import 'utils/reset';
+@import "utils/variables";
+@import "utils/reset";
 
-@import 'layout/grid';
+@import "layout/grid";
 
-@import 'components/App';
+/* Main Components */
+@import "components/App";
 @import 'components/GameContainer';
-@import 'components/Npc';
-@import 'components/Combiner';
-@import 'components/Workbench';
-@import 'components/Ingredient';
+@import "components/Npc";
+@import "components/Combiner";
+@import "components/Workbench";
+@import "components/Ingredients";
+
+/* Shared Components */
+@import "components/Button";

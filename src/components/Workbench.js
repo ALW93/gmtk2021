@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
+import Button from "./shared/Button";
 import "../styles/components/_Workbench.scss";
 
 const Workbench = (props) => {
@@ -27,7 +28,10 @@ const Workbench = (props) => {
   return (
     <div className="WorkbenchContainer">
       <Ingredients addSelection={handleSelect} />
-      <Combiner ingredients={selection} removeSelection={removeSelect} />
+      <div>
+        <Combiner ingredients={selection} removeSelection={removeSelect} />
+        <Button text="Combine" />
+      </div>
     </div>
   );
 };

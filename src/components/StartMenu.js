@@ -16,7 +16,6 @@ const StartMenu = ({setMusicPlaying}) => {
   }
 
   const handleClick = () => {
-    debugger;
     setMusicPlaying(true)
   }
 

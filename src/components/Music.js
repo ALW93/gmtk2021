@@ -9,7 +9,6 @@ const Music = ( {musicPlaying, setMusicPlaying} ) => {
   const [play, { stop }] = useSound(song);
 
   useEffect(() => {
-    debugger;
     if(musicPlaying){
       play();
       setIsPlaying(true);

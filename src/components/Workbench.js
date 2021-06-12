@@ -14,11 +14,15 @@ import Combiner from "./Combiner";
 import Button from "./shared/Button";
 import RecipeBook from "./RecipeBook";
 
+import useSound from "use-sound";
+import waterDrop from "../music/waterdrop.mp3"
+
 const Workbench = (props) => {
   const dispatch = useDispatch();
   const potions = useSelector((state) => state.potions);
   const selections = useSelector((state) => state.active.ingredients);
   const [open, setOpen] = useState(false);
+  const [playWaterDrop] = useSound(waterDrop)
 
   const handleSelect = (e) => {
     if (selections.length === 3) {
@@ -26,6 +30,7 @@ const Workbench = (props) => {
       return;
     } else {
       dispatch(addIngredient(e.target.dataset.id));
+      playWaterDrop()
     }
   };
 

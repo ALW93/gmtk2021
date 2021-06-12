@@ -1,8 +1,5 @@
 .itemContainer {
-  border-radius: 100%;
   display: flex;
-  border: 1px solid rgb(196, 167, 167);
-  background-color: $color-black;
   position: relative;
   width: 5em;
   height: 5em;
@@ -12,7 +9,7 @@
     position: relative;
     top: 4.2em;
     border: 2px ridge rgb(255, 255, 255);
-    background-color: rgb(213, 198, 198);
+    background-color: rgb(188, 182, 175);
     max-height: 2em;
     p {
       width: 100%;
@@ -22,8 +19,10 @@
 
   img {
     margin: 0 auto;
-    height: 4em;
-    width: 4em;
+    height: 4.5em;
+    width: 4.5em;
+    background-color: rgb(0, 0, 0, 0.8);
+    border-radius: 100%;
   }
 }
 

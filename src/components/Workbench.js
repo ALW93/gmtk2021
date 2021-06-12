@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { findIndex } from "lodash";
+import { findIndex, map } from "lodash";
+import { matchRecipes } from "../utility/utility";
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
@@ -27,12 +28,19 @@ const Workbench = (props) => {
     setSelection(newValues);
   };
 
+  const calculateRecipe = () => {
+    const ingredients = map(selection, (item) => item.id);
+    console.log(ingredients);
+    const result = matchRecipes(ingredients);
+    console.log(result);
+  };
+
   return (
     <div className="WorkbenchContainer">
       <Ingredients addSelection={handleSelect} />
       <div>
         <Combiner ingredients={selection} removeSelection={removeSelect} />
-        <Button text="Combine" />
+        <Button text="Combine" onClick={calculateRecipe} />
       </div>
     </div>
   );

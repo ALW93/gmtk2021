@@ -1,9 +1,8 @@
 import React from 'react'
-import {useHistory, Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './StartMenu.scss'
 
 const StartMenu = () => {
-    const history = useHistory()
 
     return(
         // the background image scaling is off, but will come back to it.

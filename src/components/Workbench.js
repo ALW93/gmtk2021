@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { map } from "lodash";
 
 import { matchRecipes } from "../utility/utility";
-import { updatePotion } from "../store/reducers/activeReducer";
+import { updatePotion, clearIngredient } from "../store/reducers/activeReducer";
 import {
   addIngredient,
   updateIngredients,
@@ -13,6 +13,7 @@ import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
 import RecipeBook from "./RecipeBook";
+import { getElementError } from "@testing-library/react";
 
 const Workbench = (props) => {
   const dispatch = useDispatch();
@@ -41,13 +42,22 @@ const Workbench = (props) => {
   const calculateRecipe = () => {
     const ingredients = map(selections, (item) => item);
     const potionId = matchRecipes(ingredients);
+    console.log(potionId);
     if (!potionId) {
       alert("Well, I guess you could call this a potion...");
       dispatch(updatePotion(potionId));
     } else {
       alert(`Discovered ${potions[potionId].name}`);
       dispatch(updatePotion(potionId));
+      const clearIngredients = [];
+      dispatch(updateIngredients(clearIngredients));
     }
+  };
+
+  //clear ingredients button
+  const clearRecipe = () => {
+    const ingredients = [];
+    dispatch(updateIngredients(ingredients));
   };
 
   const toggleRecipeBook = () => {
@@ -66,6 +76,7 @@ const Workbench = (props) => {
 
       <div className="WorkbenchContainer--Bottom">
         <Combiner removeSelection={removeSelect} />
+        <Button text="Clear" onClick={clearRecipe} />
         <Button text="Combine" onClick={calculateRecipe} />
       </div>
     </div>

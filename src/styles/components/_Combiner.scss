@@ -1,13 +1,21 @@
 .combinerContainer {
   display: flex;
 
+
   .ingredient {
-    background-color: rgb(146, 203, 180);
-    border: 2px outset rgb(211, 211, 211);
-    border-radius: 0.3em;
-    width: 5em;
-    height: 5em;
-    font-size: small;
-    margin: 1em;
+    position: relative;
+    border-radius: 50%;
+    border: 0.5em dashed rgba(255,255,255, 0.3);
+    background-color: lightpink;
+    width: 8em;
+    
+    height: 8em;
+    font-size: $font-size-small;
+    margin: 0.5em;
+
+    img {
+      height: 5em;
+      width: 5em;
+    }
   }
 }

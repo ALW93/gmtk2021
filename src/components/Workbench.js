@@ -7,6 +7,7 @@ import Combiner from "./Combiner";
 import Button from "./shared/Button";
 import { sendResult } from "../store/actions/resultsActions";
 import LightBox from "./shared/LightBox";
+import { loadNPCs } from "../store/actions/npcAction";
 
 const Workbench = (props) => {
   const [selection, setSelection] = useState([]);
@@ -14,6 +15,7 @@ const Workbench = (props) => {
   const dispatch = useDispatch();
 
   const handleSelect = (e) => {
+    console.log("target", e.target);
     if (selection.length === 3) {
       alert("Error: Maximum selection reached");
       return;

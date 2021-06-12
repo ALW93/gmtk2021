@@ -13,15 +13,11 @@
     margin: 0.5em;
     font-size: $font-size-small;
     
-p {
-width: 100%;
-   text-align: center;
-}
+  p {
+    width: 100%;
+    text-align: center;
+  }
     img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       margin: 0 auto;
       height: 6em;
       width: 6em;

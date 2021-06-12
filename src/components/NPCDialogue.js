@@ -1,9 +1,9 @@
 import React from 'react';
 
-const NPCDialogue = ({intro}) => {
+const NPCDialogue = ({body}) => {
     return (
         <div className="dialogue-box">
-            <p>{intro}</p>
+            <p>{body}</p>
         </div>
     )
 };

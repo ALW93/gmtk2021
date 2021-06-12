@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: $font-size-default;
+  font-family: 'Open Sans', sans-serif;
+  color: $color-light;
+}
+
+a,
+a:active,
+a:visited {
+  // link styling
+}

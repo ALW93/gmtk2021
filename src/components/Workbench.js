@@ -49,22 +49,18 @@ const Workbench = (props) => {
   const calculateRecipe = () => {
     const ingredients = map(selections, (item) => item);
     const potionId = matchRecipes(ingredients);
-    console.log(potionId);
     if (!potionId) {
       alert("Well, I guess you could call this a potion...");
       dispatch(updatePotion(potionId));
     } else {
       alert(`Discovered ${potions[potionId].name}`);
       dispatch(updatePotion(potionId));
-      const clearIngredients = [];
-      dispatch(updateIngredients(clearIngredients));
     }
   };
 
   //clear ingredients button
   const clearRecipe = () => {
-    const ingredients = [];
-    dispatch(updateIngredients(ingredients));
+    dispatch(updateIngredients([]));
   };
 
   const toggleRecipeBook = () => {

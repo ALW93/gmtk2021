@@ -6,8 +6,7 @@ import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
 import { sendResult } from "../store/actions/resultsActions";
-import LightBox from "./shared/LightBox";
-import { loadNPCs } from "../store/actions/npcAction";
+import RecipeBook from "./RecipeBook";
 
 const Workbench = (props) => {
   const [selection, setSelection] = useState([]);
@@ -15,7 +14,6 @@ const Workbench = (props) => {
   const dispatch = useDispatch();
 
   const handleSelect = (e) => {
-    console.log("target", e.target)
     if (selection.length === 3) {
       alert("Error: Maximum selection reached");
       return;
@@ -33,13 +31,12 @@ const Workbench = (props) => {
     setSelection(newValues);
   };
 
-  const calculateRecipe = async () => {
+  const calculateRecipe = () => {
     const ingredients = map(selection, (item) => item.id);
     const result = matchRecipes(ingredients);
     if (!result) {
       alert("No matching recipes found");
     } else {
-      alert(`Discovered ${result.name}`);
       dispatch(sendResult(result));
     }
   };
@@ -50,7 +47,7 @@ const Workbench = (props) => {
 
   return (
     <div className="WorkbenchContainer">
-      {open && <LightBox onClick={toggleRecipeBook} />}
+      {open && <RecipeBook onClick={toggleRecipeBook} title="Recipes" />}
       <div>
         <Button text="Recipe Book" onClick={toggleRecipeBook} />
       </div>

@@ -19,7 +19,7 @@ export default function potionsReducer(state = {}, action) {
 
 
     case ADD_POTION: 
-      return [...state, action.data];
+      return {...state, [action.data.id]: action.data};
     
     default: 
       return state;

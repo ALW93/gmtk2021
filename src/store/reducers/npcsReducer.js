@@ -5,7 +5,7 @@ export const loadNPCs = (data) => ({
   data,
 });
 
-export default function npcsReducer(state = [], action) {
+export default function npcsReducer(state = {}, action) {
   switch (action.type) {
 
     case LOAD_NPCS: {

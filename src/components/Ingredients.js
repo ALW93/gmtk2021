@@ -1,13 +1,9 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { loadAilments } from '../store/reducers/ailmentsReducer';
+import React from "react";
 import { ingredients } from "../data/data";
 import images from "../images/images";
 
 const Ingredients = ({ addSelection }) => {
-  const dispatch = useDispatch();
-
-
+console.log('raw ingredients', ingredients)
   return (
     <div className="ingredientsContainer">
       {ingredients.map((ingredient) => (

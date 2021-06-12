@@ -1,10 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import images from "../images/images";
 
-const Combiner = ({ ingredients = [], removeSelection }) => {
+const Combiner = ({ selections = [], removeSelection }) => {
+  const ingredients = useSelector(state => state.ingredients)
+  console.log('ingredients', ingredients, selections)
+
   return (
     <div className="combinerContainer">
-      {ingredients.map((ingredient, idx) => (
+      {selections.map((id, idx) => (
       <div key={`ingredient${idx}`}>
         <div
           onClick={removeSelection}
@@ -12,14 +16,14 @@ const Combiner = ({ ingredients = [], removeSelection }) => {
           className="ingredient"
         >
           <img 
-            data-id={ingredient.id}
-            data-name={ingredient.name}
-            src={images[ingredient.id]} 
-            alt={ingredient.name} 
+            data-id={ingredients[id].id}
+            data-name={ingredients[id].name}
+            src={images[ingredients[id].id]} 
+            alt={ingredients[id].name} 
             className="absoluteCenter"
           />
         </div>
-        <p>{ingredient.name}</p>
+        <p>{ingredients[id].name}</p>
       </div>
       ))}
     </div>

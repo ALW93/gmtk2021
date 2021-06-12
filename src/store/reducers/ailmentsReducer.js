@@ -5,7 +5,7 @@ export const loadAilments = (data) => ({
   data,
 });
 
-export default function ailmentsReducer(state = [], action) {
+export default function ailmentsReducer(state = {}, action) {
   switch (action.type) {
 
     case LOAD_AILMENTS: 

@@ -3,15 +3,15 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import rootReducer from './reducers/rootReducer';
 import {ingredients, potions, npcs, ailments} from '../data/data'
+import { normalizeData } from '../utility/utility'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-console.log('data npcs', npcs)
 const initial = {
-    npcs,
-    potions,
-    ingredients,
-    ailments
+    npcs: normalizeData(npcs),
+    potions: normalizeData(potions),
+    ingredients: normalizeData(ingredients),
+    ailments: normalizeData(ailments),
 }
 
 const configureStore = (initialState=initial) => {

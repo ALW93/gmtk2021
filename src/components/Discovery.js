@@ -4,7 +4,7 @@ import images from "../images/images";
 
 const Discovery = () => {
   const dispatch = useDispatch()
-  const potion = useSelector((state) => state.active?.potion);
+  const potion = useSelector((state) => state.potions[state.active?.potion]);
 
   const onContinue = (e) => {
     // TODO Refresh new NPC, wipe selections and discovered potion

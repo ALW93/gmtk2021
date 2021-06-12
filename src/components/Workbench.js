@@ -1,45 +1,48 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { findIndex, map } from "lodash";
 import { matchRecipes } from "../utility/utility";
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
-import { addPotion } from "../store/reducers/potionsReducer";
+import { updatePotion } from "../store/reducers/activeReducer";
 import LightBox from "./shared/LightBox";
+import { addIngredient, updateIngredients } from "../store/reducers/activeReducer";
 
 const Workbench = (props) => {
-  const [selection, setSelection] = useState([]);
+  const dispatch = useDispatch()
+  const selections = useSelector(state => state.active.ingredients)
   const [open, setOpen] = useState(false);
-  const dispatch = useDispatch();
 
   const handleSelect = (e) => {
-    console.log("target", e.target)
-    if (selection.length === 3) {
+    console.log("target", e.target.dataset)
+    if (selections.length === 3) {
       alert("Error: Maximum selection reached");
       return;
     } else {
-      setSelection([...selection, { ...e.target.dataset }]);
+      console.log('else dataset', e.target.dataset.id)
+      dispatch(addIngredient(e.target.dataset.id));
     }
   };
 
   const removeSelect = (e) => {
-    const idx = findIndex(selection, { id: e.target.dataset.id });
-    let newValues = [...selection];
+    const idx = selections.indexOf(e.target.dataset.id);
+    let newValues = [...selections];
     if (idx > -1) {
       newValues.splice(idx, 1);
     }
-    setSelection(newValues);
+    console.log('newValues', newValues)
+    dispatch(updateIngredients(newValues));
   };
 
   const calculateRecipe = async () => {
-    const ingredients = map(selection, (item) => item.id);
+    const ingredients = map(selections, (item) => item);
     const potion = matchRecipes(ingredients);
     if (!potion) {
       alert("No matching recipes found");
     } else {
       alert(`Discovered ${potion.name}`);
-      dispatch(addPotion(potion));
+      dispatch(updatePotion(potion.id));
     }
   };
 
@@ -56,7 +59,7 @@ const Workbench = (props) => {
 
       <Ingredients addSelection={handleSelect} />
       <div>
-        <Combiner ingredients={selection} removeSelection={removeSelect} />
+        <Combiner selections={selections} removeSelection={removeSelect} />
         <Button text="Combine" onClick={calculateRecipe} />
       </div>
     </div>

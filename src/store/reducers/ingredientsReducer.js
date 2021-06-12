@@ -5,7 +5,7 @@ export const loadIngredients = (data) => ({
   data,
 });
 
-export default function ingredientsReducer(state = [], action) {
+export default function ingredientsReducer(state = {}, action) {
   switch (action.type) {
 
     case LOAD_INGREDIENTS: {

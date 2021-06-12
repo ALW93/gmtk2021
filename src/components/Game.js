@@ -12,16 +12,16 @@ const Game = (props) => {
   const npcs = useSelector(state => state.npcs)
   
   useEffect(() => {
-    const randomNpc = getRandomNpc(npcs)
+    const randomNpcId = getRandomNpc(npcs)
     const initialActive = {
-      npc: randomNpc.id,
-      ailment: randomNpc.ailment,
+      npc: randomNpcId,
+      ailment: npcs[randomNpcId].ailment,
       ingredients: [],
-      potion: {},
+      potion: "",
     }
     dispatch(loadAllActive(initialActive))
   }, [])
-  
+
   useEffect(() => {
     // window.onbeforeunload = confirmExit;
     // function confirmExit() {

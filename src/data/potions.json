@@ -14,7 +14,13 @@
   {
     "id": "phoenix-down",
     "name": "Phoenix Down",
-    "ingredients": ["phoenix-feather", "unicorn-horn", "stardust"],
+    "ingredients": ["phoenix-feather", "stardust", "stardust"],
     "img-url": "images/potions/phoenix-down.png"
+  },
+  {
+    "id": "smelly-potion",
+    "name": "Smelly Potion(?)",
+    "ingredients": [],
+    "img-url": ""
   }
 ]

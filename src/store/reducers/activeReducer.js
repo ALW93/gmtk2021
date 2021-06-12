@@ -14,12 +14,11 @@ export const addIngredient = (data) => ({type: ADD_INGREDIENT, data})
 export const clearIngredient = (data) => ({type: CLEAR_INGREDIENT, data})
 export const updatePotion = (data) => ({type: UPDATE_POTION, data})
 
-
 const initialState = {
-  npc: {},
-  ailment: {},
+  npc: "",
+  ailment: "",
   ingredients: [],
-  potion: {},
+  potion: "",
 }
 
 
@@ -41,6 +40,7 @@ export default function activeReducer(state = initialState, action) {
     case ADD_INGREDIENT: 
       return {...state, ingredients: [...state.ingredients, action.data]};
 
+      // TODO: This is a hot mess. Using 'UPDATE_INGREDIENTS' for now.
     case CLEAR_INGREDIENT:
       const idx = state.ingredients.indexOf(action.data)
       const newIngredients = [ ...state.ingredients.slice(0,idx), ...state.ingredients.slice(idx+1, state.ingredients-1) ]

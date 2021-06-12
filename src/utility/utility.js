@@ -9,13 +9,14 @@ export const matchRecipes = (ingredients) => {
       ingredients.every((item, idx) => item === sortedIngredients[idx])
     );
   });
-  return match;
+  if (!match) return "smelly-potion"
+  return match.id;
 };
 
 export function getRandomNpc(npcsData) {
   const npcs = Object.values(npcsData)
   const npcIndex = Math.floor(Math.random() * npcs.length);
-  return npcs[npcIndex]
+  return npcs[npcIndex].id
 }
 
 export function normalizeData(data) {

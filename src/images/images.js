@@ -6,6 +6,7 @@ import rosePetalsImg from "./ingredients/rose-petals.png";
 import stardustImg from "./ingredients/stardust.png";
 import swampWaterImg from "./ingredients/swamp-water.png";
 import unicornHornImg from "./ingredients/unicorn-horn.png";
+// import nightEssenceImg from "./ingredients/night-essence.png";
 
 // NPCs
 import ghostyImg from "./npcs/ghosty_pic.png";
@@ -16,9 +17,9 @@ import wolfyImg from "./npcs/wolfy.png";
 import lovePotion from "./potions/love-potion.png";
 import shapeShiftPotion from "./potions/shape-shift-potion.png";
 import phoenixDown from "./potions/phoenix-down.png";
+import smellyPotion from "./potions/smelly-potion.png";
 
 const images = {
-  // ingredients: {
   "fairy-juice": fairyJuiceImg,
   "frog-kidney": frogKidneyImg,
   "phoenix-feather": phoenixFeatherImg,
@@ -26,17 +27,14 @@ const images = {
   stardust: stardustImg,
   "swamp-water": swampWaterImg,
   "unicorn-horn": unicornHornImg,
-  // },
-  // npcs: {
+  // "night-essence": nightEssenceImg,
   ghosty: ghostyImg,
   "sad-loser": sadLoserImg,
   wolfy: wolfyImg,
-  // },
-  // potions: {
   "love-potion": lovePotion,
   "shape-shift-potion": shapeShiftPotion,
   "phoenix-down": phoenixDown,
-  // }
+  "smelly-potion": smellyPotion,
 };
 
 export default images;

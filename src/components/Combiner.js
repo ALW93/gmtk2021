@@ -4,15 +4,13 @@ import images from "../images/images";
 
 const Combiner = ({ selections = [], removeSelection }) => {
   const ingredients = useSelector(state => state.ingredients)
-  console.log('ingredients', ingredients, selections)
-
+console.log('ingredients', ingredients, selections)
   return (
     <div className="combinerContainer">
       {selections.map((id, idx) => (
       <div key={`ingredient${idx}`}>
         <div
           onClick={removeSelection}
-          
           className="ingredient"
         >
           <img 

@@ -14,6 +14,7 @@ import RecipeBook from "./RecipeBook";
 
 const Workbench = (props) => {
   const dispatch = useDispatch()
+  const potions = useSelector(state => state.potions)
   const selections = useSelector(state => state.active.ingredients)
   const [open, setOpen] = useState(false);
 
@@ -32,18 +33,18 @@ const Workbench = (props) => {
     if (idx > -1) {
       newValues.splice(idx, 1);
     }
-    console.log('newValues', newValues)
     dispatch(updateIngredients(newValues));
   };
 
   const calculateRecipe = async () => {
     const ingredients = map(selections, (item) => item);
-    const potion = matchRecipes(ingredients);
-    if (!potion) {
-      alert("No matching recipes found");
+    const potionId = matchRecipes(ingredients);
+    if (!potionId) {
+      alert("Well, I guess you could call this a potion...");
+      dispatch(updatePotion(potionId))
     } else {
-      alert(`Discovered ${potion.name}`);
-      dispatch(updatePotion(potion.id));
+      alert(`Discovered ${potions[potionId].name}`);
+      dispatch(updatePotion(potionId));
     }
   };
 

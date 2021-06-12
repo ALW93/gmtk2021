@@ -11,6 +11,7 @@ const Workbench = (props) => {
   const [selection, setSelection] = useState([]);
 
   const handleSelect = (e) => {
+    console.log("target", e.target)
     if (selection.length === 3) {
       alert("Error: Maximum selection reached");
       return;

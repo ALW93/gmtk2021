@@ -12,11 +12,15 @@ const Ingredients = ({ addSelection }) => {
           <div
             onClick={addSelection}
             key={ingredient.id}
-            data-id={ingredient.id}
-            data-name={ingredient.name}
             className="ingredient"
           >
-            <img src={images[ingredient.id]} alt={ingredient.name} />
+            <img 
+              data-id={ingredient.id} 
+              data-name={ingredient.name} 
+              src={images[ingredient.id]} 
+              alt={ingredient.name} 
+              className="absoluteCenter"
+            />
           </div>
           <p>{ingredient.name}</p>
         </div>

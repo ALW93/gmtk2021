@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { findIndex, map } from "lodash";
 import { matchRecipes } from "../utility/utility";
 import Ingredients from "./Ingredients";
@@ -10,6 +11,7 @@ import "../styles/components/_Workbench.scss";
 
 const Workbench = (props) => {
   const [selection, setSelection] = useState([]);
+  const dispatch = useDispatch();
 
   const handleSelect = (e) => {
     if (selection.length === 3) {
@@ -29,14 +31,14 @@ const Workbench = (props) => {
     setSelection(newValues);
   };
 
-  const calculateRecipe = async () => {
+  const calculateRecipe = () => {
     const ingredients = map(selection, (item) => item.id);
     const result = matchRecipes(ingredients);
     if (!result) {
       alert("No matching recipes found");
     } else {
       alert(`Discovered ${result.name}`);
-      await sendResult(result);
+      dispatch(sendResult(result));
     }
   };
 

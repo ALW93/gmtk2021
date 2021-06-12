@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 
 const Discovery = () => {
-  const [results, setResults] = useState({});
+  const result = useSelector((state) => state.result);
 
-  // if (!results) {
-  //   return null;
-  // } else {
-  return <div className="discoveryContainer"></div>;
-  // }
+  return <div className="discoveryContainer">{JSON.stringify(result)}</div>;
 };
 
 export default Discovery;

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { loadAilments } from "../store/actions/ailmentAction";
+import { dispatchLoadAilments } from "../store/actions/ailmentAction";
 import { ingredients } from "../data/data";
 import Item from "../components/shared/Item";
 
@@ -8,7 +8,7 @@ const Ingredients = ({ addSelection }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadAilments());
+    dispatch(dispatchLoadAilments());
   }, [dispatch]);
 
   return (

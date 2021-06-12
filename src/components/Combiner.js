@@ -1,10 +1,10 @@
 import React from "react";
 import Item from "./shared/Item";
 
-const Combiner = ({ ingredients = [], removeSelection }) => {
+const Combiner = ({ removeSelection, selections = [] }) => {
   return (
     <div className="combinerContainer">
-      {ingredients.map((ingredient, idx) => (
+      {selections.map((ingredient, idx) => (
         <div key={`ingredient${idx}`}>
           <Item
             id={ingredient.id}

@@ -1,15 +1,17 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Item from "./shared/Item";
 
 const Discovery = () => {
-  const potion = useSelector((state) => state.result);
+  const dispatch = useDispatch();
+  const potion = useSelector((state) => state.potions[state.active?.potion]);
 
   const onContinue = (e) => {
     // TODO Refresh new NPC, wipe selections and discovered potion
+    // dispatch()
   };
 
-  if (!potion.id)
+  if (!potion)
     return (
       <div className="discoveryContainer">
         <p>Conceiving a concoction...</p>

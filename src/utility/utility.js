@@ -11,3 +11,17 @@ export const matchRecipes = (ingredients) => {
   });
   return match;
 };
+
+export function getRandomNpc(npcsData) {
+  const npcs = Object.values(npcsData)
+  const npcIndex = Math.floor(Math.random() * npcs.length);
+  return npcs[npcIndex]
+}
+
+export function normalizeData(data) {
+    const normalized = {}
+    data.forEach(item => {
+        normalized[item.id] = item
+    })
+    return normalized
+}

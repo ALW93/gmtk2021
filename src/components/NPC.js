@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import NPCDialogue from "./NPCDialogue";
-import { loadNPCs } from "../store/actions/npcAction";
 import images from "../images/images";
 
 const NPC = () => {
-  const dispatch = useDispatch();
-  const npcs = useSelector((state) => state.npc);
-  const potionId = useSelector((state) => state.result?.id);
-  const ailments = useSelector((state) => state.ailment);
+  const potionId = useSelector((state) => state.active?.potion?.id);
+  const ailments = useSelector((state) => state.ailments);
+  const npc = useSelector((state) => state.npcs[state.active.npc]);
   const [isMatchingPotion, setIsMatchingPotion] = useState(false);
-  const [npc, setNpc] = useState({});
   const [dialogue, setDialogue] = useState("");
 
   useEffect(() => {
     let ailmentWhichSelectedPotionCures;
-    ailments.forEach((ailment) => {
+    Object.values(ailments).forEach((ailment) => {
       if (ailment.cure === potionId) {
         ailmentWhichSelectedPotionCures = ailment.id;
       }
@@ -35,21 +32,14 @@ const NPC = () => {
     }
   }, [npc, isMatchingPotion, potionId]);
 
-  useEffect(() => {
-    dispatch(loadNPCs());
-  }, [dispatch]);
-
-  useEffect(() => {
-    const npcIndex = Math.floor(Math.random() * npcs.length);
-    setNpc(npcs[npcIndex]);
-  }, [npcs]);
+  if (!npc) return null;
 
   return (
     <div className="Npc">
       <div className="imageContainer">
-        <img src={images[npc?.id]} alt={npc?.name} />
+        <img src={images[npc.id]} alt={npc.name} />
       </div>
-      <h3 className="name">{npc?.name}</h3>
+      <h3 className="name">{npc.name}</h3>
       <NPCDialogue body={dialogue} />
       <div className="footer">Potion Matching Game ©</div>
     </div>

@@ -1,12 +1,17 @@
 import { combineReducers } from "redux";
-import npc from "../reducers/npcReducer";
-import result from "../reducers/resultReducer";
-import ailment from "../reducers/ailmentReducer";
+
+import active from './activeReducer'
+import npcs from "./npcsReducer";
+import potions from "./potionsReducer";
+import ailments from "./ailmentsReducer";
+import ingredients from './ingredientsReducer'
 
 const appReducer = combineReducers({
-  npc,
-  ailment,
-  result,
+  active,
+  npcs,
+  ingredients,
+  ailments,
+  potions,
 });
 
 const rootReducer = (state, action) => {

@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import npc from '../reducers/npcReducer'
 
-// Put
 const appReducer = combineReducers({
+    npc
 });
 
 const rootReducer = (state, action) => {

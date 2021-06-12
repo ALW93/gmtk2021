@@ -30,9 +30,12 @@ const Workbench = (props) => {
 
   const calculateRecipe = () => {
     const ingredients = map(selection, (item) => item.id);
-    console.log(ingredients);
     const result = matchRecipes(ingredients);
-    console.log(result);
+    if (!result) {
+      alert("No matching recipes found");
+    } else {
+      alert(`Discovered ${result.name}`);
+    }
   };
 
   return (

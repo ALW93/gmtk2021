@@ -1,11 +1,14 @@
 import React from "react";
 import { ingredients } from "../data/data";
+import "./Ingredient.scss";
 
 const Ingredients = (props) => {
   return (
-    <div>
+    <div className="ingredientContainer">
       {ingredients.map((ingredient) => (
-        <span>{ingredient.name}</span>
+        <div key={ingredient.name} className="ingredient">
+          {ingredient.name}
+        </div>
       ))}
     </div>
   );

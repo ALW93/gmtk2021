@@ -1,5 +1,6 @@
 .ingredientsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(6em, 1fr));
-  gap: 0.2em;
+  gap: 0.6em;
+  margin-top: 2em;
 }

@@ -15,9 +15,9 @@ import Button from "./shared/Button";
 import RecipeBook from "./RecipeBook";
 
 const Workbench = (props) => {
-  const dispatch = useDispatch()
-  const potions = useSelector(state => state.potions)
-  const selections = useSelector(state => state.active.ingredients)
+  const dispatch = useDispatch();
+  const potions = useSelector((state) => state.potions);
+  const selections = useSelector((state) => state.active.ingredients);
   const [open, setOpen] = useState(false);
 
   const handleSelect = (e) => {
@@ -43,7 +43,7 @@ const Workbench = (props) => {
     const potionId = matchRecipes(ingredients);
     if (!potionId) {
       alert("Well, I guess you could call this a potion...");
-      dispatch(updatePotion(potionId))
+      dispatch(updatePotion(potionId));
     } else {
       alert(`Discovered ${potions[potionId].name}`);
       dispatch(updatePotion(potionId));
@@ -56,13 +56,15 @@ const Workbench = (props) => {
 
   return (
     <div className="WorkbenchContainer">
-      {open && <RecipeBook onClick={toggleRecipeBook} title="Recipes" />}
-      <div>
-        <Button text="Recipe Book" onClick={toggleRecipeBook} />
+      <div className="WorkbenchContainer--Top">
+        <nav className="WorkbenchNav">
+          {open && <RecipeBook onClick={toggleRecipeBook} title="Recipes" />}
+          <Button text="Recipe Book" onClick={toggleRecipeBook} />
+        </nav>
+        <Ingredients addSelection={handleSelect} />
       </div>
 
-      <Ingredients addSelection={handleSelect} />
-      <div>
+      <div className="WorkbenchContainer--Bottom">
         <Combiner removeSelection={removeSelect} />
         <Button text="Combine" onClick={calculateRecipe} />
       </div>

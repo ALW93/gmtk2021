@@ -17,14 +17,18 @@ import RecipeBook from "./RecipeBook";
 import useSound from "use-sound";
 import waterDrop from "../music/waterdrop.mp3"
 import empty from "../music/empty.mp3"
+import failedPotion from "../music/failedPotion.mp3"
+import discoverPotion from "../music/discoverPotion.mp3"
 
 const Workbench = (props) => {
   const dispatch = useDispatch();
   const potions = useSelector((state) => state.potions);
   const selections = useSelector((state) => state.active.ingredients);
   const [open, setOpen] = useState(false);
-  const [playWaterDrop] = useSound(waterDrop)
-  const [playEmtpy] = useSound(empty)
+  const [playWaterDrop] = useSound(waterDrop);
+  const [playEmtpy] = useSound(empty);
+  const [playFail] = useSound(failedPotion);
+  const [playDiscoverPotion] = useSound(discoverPotion);
 
   const handleSelect = (e) => {
     if (selections.length === 3) {
@@ -50,9 +54,16 @@ const Workbench = (props) => {
     const ingredients = map(selections, (item) => item);
     const potionId = matchRecipes(ingredients);
     if (!potionId) {
+      playFail()
       alert("Well, I guess you could call this a potion...");
       dispatch(updatePotion(potionId));
     } else {
+      // Also play the fail sound if the potion is the defaulted smelly potion
+      if(potions[potionId].name === 'Smelly Potion(?)'){
+        playFail()
+      } else {
+        playDiscoverPotion()
+      }
       alert(`Discovered ${potions[potionId].name}`);
       dispatch(updatePotion(potionId));
     }

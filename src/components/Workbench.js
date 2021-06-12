@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { findIndex } from "lodash";
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
+
 import "../styles/components/_Workbench.scss";
 
 const Workbench = (props) => {
@@ -12,12 +14,12 @@ const Workbench = (props) => {
       alert("Error: Maximum selection reached");
       return;
     } else {
-      setSelection([...selection, e.target.dataset.value]);
+      setSelection([...selection, { ...e.target.dataset }]);
     }
   };
 
   const removeSelect = (e) => {
-    const idx = selection.indexOf(e.target.dataset.value);
+    const idx = findIndex(selection, { id: e.target.dataset.id });
     let newValues = [...selection];
     if (idx > -1) {
       newValues.splice(idx, 1);

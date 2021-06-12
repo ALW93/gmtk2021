@@ -3,18 +3,18 @@
     "id": "lovesickness",
     "name": "Lovesickness",
     "cure": "love-potion",
-    "img-url": "images/ailments/lovesickness.png"
+    "imgUrl": "images/ailments/lovesickness.png"
   },
   {
     "id": "lycanthropy",
     "name": "Lycanthropy",
     "cure": "shape-shift-potion",
-    "img-url": "images/ailments/lycanthropy.png"
+    "imgUrl": "images/ailments/lycanthropy.png"
   },
   {
     "id": "death",
     "name": "Death",
     "cure": "phoenix-down",
-    "img-url": "images/ailments/phoenix-down.png"
+    "imgUrl": "images/ailments/phoenix-down.png"
   }
 ]

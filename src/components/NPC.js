@@ -18,6 +18,7 @@ const NPC = () => {
     return (
         <div className="Npc">
             <h3 className="name">{npc?.name}</h3>
+            <img src={`/images/npcs/${npc?.id}`}/>
             <NPCDialogue intro={npc?.intro}/>
         </div>
     )

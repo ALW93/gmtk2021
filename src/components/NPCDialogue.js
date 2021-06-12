@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NPCDialpgue = ({intro}) => {
+const NPCDialogue = ({intro}) => {
     return (
         <div className="dialogue-box">
             <p>{intro}</p>
@@ -8,4 +8,4 @@ const NPCDialpgue = ({intro}) => {
     )
 };
 
-export default NPCDialpgue;
+export default NPCDialogue;

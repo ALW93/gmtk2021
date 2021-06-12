@@ -2,12 +2,12 @@
   display: flex;
 
   .ingredient {
-    color: black;
-    border: 1px solid white;
-    background-color: rgb(228, 217, 217);
-    margin: 0.5em;
+    background-color: rgb(146, 203, 180);
+    border: 2px outset rgb(211, 211, 211);
+    border-radius: 0.3em;
     width: 5em;
     height: 5em;
     font-size: small;
+    margin: 1em;
   }
 }

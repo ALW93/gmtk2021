@@ -1,11 +1,9 @@
 .WorkbenchContainer {
-  display: flex;
   min-width: 100%;
 
   > div {
     margin: 0.2em;
     padding: 3em;
-    width: 50%;
     border: 2px solid white;
     border-radius: 0.5em;
   }

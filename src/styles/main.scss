@@ -1,10 +1,14 @@
-@import 'utils/variables';
-@import 'utils/reset';
+@import "utils/variables";
+@import "utils/reset";
 
-@import 'layout/grid';
+@import "layout/grid";
 
-@import 'components/App';
-@import 'components/Npc';
-@import 'components/Combiner';
-@import 'components/Workbench';
-@import 'components/Ingredient';
+/* Main Components */
+@import "components/App";
+@import "components/Npc";
+@import "components/Combiner";
+@import "components/Workbench";
+@import "components/Ingredients";
+
+/* Shared Components */
+@import "components/Button";

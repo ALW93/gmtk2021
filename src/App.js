@@ -1,4 +1,3 @@
-import "./App.css";
 import {BrowserRouter, Route} from "react-router-dom"
 import Game from "./components/Game";
 import StartMenu from "./components/startMenu/StartMenu"

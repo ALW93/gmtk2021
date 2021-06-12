@@ -10,7 +10,6 @@ const Game = (props) => {
     // function confirmExit() {
     //   return "show warning";
     // }
-    console.log(loadSaveData());
   }, []);
 
   return (

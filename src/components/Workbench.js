@@ -6,7 +6,7 @@ import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
 import { sendResult } from "../store/actions/resultsActions";
-import LightBox from "./shared/LightBox";
+import RecipeBook from "./RecipeBook";
 
 const Workbench = (props) => {
   const [selection, setSelection] = useState([]);
@@ -47,7 +47,7 @@ const Workbench = (props) => {
 
   return (
     <div className="WorkbenchContainer">
-      {open && <LightBox onClick={toggleRecipeBook} title="Recipes" />}
+      {open && <RecipeBook onClick={toggleRecipeBook} title="Recipes" />}
       <div>
         <Button text="Recipe Book" onClick={toggleRecipeBook} />
       </div>

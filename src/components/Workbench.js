@@ -16,7 +16,12 @@ const Workbench = (props) => {
   };
 
   const removeSelect = (e) => {
-    //
+    const idx = selection.indexOf(e.target.dataset.value);
+    let newValues = [...selection];
+    if (idx > -1) {
+      newValues.splice(idx, 1);
+    }
+    setSelection(newValues);
   };
 
   return (

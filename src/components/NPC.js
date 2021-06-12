@@ -6,33 +6,33 @@ import images from "../images/images";
 
 const NPC = () => {
   const potionId = useSelector((state) => state.active?.potion?.id);
-  const ailments = useSelector(state => state.ailments);
-  const npc = useSelector(state => state.npcs[state.active.npc])
+  const ailments = useSelector((state) => state.ailments);
+  const npc = useSelector((state) => state.npcs[state.active.npc]);
   const [isMatchingPotion, setIsMatchingPotion] = useState(false);
-  const [dialogue, setDialogue] = useState('');
+  const [dialogue, setDialogue] = useState("");
 
   useEffect(() => {
     let ailmentWhichSelectedPotionCures;
-    Object.values(ailments).forEach(ailment => {
-        if (ailment.cure === potionId) {
-            ailmentWhichSelectedPotionCures = ailment.id;
-        }
-    })
+    Object.values(ailments).forEach((ailment) => {
+      if (ailment.cure === potionId) {
+        ailmentWhichSelectedPotionCures = ailment.id;
+      }
+    });
 
     if (potionId && ailmentWhichSelectedPotionCures === npc.ailment) {
-        setIsMatchingPotion(true);
+      setIsMatchingPotion(true);
     }
   }, [potionId, npc, ailments]);
 
-    useEffect(() => {
-        if (potionId) {
-            setDialogue(isMatchingPotion ? npc?.success : npc?.failure)
-        } else {
-            setDialogue(npc?.intro);
-        }
-    }, [npc, isMatchingPotion, potionId])
+  useEffect(() => {
+    if (potionId) {
+      setDialogue(isMatchingPotion ? npc?.success : npc?.failure);
+    } else {
+      setDialogue(npc?.intro);
+    }
+  }, [npc, isMatchingPotion, potionId]);
 
-  if (!npc) return null; 
+  if (!npc) return null;
 
   return (
     <div className="Npc">

@@ -1,31 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { dispatchLoadAilments } from "../store/actions/ailmentAction";
 import { ingredients } from "../data/data";
-import images from "../images/images";
+import Item from "../components/shared/Item";
 
 const Ingredients = ({ addSelection }) => {
-console.log('raw ingredients', ingredients)
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(dispatchLoadAilments());
+  }, [dispatch]);
+
   return (
     <div className="ingredientsContainer">
       {ingredients.map((ingredient) => (
         <div className="ingredientContainer" key={ingredient.id}>
-          <div
+          <Item
+            id={ingredient.id}
             onClick={addSelection}
-            className="ingredient"
-          >
-            <img 
-              data-id={ingredient.id} 
-              data-name={ingredient.name} 
-              src={images[ingredient.id]} 
-              alt={ingredient.name} 
-              className="absoluteCenter"
-            />
-          </div>
-          <p>{ingredient.name}</p>
+            type="ingredient"
+            name={ingredient.name}
+          />
         </div>
       ))}
     </div>
   );
 };
-
 
 export default Ingredients;

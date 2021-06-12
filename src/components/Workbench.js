@@ -4,17 +4,19 @@ import { map } from "lodash";
 
 import { matchRecipes } from "../utility/utility";
 import { updatePotion } from "../store/reducers/activeReducer";
-import { addIngredient, updateIngredients } from "../store/reducers/activeReducer";
+import {
+  addIngredient,
+  updateIngredients,
+} from "../store/reducers/activeReducer";
 
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
-import LightBox from "./shared/LightBox";
 import RecipeBook from "./RecipeBook";
 
 const Workbench = (props) => {
-  const dispatch = useDispatch()
-  const selections = useSelector(state => state.active.ingredients)
+  const dispatch = useDispatch();
+  const selections = useSelector((state) => state.active.ingredients);
   const [open, setOpen] = useState(false);
 
   const handleSelect = (e) => {
@@ -32,11 +34,11 @@ const Workbench = (props) => {
     if (idx > -1) {
       newValues.splice(idx, 1);
     }
-    console.log('newValues', newValues)
+
     dispatch(updateIngredients(newValues));
   };
 
-  const calculateRecipe = async () => {
+  const calculateRecipe = () => {
     const ingredients = map(selections, (item) => item);
     const potion = matchRecipes(ingredients);
     if (!potion) {
@@ -60,7 +62,7 @@ const Workbench = (props) => {
 
       <Ingredients addSelection={handleSelect} />
       <div>
-        <Combiner selections={selections} removeSelection={removeSelect} />
+        <Combiner removeSelection={removeSelect} />
         <Button text="Combine" onClick={calculateRecipe} />
       </div>
     </div>

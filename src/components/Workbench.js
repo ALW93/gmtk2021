@@ -31,7 +31,7 @@ const Workbench = (props) => {
     setSelection(newValues);
   };
 
-  const calculateRecipe = () => {
+  const calculateRecipe = async () => {
     const ingredients = map(selection, (item) => item.id);
     const result = matchRecipes(ingredients);
     if (!result) {

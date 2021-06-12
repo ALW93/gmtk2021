@@ -7,6 +7,7 @@ import Combiner from "./Combiner";
 import Button from "./shared/Button";
 import { sendResult } from "../store/actions/resultsActions";
 import LightBox from "./shared/LightBox";
+import { loadNPCs } from "../store/actions/npcAction";
 
 const Workbench = (props) => {
   const [selection, setSelection] = useState([]);

@@ -4,8 +4,9 @@
 
   .ingredient {
     position: relative;
-    background-color: palevioletred;
     border-radius: 50%;
+    border: 0.5em dashed rgba(255,255,255, 0.3);
+    background-color: lightpink;
     width: 8em;
     
     height: 8em;

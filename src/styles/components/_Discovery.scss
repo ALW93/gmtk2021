@@ -1,5 +1,21 @@
 .discoveryContainer {
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
+  margin: 1em auto;
+  width: 100%;
+
+  .discoveryBox {
+    position: relative;
+    margin: 0 auto;
+    width: 14em;
+    height: 14em;
+    border-radius: 3em;
+    border: 2rem solid rgba(100,50,20,0.05);
+    text-align: center;
+    background: cornsilk;
+    
+    img {
+      height: 10em;
+      width: 10em;
+
+    }
+  }
 }

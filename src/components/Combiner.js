@@ -7,10 +7,11 @@ const Combiner = ({ ingredients = [], removeSelection }) => {
         <div
           onClick={removeSelection}
           key={`ingredient${idx}`}
-          data-value={ingredient}
+          data-id={ingredient.id}
+          data-name={ingredient.name}
           className="ingredient"
         >
-          {ingredient}
+          {ingredient.name}
         </div>
       ))}
     </div>

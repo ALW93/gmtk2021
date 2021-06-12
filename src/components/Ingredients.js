@@ -1,11 +1,18 @@
 import React from "react";
 import { ingredients } from "../data/data";
 
-const Ingredients = (props) => {
+const Ingredients = ({ addSelection }) => {
   return (
-    <div>
+    <div className="ingredientContainer">
       {ingredients.map((ingredient) => (
-        <span>{ingredient.name}</span>
+        <div
+          onClick={addSelection}
+          key={ingredient.id}
+          data-value={ingredient.name}
+          className="ingredient"
+        >
+          {ingredient.name}
+        </div>
       ))}
     </div>
   );

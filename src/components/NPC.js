@@ -8,17 +8,18 @@ const NPC = () => {
     const dispatch = useDispatch();
     const npcs = useSelector(state => state.npc);
 
+    const npcIndex = Math.floor(Math.random() * npcs.length);
+    const npc = npcs[npcIndex];
+
     useEffect(() => {
         dispatch(loadNPCs())
     }, [])
 
     return (
-        npcs.map(npc => (
-        <div className="npc">
-            <h1>{npc.name}</h1>
-            <NPCDialogue />
+        <div className="Npc">
+            <h3 className="name">{npc?.name}</h3>
+            <NPCDialogue intro={npc?.intro}/>
         </div>
-        ))
     )
 };
 

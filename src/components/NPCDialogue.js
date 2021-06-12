@@ -2,7 +2,7 @@ import React from 'react';
 
 const NPCDialpgue = () => {
     return (
-        <div>
+        <div className="dialogue-box">
             dialogue
         </div>
     )

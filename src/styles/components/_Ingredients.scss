@@ -1,6 +1,11 @@
 .ingredientsContainer {
+  background-color: seashell;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(6em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(6.5em, 1fr));
   gap: 0.6em;
-  margin-top: 2em;
+  max-height: 50vh;
+  width: calc(100% - 1rem);
+  overflow-y: scroll;
+  padding: 2rem;
+
 }

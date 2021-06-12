@@ -14,12 +14,20 @@
   }
 
   .name {
-    background: rosybrown;
+    position: absolute;
+    z-index: 1;
+    top: -4rem;
+    left: 1rem;
+    width: max-content;
+    margin: 1rem;
+    border-radius: 20px;
+    background: $color-bg-secondary;
     font-size: $font-size-xlarge;
-    padding: $space-medium;
+    padding: $space-large;
   }
 
   .dialogue-box {
+    position: relative;
     border-radius: 5px;
     border: 1px solid white;
     padding: $space-medium $space-large;
@@ -31,6 +39,7 @@
     display: flex;
     align-items: center;
     overflow-y: auto;
+    overflow: visible;
   }
 
   .footer {

@@ -1,18 +1,19 @@
+import {useState} from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import Game from "./components/Game";
 import StartMenu from "./components/StartMenu";
-import Music from "./components/Music";
 
 function App() {
+  const [musicPlaying, setMusicPlaying] = useState(false)
+
   return (
     <BrowserRouter>
-      <Music />
       <Route path="/game" exact={true}>
-        <Game />
+        <Game musicPlaying={musicPlaying} setMusicPlaying={setMusicPlaying} />
       </Route>
       <Route path="/" exact={true}>
-        <StartMenu />
+        <StartMenu setMusicPlaying={setMusicPlaying}/>
       </Route>
     </BrowserRouter>
   );

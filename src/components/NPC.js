@@ -46,9 +46,7 @@ const NPC = () => {
       <div className="imageContainer">
         <img src={images[npc.id]} alt={npc.name} />
       </div>
-      <h3 className="name">{npc.name}</h3>
-      <NPCDialogue body={dialogue} />
-      <div className="footer">Potion Matching Game ©</div>
+      <NPCDialogue body={dialogue} name={npc.name} />
     </div>
   );
 };

@@ -4,12 +4,14 @@ import { map } from "lodash";
 
 import { matchRecipes } from "../utility/utility";
 import { updatePotion } from "../store/reducers/activeReducer";
-import { addIngredient, updateIngredients } from "../store/reducers/activeReducer";
+import {
+  addIngredient,
+  updateIngredients,
+} from "../store/reducers/activeReducer";
 
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
-import LightBox from "./shared/LightBox";
 import RecipeBook from "./RecipeBook";
 
 const Workbench = (props) => {
@@ -36,7 +38,7 @@ const Workbench = (props) => {
     dispatch(updateIngredients(newValues));
   };
 
-  const calculateRecipe = async () => {
+  const calculateRecipe = () => {
     const ingredients = map(selections, (item) => item);
     const potionId = matchRecipes(ingredients);
     if (!potionId) {
@@ -61,7 +63,7 @@ const Workbench = (props) => {
 
       <Ingredients addSelection={handleSelect} />
       <div>
-        <Combiner selections={selections} removeSelection={removeSelect} />
+        <Combiner removeSelection={removeSelect} />
         <Button text="Combine" onClick={calculateRecipe} />
       </div>
     </div>

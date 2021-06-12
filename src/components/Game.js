@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import Workbench from "./Workbench";
 import NPC from "./NPC";
 import Discovery from "./Discovery";
@@ -9,8 +8,8 @@ import { getRandomNpc } from "../utility/utility";
 
 const Game = (props) => {
   const dispatch = useDispatch();
-  const npcs = useSelector(state => state.npcs)
-  
+  const npcs = useSelector((state) => state.npcs);
+
   useEffect(() => {
     const randomNpcId = getRandomNpc(npcs)
     const initialActive = {

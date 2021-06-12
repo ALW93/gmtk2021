@@ -1,19 +1,21 @@
 .lightBoxContainer--Outer {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   width: 100%;
   height: 100%;
   left: 0;
+}
 
-  .lightBoxContainer--Inner {
-    background-color: peachpuff;
-    width: 50%;
-    margin: auto;
-    top: 3em;
-    text-align: center;
-    padding: 2em;
-    border: 1px solid black;
-    position: relative;
-  }
+.lightBoxContainer--Inner {
+  background-color: peachpuff;
+
+  width: 50%;
+  margin: auto;
+  top: 3em;
+  text-align: center;
+  padding: 2em;
+  border: 1px solid black;
+  position: relative;
 }

@@ -13,6 +13,7 @@ const initial = {
     ingredients: normalizeData(ingredients),
     ailments: normalizeData(ailments),
 }
+console.log("initial", initial)
 
 const configureStore = (initialState=initial) => {
     return createStore(

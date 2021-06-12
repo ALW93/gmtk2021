@@ -7,13 +7,11 @@ export const loadAilments = (data) => ({
 
 export default function ailmentsReducer(state = {}, action) {
   switch (action.type) {
-
-    case LOAD_AILMENTS: 
+    case LOAD_AILMENTS:
       return action.data;
-    
+
     default: {
       return state;
     }
   }
 }
-

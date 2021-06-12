@@ -1,6 +1,6 @@
 import {BrowserRouter, Route} from "react-router-dom"
 import Game from "./components/Game";
-import StartMenu from "./components/startMenu/StartMenu"
+import StartMenu from "./components/StartMenu"
 
 function App() {
   return (

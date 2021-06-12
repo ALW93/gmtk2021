@@ -16,6 +16,7 @@ import RecipeBook from "./RecipeBook";
 
 import useSound from "use-sound";
 import waterDrop from "../music/waterdrop.mp3"
+import empty from "../music/empty.mp3"
 
 const Workbench = (props) => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const Workbench = (props) => {
   const selections = useSelector((state) => state.active.ingredients);
   const [open, setOpen] = useState(false);
   const [playWaterDrop] = useSound(waterDrop)
+  const [playEmtpy] = useSound(empty)
 
   const handleSelect = (e) => {
     if (selections.length === 3) {
@@ -40,6 +42,7 @@ const Workbench = (props) => {
     if (idx > -1) {
       newValues.splice(idx, 1);
     }
+    playEmtpy()
     dispatch(updateIngredients(newValues));
   };
 

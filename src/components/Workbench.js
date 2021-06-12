@@ -14,11 +14,17 @@ import Combiner from "./Combiner";
 import Button from "./shared/Button";
 import RecipeBook from "./RecipeBook";
 
+import useSound from "use-sound";
+import waterDrop from "../music/waterdrop.mp3"
+import empty from "../music/empty.mp3"
+
 const Workbench = (props) => {
-  const dispatch = useDispatch()
-  const potions = useSelector(state => state.potions)
-  const selections = useSelector(state => state.active.ingredients)
+  const dispatch = useDispatch();
+  const potions = useSelector((state) => state.potions);
+  const selections = useSelector((state) => state.active.ingredients);
   const [open, setOpen] = useState(false);
+  const [playWaterDrop] = useSound(waterDrop)
+  const [playEmtpy] = useSound(empty)
 
   const handleSelect = (e) => {
     if (selections.length === 3) {
@@ -26,6 +32,7 @@ const Workbench = (props) => {
       return;
     } else {
       dispatch(addIngredient(e.target.dataset.id));
+      playWaterDrop()
     }
   };
 
@@ -35,6 +42,7 @@ const Workbench = (props) => {
     if (idx > -1) {
       newValues.splice(idx, 1);
     }
+    playEmtpy()
     dispatch(updateIngredients(newValues));
   };
 
@@ -43,7 +51,7 @@ const Workbench = (props) => {
     const potionId = matchRecipes(ingredients);
     if (!potionId) {
       alert("Well, I guess you could call this a potion...");
-      dispatch(updatePotion(potionId))
+      dispatch(updatePotion(potionId));
     } else {
       alert(`Discovered ${potions[potionId].name}`);
       dispatch(updatePotion(potionId));
@@ -56,8 +64,17 @@ const Workbench = (props) => {
 
   return (
     <div className="WorkbenchContainer">
-      <Ingredients addSelection={handleSelect} />
-      <div className="CombinerContainer">
+      {/* <Ingredients addSelection={handleSelect} />
+      <div className="CombinerContainer"> */}
+      <div className="WorkbenchContainer--Top">
+        <nav className="WorkbenchNav">
+          {open && <RecipeBook onClick={toggleRecipeBook} title="Recipes" />}
+          <Button text="Recipe Book" onClick={toggleRecipeBook} />
+        </nav>
+        <Ingredients addSelection={handleSelect} />
+      </div>
+
+      <div className="WorkbenchContainer--Bottom">
         <Combiner removeSelection={removeSelect} />
     </div>
         <Button text="Brew" onClick={calculateRecipe} />

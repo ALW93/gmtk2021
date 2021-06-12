@@ -10,7 +10,7 @@ import Discovery from "./Discovery";
 import GameOptions from './GameOptions/GameOptions'
 
 
-const Game = (props) => {
+const Game = ({musicPlaying, setMusicPlaying}) => {
   const dispatch = useDispatch();
   const npcs = useSelector((state) => state.npcs);
 
@@ -36,13 +36,13 @@ const Game = (props) => {
     <div className="GameContainer grid">
 
       <aside>
-      <GameOptions />
         <Discovery />
       </aside>
       <main className="main">
         <NPC />
       </main>
       <aside>
+        <GameOptions musicPlaying={musicPlaying} setMusicPlaying={setMusicPlaying} />
         <Workbench />
       </aside>
     </div>

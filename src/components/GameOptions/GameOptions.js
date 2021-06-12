@@ -3,12 +3,12 @@ import MusicButton from './Music';
 import RecipeBookButton from './RecipeBookButton';
 import BackToMenuButton from './BackToMenuButton';
 
-const GameOptions = (props) => {
+const GameOptions = ({musicPlaying, setMusicPlaying}) => {
 
   return (
     <aside className="GameOptions">
       <BackToMenuButton />
-      <MusicButton />
+      <MusicButton musicPlaying={musicPlaying} setMusicPlaying={setMusicPlaying} />
       <RecipeBookButton />
     </aside>
   );

@@ -14,7 +14,7 @@ const NPC = () => {
 
     return (
         npcs.map(npc => (
-            <div className="npc">
+            <div className="Npc">
                 <h1>{npc.name}</h1>
                 <NPCDialogue intro={npc.intro}/>
             </div>

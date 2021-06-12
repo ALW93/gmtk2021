@@ -20,12 +20,13 @@
   }
 
   .dialogue-box {
+    border-radius: 5px;
     border: 1px solid white;
-    padding: $space-medium;
+    padding: $space-medium $space-large;
     margin: $space-medium;
     height: 20rem;
     line-height: 2.5rem;
-    background: antiquewhite;
+    background: $color-bg-primary;
     color: $color-black;
     display: flex;
     align-items: center;

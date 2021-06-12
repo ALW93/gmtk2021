@@ -6,11 +6,11 @@ import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
 import { sendResult } from "../store/actions/resultsActions";
-
-import "../styles/components/_Workbench.scss";
+import LightBox from "./shared/LightBox";
 
 const Workbench = (props) => {
   const [selection, setSelection] = useState([]);
+  const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
   const handleSelect = (e) => {
@@ -42,8 +42,17 @@ const Workbench = (props) => {
     }
   };
 
+  const toggleRecipeBook = () => {
+    setOpen((prev) => !prev);
+  };
+
   return (
     <div className="WorkbenchContainer">
+      {open && <LightBox onClick={toggleRecipeBook} />}
+      <div>
+        <Button text="Recipe Book" onClick={toggleRecipeBook} />
+      </div>
+
       <Ingredients addSelection={handleSelect} />
       <div>
         <Combiner ingredients={selection} removeSelection={removeSelect} />

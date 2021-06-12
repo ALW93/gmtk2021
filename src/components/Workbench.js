@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { map } from "lodash";
 
 import { matchRecipes } from "../utility/utility";
-import { updatePotion, clearIngredient } from "../store/reducers/activeReducer";
+import { updatePotion } from "../store/reducers/activeReducer";
 import {
   addIngredient,
   updateIngredients,
@@ -13,19 +13,18 @@ import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
 import RecipeBook from "./RecipeBook";
-import { getElementError } from "@testing-library/react";
 
 import useSound from "use-sound";
-import waterDrop from "../music/waterdrop.mp3"
-import empty from "../music/empty.mp3"
+import waterDrop from "../music/waterdrop.mp3";
+import empty from "../music/empty.mp3";
 
 const Workbench = (props) => {
   const dispatch = useDispatch();
   const potions = useSelector((state) => state.potions);
   const selections = useSelector((state) => state.active.ingredients);
   const [open, setOpen] = useState(false);
-  const [playWaterDrop] = useSound(waterDrop)
-  const [playEmtpy] = useSound(empty)
+  const [playWaterDrop] = useSound(waterDrop);
+  const [playEmtpy] = useSound(empty);
 
   const handleSelect = (e) => {
     if (selections.length === 3) {
@@ -33,7 +32,7 @@ const Workbench = (props) => {
       return;
     } else {
       dispatch(addIngredient(e.target.dataset.id));
-      playWaterDrop()
+      playWaterDrop();
     }
   };
 
@@ -43,7 +42,7 @@ const Workbench = (props) => {
     if (idx > -1) {
       newValues.splice(idx, 1);
     }
-    playEmtpy()
+    playEmtpy();
     dispatch(updateIngredients(newValues));
   };
 

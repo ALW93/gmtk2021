@@ -1,0 +1,14 @@
+.GameContainer {
+  .main {
+    background: lightpink;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      font-size: $font-size-xlarge;
+      background: pink;
+      padding: $space-large;
+    }
+  }
+}

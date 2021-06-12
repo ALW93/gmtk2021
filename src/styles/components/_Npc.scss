@@ -1,11 +1,31 @@
 .Npc {
-  background: skyblue;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+;
 
   .name {
-    background: azure;
+    background: rosybrown;
+    font-size: $font-size-xlarge;
+    padding: $space-medium;
   }
 
   .dialogue-box {
     border: 1px solid white;
+    padding: $space-medium;
+    margin: $space-medium;
+    height: 70%;
+    line-height: 2.5rem;
+    background: antiquewhite;
+    color: $color-dark;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer {
+    background: rosybrown;
+    font-size: $font-size-tiny;
+    padding: $space-small;
   }
 }

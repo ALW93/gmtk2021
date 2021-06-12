@@ -5,12 +5,13 @@
 
 /* Main Components */
 @import "components/App";
-@import 'components/GameContainer';
+@import "components/GameContainer";
 @import "components/Npc";
 @import "components/Combiner";
 @import "components/Workbench";
 @import "components/Ingredients";
 @import "components/StartMenu";
+@import "components/Discovery";
 
 /* Shared Components */
 @import "components/Button";

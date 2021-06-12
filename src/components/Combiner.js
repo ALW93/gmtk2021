@@ -5,10 +5,10 @@ const Combiner = ({ ingredients = [], removeSelection }) => {
   return (
     <div className="combinerContainer">
       {ingredients.map((ingredient, idx) => (
-      <div>
+      <div key={`ingredient${idx}`}>
         <div
           onClick={removeSelection}
-          key={`ingredient${idx}`}
+          
           className="ingredient"
         >
           <img 

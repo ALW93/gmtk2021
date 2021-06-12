@@ -1,11 +1,13 @@
 .combinerContainer {
   display: flex;
 
+
   .ingredient {
     position: relative;
     background-color: palevioletred;
     border-radius: 50%;
     width: 8em;
+    
     height: 8em;
     font-size: $font-size-small;
     margin: 0.5em;

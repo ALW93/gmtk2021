@@ -1,6 +1,14 @@
+
 .buttonBase {
-  width: 10em;
-  height: 3em;
-  background-color: peachpuff;
-  font-family: "Mate SC", serif;
+  min-width: 10rem;
+  height: 5rem;
+
+  margin: 1rem;
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem 2rem;
+  color: white;
+  background-color: $color-highlight;
+  font: bold 2rem "Mate SC", serif;
+  line-height: 1rem;
 }

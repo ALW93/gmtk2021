@@ -1,6 +1,5 @@
 .GameContainer {
   .main {
-    border: 2px solid $color-black;
     background-color: rgba(247, 251, 255, 0.626);
     display: flex;
     flex-direction: column;
@@ -8,8 +7,8 @@
 
     .title {
       font-size: $font-size-xlarge;
-      color: $color-tan;
-      background-color: $color-pink;
+      color: white;
+      background-color: $color-highlight;
       text-align: center;
       padding: $space-large;
     }

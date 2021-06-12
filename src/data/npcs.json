@@ -4,6 +4,7 @@
     "name": "Ghosty",
     "ailment": "death",
     "imgUrl": "images/npcs/ghosty.png",
+    "description": "You don't hear anyone come in, but a mournfully small voice quivers out to you. Looking more closely, you sense a deathly aura, and realize you indeed have a visitor.",
     "intro": "H-h-hello... I'm f-feeling... a little under the weather today, so... if you have something that could liven me up... thatwouldreallyhelp...",
     "success": "Wow, this tastes amazing, and I feel so much better now! You're a real life-saver!",
     "failure": "Oh... th-thanks... That's... nice, I guess... (If it's nice or not doesn't matter much when you're dead though...)"

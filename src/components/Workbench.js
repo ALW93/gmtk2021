@@ -1,21 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import "./Workbench.scss";
 
 const Workbench = (props) => {
-  const [selection, setSelection] = useState(["apple", "banana", "pear"]);
+  const [selection, setSelection] = useState([]);
 
-  useEffect(() => {
-    if (selection === 3) {
+  const handleSelect = (e) => {
+    if (selection.length === 3) {
       alert("Error: Maximum selection reached");
+      return;
+    } else {
+      setSelection([...selection, e.target.dataset.value]);
     }
-  }, [selection, setSelection]);
+  };
+
+  const removeSelect = (e) => {
+    //
+  };
 
   return (
     <div className="WorkbenchContainer">
-      <Ingredients />
-      <Combiner />
+      <Ingredients addSelection={handleSelect} />
+      <Combiner ingredients={selection} removeSelection={removeSelect} />
     </div>
   );
 };

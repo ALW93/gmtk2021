@@ -12,19 +12,17 @@ import {
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
-import RecipeBook from "./RecipeBook";
 
 import useSound from "use-sound";
-import waterDrop from "../music/waterdrop.mp3"
-import empty from "../music/empty.mp3"
+import waterDrop from "../music/waterdrop.mp3";
+import empty from "../music/empty.mp3";
 
 const Workbench = (props) => {
   const dispatch = useDispatch();
   const potions = useSelector((state) => state.potions);
   const selections = useSelector((state) => state.active.ingredients);
-  const [open, setOpen] = useState(false);
-  const [playWaterDrop] = useSound(waterDrop)
-  const [playEmtpy] = useSound(empty)
+  const [playWaterDrop] = useSound(waterDrop);
+  const [playEmtpy] = useSound(empty);
 
   const handleSelect = (e) => {
     if (selections.length === 3) {
@@ -32,7 +30,7 @@ const Workbench = (props) => {
       return;
     } else {
       dispatch(addIngredient(e.target.dataset.id));
-      playWaterDrop()
+      playWaterDrop();
     }
   };
 
@@ -42,7 +40,7 @@ const Workbench = (props) => {
     if (idx > -1) {
       newValues.splice(idx, 1);
     }
-    playEmtpy()
+    playEmtpy();
     dispatch(updateIngredients(newValues));
   };
 
@@ -58,27 +56,29 @@ const Workbench = (props) => {
     }
   };
 
-  const toggleRecipeBook = () => {
-    setOpen((prev) => !prev);
+  //clear ingredients button
+  const clearRecipe = () => {
+    dispatch(updateIngredients([]));
   };
 
   return (
     <div className="WorkbenchContainer">
       {/* <Ingredients addSelection={handleSelect} />
       <div className="CombinerContainer"> */}
-      <div className="WorkbenchContainer--Top">
-        <nav className="WorkbenchNav">
+      {/* <div className="WorkbenchContainer--Top"> */}
+        {/* <nav className="WorkbenchNav">
           {open && <RecipeBook onClick={toggleRecipeBook} title="Recipes" />}
           <Button text="Recipe Book" onClick={toggleRecipeBook} />
-        </nav>
+        </nav> */}
         <Ingredients addSelection={handleSelect} />
-      </div>
+      {/* </div> */}
 
       <div className="WorkbenchContainer--Bottom">
         <Combiner removeSelection={removeSelect} />
-    </div>
+        <Button text="Clear" onClick={clearRecipe} />
         <Button text="Brew" onClick={calculateRecipe} />
       </div>
+    </div>
   );
 };
 

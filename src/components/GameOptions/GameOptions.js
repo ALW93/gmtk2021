@@ -8,8 +8,8 @@ const GameOptions = ({musicPlaying, setMusicPlaying}) => {
   return (
     <aside className="GameOptions">
       <BackToMenuButton />
-      <MusicButton musicPlaying={musicPlaying} setMusicPlaying={setMusicPlaying} />
       <RecipeBookButton />
+      <MusicButton musicPlaying={musicPlaying} setMusicPlaying={setMusicPlaying} />
     </aside>
   );
 };

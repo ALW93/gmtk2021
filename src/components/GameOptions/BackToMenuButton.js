@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 export default function BackToMenuButton() {
   return (
     // the background image scaling is off, but will come back to it.
-        <div className="">
+        <div className="optionButton">
           <Link to={"/"} className="link">
-            Back
+            {"<"}
           </Link>
     </div>
   );

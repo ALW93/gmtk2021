@@ -4,9 +4,8 @@
   grid-template-columns: repeat(auto-fit, minmax(6.5em, 1fr));
   gap: 0.6em;
   max-height: 50vh;
-  width: 100%;
+  width: calc(100% - 1rem);
   overflow-y: scroll;
-  margin-top: 2em;
   padding: 2rem;
 
 }

@@ -1,10 +1,11 @@
 import React from 'react';
 
-const NPCDialogue = ({body}) => {
+const NPCDialogue = ({body, name}) => {
     return (
-        <div className="dialogue-box">
+        <section className="dialogue-box">
+            <h3 className="name">{name}</h3>
             <p>{body}</p>
-        </div>
+        </section>
     )
 };
 

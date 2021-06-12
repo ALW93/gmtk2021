@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import useSound from "use-sound";
-import song from "../music/infados-by-kevin-macleod.mp3";
-import mute from "../images/music/Mute_Icon.svg";
-import playButton from "../images/music/Speaker_Icon.svg";
+import song from "../../music/infados-by-kevin-macleod.mp3";
+import mute from "../../images/music/Mute_Icon.svg";
+import playButton from "../../images/music/Speaker_Icon.svg";
 
 const Music = () => {
   const [isPlaying, setIsPlaying] = useState(false);

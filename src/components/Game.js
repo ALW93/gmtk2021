@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+import { loadAllActive } from "../store/reducers/activeReducer";
+import { getRandomNpc } from "../utility/utility";
+
 import Workbench from "./Workbench";
 import NPC from "./NPC";
 import Discovery from "./Discovery";
-import { loadAllActive } from "../store/reducers/activeReducer";
-import { getRandomNpc } from "../utility/utility";
+import GameOptions from './GameOptions/GameOptions'
+
 
 const Game = (props) => {
   const dispatch = useDispatch();
@@ -30,11 +34,12 @@ const Game = (props) => {
 
   return (
     <div className="GameContainer grid">
+
       <aside>
+      <GameOptions />
         <Discovery />
       </aside>
       <main className="main">
-        <h1 className="title">Potion Matching Game</h1>
         <NPC />
       </main>
       <aside>

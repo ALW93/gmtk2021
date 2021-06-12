@@ -56,17 +56,12 @@ const Workbench = (props) => {
 
   return (
     <div className="WorkbenchContainer">
-      {open && <RecipeBook onClick={toggleRecipeBook} title="Recipes" />}
-      <div>
-        <Button text="Recipe Book" onClick={toggleRecipeBook} />
-      </div>
-
       <Ingredients addSelection={handleSelect} />
-      <div>
+      <div className="CombinerContainer">
         <Combiner removeSelection={removeSelect} />
-        <Button text="Combine" onClick={calculateRecipe} />
-      </div>
     </div>
+        <Button text="Brew" onClick={calculateRecipe} />
+      </div>
   );
 };
 

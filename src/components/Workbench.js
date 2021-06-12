@@ -4,6 +4,7 @@ import { matchRecipes } from "../utility/utility";
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
+import { sendResult } from "../store/actions/resultsActions";
 
 import "../styles/components/_Workbench.scss";
 
@@ -28,13 +29,14 @@ const Workbench = (props) => {
     setSelection(newValues);
   };
 
-  const calculateRecipe = () => {
+  const calculateRecipe = async () => {
     const ingredients = map(selection, (item) => item.id);
     const result = matchRecipes(ingredients);
     if (!result) {
       alert("No matching recipes found");
     } else {
       alert(`Discovered ${result.name}`);
+      await sendResult(result);
     }
   };
 

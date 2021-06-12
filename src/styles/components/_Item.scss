@@ -17,6 +17,10 @@
     }
   }
 
+  .disabled {
+    filter: grayscale(100%);
+  }
+
   img {
     margin: 0 auto;
     height: 4.5em;

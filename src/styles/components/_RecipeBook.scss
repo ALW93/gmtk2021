@@ -1,0 +1,6 @@
+.recipeContainer {
+  display: flex;
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fit, minmax(6em, 1fr));
+  margin: 2em;
+}

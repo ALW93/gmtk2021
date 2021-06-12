@@ -6,16 +6,18 @@ const Ingredients = ({ addSelection }) => {
   console.log('ingredient', ingredients)
   console.log('images', images)
   return (
-    <div className="ingredientContainer">
+    <div className="ingredientsContainer">
       {ingredients.map((ingredient) => (
-        <div
-          onClick={addSelection}
-          key={ingredient.id}
-          data-id={ingredient.id}
-          data-name={ingredient.name}
-          className="ingredient"
-        >
-          <img src={images[ingredient.id]} alt={ingredient.name} />
+        <div className="ingredientContainer">
+          <div
+            onClick={addSelection}
+            key={ingredient.id}
+            data-id={ingredient.id}
+            data-name={ingredient.name}
+            className="ingredient"
+          >
+            <img src={images[ingredient.id]} alt={ingredient.name} />
+          </div>
           <p>{ingredient.name}</p>
         </div>
       ))}

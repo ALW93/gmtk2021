@@ -1,19 +1,30 @@
-.ingredientContainer {
+.ingredientsContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(6em, 1fr));
   gap: 0.2em;
 
   .ingredient {
-    background-color: aliceblue;
-    border-radius: 0.3em;
-    border: 2px outset rgb(211, 211, 211);
+    background-color: rgba(170, 200, 250, 0.2);
+    border-radius: 1em;
 
-    min-width: 2em;
-    height: 5em;
-    font-size: small;
-
+    position: relative;
+    width: 7em;
+    height: 7em;
+    margin: 0.5em;
+    font-size: $font-size-small;
+    
+p {
+width: 100%;
+   text-align: center;
+}
     img {
-      height: 4em;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0 auto;
+      height: 6em;
+      width: 6em;
     }
   }
 }

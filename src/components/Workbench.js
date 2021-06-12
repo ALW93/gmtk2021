@@ -36,7 +36,7 @@ const Workbench = (props) => {
       return;
     } else {
       dispatch(addIngredient(e.target.dataset.id));
-      playWaterDrop()
+      playWaterDrop();
     }
   };
 
@@ -46,7 +46,7 @@ const Workbench = (props) => {
     if (idx > -1) {
       newValues.splice(idx, 1);
     }
-    playEmtpy()
+    playEmtpy();
     dispatch(updateIngredients(newValues));
   };
 
@@ -69,6 +69,11 @@ const Workbench = (props) => {
     }
   };
 
+  //clear ingredients button
+  const clearRecipe = () => {
+    dispatch(updateIngredients([]));
+  };
+
   const toggleRecipeBook = () => {
     setOpen((prev) => !prev);
   };
@@ -85,6 +90,7 @@ const Workbench = (props) => {
 
       <div className="WorkbenchContainer--Bottom">
         <Combiner removeSelection={removeSelect} />
+        <Button text="Clear" onClick={clearRecipe} />
         <Button text="Combine" onClick={calculateRecipe} />
       </div>
     </div>

@@ -9,7 +9,7 @@ const Ingredients = ({ addSelection }) => {
 
   useEffect(() => {
     dispatch(loadAilments());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="ingredientsContainer">

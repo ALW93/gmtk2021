@@ -1,5 +1,4 @@
 import React from "react";
-import images from "../images/images";
 import Item from "./shared/Item";
 
 const Combiner = ({ ingredients = [], removeSelection }) => {

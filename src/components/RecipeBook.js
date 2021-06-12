@@ -5,14 +5,16 @@ import { potions } from "../data/data";
 import Item from "../components/shared/Item";
 
 const RecipeBook = ({ title, onClick }) => {
-  const recipes = loadSaveData();
+  const data = loadSaveData();
+  const unlocked = Object.keys(data);
 
   return (
     <LightBox onClick={onClick}>
       <h1>{title}</h1>
       {potions.map((potion) => (
-        <Item id={potion.id} type="potion" name={potion.name} />
+        <Item key={potion.id} id={potion.id} type="potion" name={potion.name} />
       ))}
+      {JSON.stringify(unlocked)}
     </LightBox>
   );
 };

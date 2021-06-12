@@ -13,7 +13,7 @@ const Item = ({ id, type, name, onClick }) => {
         onClick={onClick}
         className={classNames("absoluteCenter")}
       />
-      <p className={classNames({ ["hidden"]: type === "potion" })}>{name}</p>
+      <p className={classNames({ hidden: type === "potion" })}>{name}</p>
     </div>
   );
 };

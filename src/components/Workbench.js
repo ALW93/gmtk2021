@@ -31,13 +31,12 @@ const Workbench = (props) => {
     setSelection(newValues);
   };
 
-  const calculateRecipe = async () => {
+  const calculateRecipe = () => {
     const ingredients = map(selection, (item) => item.id);
     const result = matchRecipes(ingredients);
     if (!result) {
       alert("No matching recipes found");
     } else {
-      alert(`Discovered ${result.name}`);
       dispatch(sendResult(result));
     }
   };
@@ -48,7 +47,7 @@ const Workbench = (props) => {
 
   return (
     <div className="WorkbenchContainer">
-      {open && <LightBox onClick={toggleRecipeBook} />}
+      {open && <LightBox onClick={toggleRecipeBook} title="Recipes" />}
       <div>
         <Button text="Recipe Book" onClick={toggleRecipeBook} />
       </div>

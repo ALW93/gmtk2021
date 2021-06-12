@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Workbench from "./Workbench";
 import NPC from "./NPC";
 import Discovery from "./Discovery";
 
 const Game = (props) => {
+  // useEffect(() => {
+  //   window.onbeforeunload = confirmExit;
+  //   function confirmExit() {
+  //     return "show warning";
+  //   }
+  // }, []);
+
   return (
     <div className="GameContainer grid">
       <aside>

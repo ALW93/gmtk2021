@@ -1,10 +1,10 @@
 import React from "react";
 
-const LightBox = ({ onClick }) => {
+const LightBox = ({ onClick, title }) => {
   return (
     <div className="lightBoxContainer--Outer">
       <div className="lightBoxContainer--Inner" onClick={onClick}>
-        <h1>Recipes</h1>
+        <h1>{title}</h1>
       </div>
     </div>
   );

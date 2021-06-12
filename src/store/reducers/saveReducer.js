@@ -1,8 +1,5 @@
 import { get } from "lodash";
 
-const ADD_RECIPE = "ADD_RECIPE";
-const LOAD_RECIPES = "LOAD_RECIPES";
-
 export const loadSaveData = () => {
   const savedSession = localStorage.getItem("RecipeBook");
   if (!savedSession) {
@@ -21,7 +18,7 @@ export const saveRecipe = (result) => {
   console.log("ALREADY DISCOVERED");
 };
 
-export default function (state = {}, action) {
+export default function saveReducer(state = {}, action) {
   switch (action.type) {
     default: {
       return state;

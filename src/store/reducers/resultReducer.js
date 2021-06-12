@@ -11,7 +11,7 @@ export const loadResults = (data) => ({
   data,
 });
 
-export default function (state = {}, action) {
+export default function resultReducer(state = {}, action) {
   switch (action.type) {
     case ADD_RESULTS: {
       return action.data;

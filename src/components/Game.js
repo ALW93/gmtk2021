@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Workbench from "./Workbench";
 import NPC from "./NPC";
 import Discovery from "./Discovery";
-import { loadSaveData } from "../store/reducers/saveReducer";
 
 const Game = (props) => {
   useEffect(() => {

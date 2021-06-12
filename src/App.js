@@ -1,17 +1,18 @@
-import {BrowserRouter, Route} from "react-router-dom"
+import { BrowserRouter, Route } from "react-router-dom";
+
 import Game from "./components/Game";
-import StartMenu from "./components/StartMenu"
-import Music from './components/Music'
+import StartMenu from "./components/StartMenu";
+import Music from "./components/Music";
 
 function App() {
   return (
     <BrowserRouter>
-      <Music/>
+      <Music />
       <Route path="/game" exact={true}>
-        <Game/>
+        <Game />
       </Route>
       <Route path="/" exact={true}>
-        <StartMenu/>
+        <StartMenu />
       </Route>
     </BrowserRouter>
   );

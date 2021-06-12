@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { findIndex, map } from "lodash";
+import { map } from "lodash";
+
 import { matchRecipes } from "../utility/utility";
+import { updatePotion } from "../store/reducers/activeReducer";
+import { addIngredient, updateIngredients } from "../store/reducers/activeReducer";
+
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
-import { updatePotion } from "../store/reducers/activeReducer";
 import LightBox from "./shared/LightBox";
-import { addIngredient, updateIngredients } from "../store/reducers/activeReducer";
+import RecipeBook from "./RecipeBook";
 
 const Workbench = (props) => {
   const dispatch = useDispatch()
@@ -15,12 +18,10 @@ const Workbench = (props) => {
   const [open, setOpen] = useState(false);
 
   const handleSelect = (e) => {
-    console.log("target", e.target.dataset)
     if (selections.length === 3) {
       alert("Error: Maximum selection reached");
       return;
     } else {
-      console.log('else dataset', e.target.dataset.id)
       dispatch(addIngredient(e.target.dataset.id));
     }
   };
@@ -52,7 +53,7 @@ const Workbench = (props) => {
 
   return (
     <div className="WorkbenchContainer">
-      {open && <LightBox onClick={toggleRecipeBook} />}
+      {open && <RecipeBook onClick={toggleRecipeBook} title="Recipes" />}
       <div>
         <Button text="Recipe Book" onClick={toggleRecipeBook} />
       </div>

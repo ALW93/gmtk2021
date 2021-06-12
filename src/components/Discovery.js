@@ -8,7 +8,7 @@ const Discovery = () => {
 
   const onContinue = (e) => {
     // TODO Refresh new NPC, wipe selections and discovered potion
-    dispatch()
+    // dispatch()
   }
 
 if (!potion) return (
@@ -18,18 +18,20 @@ if (!potion) return (
   </div>
 )
 
-  return (<div className="discoveryContainer">
-  <p>You've concocted a...</p>
-    <button className="discoveryBox" onClick={onContinue}>
-      <img 
-        src={images[potion.id]} 
-        alt={potion.name} 
-        className="absoluteCenter"
+  return (
+    <div className="discoveryContainer">
+      <p>You've concocted a...</p>
+      <button className="discoveryBox" onClick={onContinue}>
+        <img
+          src={images[potion.id]}
+          alt={potion.name}
+          className="absoluteCenter"
         />
-    </button>
-        <p>{potion.name}!</p>
-        <p>Congrats!</p>
-  </div>);
+      </button>
+      <p>{potion.name}!</p>
+      <p>Congrats!</p>
+    </div>
+  );
 };
 
 export default Discovery;

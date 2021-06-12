@@ -12,7 +12,7 @@ const Game = (props) => {
   const npcs = useSelector(state => state.npcs)
   
   useEffect(() => {
-const randomNpc = getRandomNpc(npcs)
+    const randomNpc = getRandomNpc(npcs)
     const initialActive = {
       npc: randomNpc.id,
       ailment: randomNpc.ailment,
@@ -21,6 +21,13 @@ const randomNpc = getRandomNpc(npcs)
     }
     dispatch(loadAllActive(initialActive))
   }, [])
+  
+  useEffect(() => {
+    // window.onbeforeunload = confirmExit;
+    // function confirmExit() {
+    //   return "show warning";
+    // }
+  }, []);
 
   return (
     <div className="GameContainer grid">

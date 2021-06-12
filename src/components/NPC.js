@@ -12,20 +12,19 @@ const NPC = () => {
   const [dialogue, setDialogue] = useState('');
 
   useEffect(() => {
-      let ailmentWhichSelectedPotionCures;
-      Object.values(ailments).forEach(ailment => {
-          if (ailment.cure === potionId) {
-              ailmentWhichSelectedPotionCures = ailment.id;
-          }
-      })
+    let ailmentWhichSelectedPotionCures;
+    Object.values(ailments).forEach(ailment => {
+        if (ailment.cure === potionId) {
+            ailmentWhichSelectedPotionCures = ailment.id;
+        }
+    })
 
-      if (potionId && ailmentWhichSelectedPotionCures === npc.ailment) {
-          setIsMatchingPotion(true);
-      }
-  }, [potionId])
+    if (potionId && ailmentWhichSelectedPotionCures === npc.ailment) {
+        setIsMatchingPotion(true);
+    }
+  }, [potionId, npc, ailments]);
 
     useEffect(() => {
-      console.log('npc change?', npc)
         if (potionId) {
             setDialogue(isMatchingPotion ? npc?.success : npc?.failure)
         } else {
@@ -34,6 +33,7 @@ const NPC = () => {
     }, [npc, isMatchingPotion, potionId])
 
   if (!npc) return null; 
+
   return (
     <div className="Npc">
       <div className="imageContainer">

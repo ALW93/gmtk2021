@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
-import "./Workbench.scss";
+import "../styles/components/_Workbench.scss";
 
 const Workbench = (props) => {
   const [selection, setSelection] = useState([]);

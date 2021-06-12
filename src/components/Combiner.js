@@ -1,5 +1,4 @@
 import React from "react";
-import "./Combiner.scss";
 
 const Combiner = ({ ingredients = [], removeSelection }) => {
   return (

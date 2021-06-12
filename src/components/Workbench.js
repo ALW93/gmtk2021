@@ -15,16 +15,16 @@ import Button from "./shared/Button";
 import RecipeBook from "./RecipeBook";
 
 import useSound from "use-sound";
-import waterDrop from "../music/waterdrop.mp3"
-import empty from "../music/empty.mp3"
+import waterDrop from "../music/waterdrop.mp3";
+import empty from "../music/empty.mp3";
 
 const Workbench = (props) => {
   const dispatch = useDispatch();
   const potions = useSelector((state) => state.potions);
   const selections = useSelector((state) => state.active.ingredients);
   const [open, setOpen] = useState(false);
-  const [playWaterDrop] = useSound(waterDrop)
-  const [playEmtpy] = useSound(empty)
+  const [playWaterDrop] = useSound(waterDrop);
+  const [playEmtpy] = useSound(empty);
 
   const handleSelect = (e) => {
     if (selections.length === 3) {
@@ -32,7 +32,7 @@ const Workbench = (props) => {
       return;
     } else {
       dispatch(addIngredient(e.target.dataset.id));
-      playWaterDrop()
+      playWaterDrop();
     }
   };
 
@@ -42,7 +42,7 @@ const Workbench = (props) => {
     if (idx > -1) {
       newValues.splice(idx, 1);
     }
-    playEmtpy()
+    playEmtpy();
     dispatch(updateIngredients(newValues));
   };
 
@@ -56,6 +56,11 @@ const Workbench = (props) => {
       alert(`Discovered ${potions[potionId].name}`);
       dispatch(updatePotion(potionId));
     }
+  };
+
+  //clear ingredients button
+  const clearRecipe = () => {
+    dispatch(updateIngredients([]));
   };
 
   const toggleRecipeBook = () => {
@@ -74,6 +79,7 @@ const Workbench = (props) => {
 
       <div className="WorkbenchContainer--Bottom">
         <Combiner removeSelection={removeSelect} />
+        <Button text="Clear" onClick={clearRecipe} />
         <Button text="Combine" onClick={calculateRecipe} />
       </div>
     </div>

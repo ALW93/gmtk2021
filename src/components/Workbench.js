@@ -12,8 +12,6 @@ import {
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
-import { sendResult } from "../store/actions/resultsActions";
-import LightBox from "./shared/LightBox";
 import RecipeBook from "./RecipeBook";
 
 const Workbench = (props) => {
@@ -36,7 +34,7 @@ const Workbench = (props) => {
     if (idx > -1) {
       newValues.splice(idx, 1);
     }
-    console.log("newValues", newValues);
+
     dispatch(updateIngredients(newValues));
   };
 
@@ -64,7 +62,7 @@ const Workbench = (props) => {
 
       <Ingredients addSelection={handleSelect} />
       <div>
-        <Combiner selections={selections} removeSelection={removeSelect} />
+        <Combiner removeSelection={removeSelect} />
         <Button text="Combine" onClick={calculateRecipe} />
       </div>
     </div>

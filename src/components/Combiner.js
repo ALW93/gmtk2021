@@ -1,16 +1,18 @@
 import React from "react";
 import Item from "./shared/Item";
+import { connect } from "react-redux";
+import { get } from "lodash";
 
-const Combiner = ({ removeSelection, selections = [] }) => {
+const Combiner = ({ removeSelection, selections, ingredients }) => {
   return (
     <div className="combinerContainer">
-      {selections.map((ingredient, idx) => (
+      {selections.map((selection, idx) => (
         <div key={`ingredient${idx}`}>
           <Item
-            id={ingredient.id}
+            id={selection}
             onClick={removeSelection}
             type="ingredient"
-            name={ingredient.name}
+            name={ingredients[selection].name}
           />
         </div>
       ))}
@@ -18,4 +20,11 @@ const Combiner = ({ removeSelection, selections = [] }) => {
   );
 };
 
-export default Combiner;
+const mapStateToProps = (state) => {
+  return {
+    ingredients: get(state, "ingredients", {}),
+    selections: get(state, "active.ingredients", []),
+  };
+};
+
+export default connect(mapStateToProps, {})(Combiner);

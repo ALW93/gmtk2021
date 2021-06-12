@@ -1,8 +1,10 @@
 import React from "react";
 import { ingredients } from "../data/data";
+import images from '../images/images'
 
 const Ingredients = ({ addSelection }) => {
   console.log('ingredient', ingredients)
+  console.log('images', images)
   return (
     <div className="ingredientContainer">
       {ingredients.map((ingredient) => (
@@ -12,8 +14,8 @@ const Ingredients = ({ addSelection }) => {
           data-value={ingredient.name}
           className="ingredient"
         >
-          <img src={require("../" + ingredient.imgUrl)} alt={ingredient.name} />
-          {ingredient.name}
+          <img src={images[ingredient.id]} alt={ingredient.name} />
+          <p>{ingredient.name}</p>
         </div>
       ))}
     </div>

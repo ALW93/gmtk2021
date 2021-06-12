@@ -1,11 +1,11 @@
-.Game {
+.GameContainer {
   height: 100vh;
   width: 100vw;
 
   display: grid;
   grid-template-columns: 30% 40% 30%;
 
-  & > * {
-    border: 1px solid black;
+  .main {
+    background: lightpink;
   }
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { ingredients } from "../data/data";
-import "./Ingredient.scss";
 
 const Ingredients = ({ addSelection }) => {
   return (

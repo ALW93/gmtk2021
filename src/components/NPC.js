@@ -19,6 +19,7 @@ const NPC = () => {
         <div className="Npc">
             <h3 className="name">{npc?.name}</h3>
             <NPCDialogue intro={npc?.intro}/>
+            <div className="footer">Potion Matching Game ©</div>
         </div>
     )
 };

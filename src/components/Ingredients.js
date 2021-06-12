@@ -1,17 +1,22 @@
 import React from "react";
 import { ingredients } from "../data/data";
+import images from '../images/images'
 
 const Ingredients = ({ addSelection }) => {
+  console.log('ingredient', ingredients)
+  console.log('images', images)
   return (
     <div className="ingredientContainer">
       {ingredients.map((ingredient) => (
         <div
           onClick={addSelection}
           key={ingredient.id}
-          data-value={ingredient.name}
+          data-id={ingredient.id}
+          data-name={ingredient.name}
           className="ingredient"
         >
-          {ingredient.name}
+          <img src={images[ingredient.id]} alt={ingredient.name} />
+          <p>{ingredient.name}</p>
         </div>
       ))}
     </div>

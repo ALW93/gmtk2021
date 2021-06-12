@@ -11,7 +11,8 @@ const Ingredients = ({ addSelection }) => {
         <div
           onClick={addSelection}
           key={ingredient.id}
-          data-value={ingredient.name}
+          data-id={ingredient.id}
+          data-name={ingredient.name}
           className="ingredient"
         >
           <img src={images[ingredient.id]} alt={ingredient.name} />

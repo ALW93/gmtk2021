@@ -1,0 +1,15 @@
+.ingredientContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.2em;
+
+  .ingredient {
+    background-color: orange;
+    border-radius: 0.3em;
+    border: 2px outset rgb(211, 211, 211);
+
+    min-width: 2em;
+    height: 5em;
+    font-size: small;
+  }
+}

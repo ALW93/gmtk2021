@@ -4,11 +4,12 @@
   justify-content: space-between;
 
   .imageContainer {
-    background: skyblue;
-    height: 50rem;
+    display: flex;
+    justify-content: center;
 
     img {
-      object-fit: cover;
+      height: 50vh;
+      width: auto;
     }
   }
 
@@ -22,17 +23,20 @@
     border: 1px solid white;
     padding: $space-medium;
     margin: $space-medium;
-    height: 70%;
+    height: 20rem;
     line-height: 2.5rem;
     background: antiquewhite;
     color: $color-dark;
     display: flex;
     align-items: center;
+    overflow-y: auto;
   }
 
   .footer {
     background: rosybrown;
     font-size: $font-size-tiny;
     padding: $space-small;
+    display: flex;
+    justify-content: center;
   }
 }

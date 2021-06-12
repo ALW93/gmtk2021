@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 
 import NPCDialogue from "./NPCDialogue";
 import {loadNPCs} from '../store/actions/npcAction'
+import images from '../images/images';
 import image from '../images/npcs/ghosty.png'
 
 const NPC = () => {
@@ -19,10 +20,9 @@ const NPC = () => {
     return (
         <div className="Npc">
             <div className="imageContainer">
-                <img src={image} alt="ghosty" />
+                <img src={images[npc?.id]} alt={npc?.name} />
             </div>
             <h3 className="name">{npc?.name}</h3>
-            <img src={`/images/npcs/${npc?.id}`}/>
             <NPCDialogue intro={npc?.intro}/>
             <div className="footer">Potion Matching Game ©</div>
         </div>

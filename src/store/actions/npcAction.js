@@ -1,8 +1,8 @@
-import {loadNPCsAction} from '../reducers/npcReducer'
+import {loadNPCs} from '../reducers/npcsReducer'
 import {npc} from '../../data/data'
 
-export const loadNPCs = () => {
+export const dispatchLoadNPCs = () => {
     return dispatch => {
-        return dispatch(loadNPCsAction(npc));
+        return dispatch(loadNPCs(npc));
     }
 }

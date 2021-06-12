@@ -1,15 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { loadAilments } from '../store/actions/ailmentAction';
+import { loadAilments } from '../store/reducers/ailmentsReducer';
 import { ingredients } from "../data/data";
 import images from "../images/images";
 
 const Ingredients = ({ addSelection }) => {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loadAilments());
-  }, [])
 
 
   return (
@@ -34,5 +30,6 @@ const Ingredients = ({ addSelection }) => {
     </div>
   );
 };
+
 
 export default Ingredients;

@@ -5,9 +5,8 @@ import { matchRecipes } from "../utility/utility";
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
-import { sendResult } from "../store/actions/resultsActions";
+import { addPotion } from "../store/reducers/potionsReducer";
 import LightBox from "./shared/LightBox";
-import { loadNPCs } from "../store/actions/npcAction";
 
 const Workbench = (props) => {
   const [selection, setSelection] = useState([]);
@@ -35,12 +34,12 @@ const Workbench = (props) => {
 
   const calculateRecipe = async () => {
     const ingredients = map(selection, (item) => item.id);
-    const result = matchRecipes(ingredients);
-    if (!result) {
+    const potion = matchRecipes(ingredients);
+    if (!potion) {
       alert("No matching recipes found");
     } else {
-      alert(`Discovered ${result.name}`);
-      dispatch(sendResult(result));
+      alert(`Discovered ${potion.name}`);
+      dispatch(addPotion(potion));
     }
   };
 

@@ -4,14 +4,14 @@ import images from "../images/images";
 
 const Discovery = () => {
   const dispatch = useDispatch()
-  const selections = useSelector(state => state.selections)
-  const potion = useSelector((state) => state.result);
+  const potion = useSelector((state) => state.active?.potion);
 
   const onContinue = (e) => {
     // TODO Refresh new NPC, wipe selections and discovered potion
+    dispatch()
   }
 
-if (!potion.id) return (
+if (!potion) return (
   <div className="discoveryContainer">
     <p>Conceiving a concoction...</p>
     <div className="discoveryBox"/>

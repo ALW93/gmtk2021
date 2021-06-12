@@ -1,8 +1,8 @@
-import {loadAilmentsAction} from '../reducers/ailmentReducer'
+import {loadAilments} from '../reducers/ailmentsReducer'
 import {ailments} from '../../data/data'
 
-export const loadAilments = () => {
+export const dispatchLoadAilments = () => {
     return dispatch => {
-        return dispatch(loadAilmentsAction(ailments));
+        return dispatch(loadAilments(ailments));
     }
 }

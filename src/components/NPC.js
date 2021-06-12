@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import NPCDialogue from "./NPCDialogue";
-import { loadNPCs } from "../store/actions/npcAction";
+import { loadNPCs } from "../store/reducers/npcsReducer";
 import images from "../images/images";
 
 const NPC = () => {
   const dispatch = useDispatch();
-  const npcs = useSelector((state) => state.npc);
-  const potionId = useSelector((state) => state.result?.id);
-  const ailments = useSelector(state => state.ailment);
+  const npcs = useSelector((state) => state.npcs);
+  const potionId = useSelector((state) => state.active?.potion?.id);
+  const ailments = useSelector(state => state.ailments);
   const [isMatchingPotion, setIsMatchingPotion] = useState(false);
   const [npc, setNpc] = useState({});
   const [dialogue, setDialogue] = useState('');
@@ -34,10 +34,6 @@ const NPC = () => {
             setDialogue(npc?.intro);
         }
     }, [npc, isMatchingPotion, potionId])
-
-  useEffect(() => {
-    dispatch(loadNPCs());
-  }, [dispatch]);
 
     useEffect(() => {
         const npcIndex = Math.floor(Math.random() * npcs.length);

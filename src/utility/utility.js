@@ -11,3 +11,8 @@ export const matchRecipes = (ingredients) => {
   });
   return match;
 };
+
+export function getRandomNpc(npcs) {
+  const npcIndex = Math.floor(Math.random() * npcs.length);
+  return npcs[npcIndex]
+}

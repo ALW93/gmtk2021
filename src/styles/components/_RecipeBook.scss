@@ -1,6 +1,22 @@
 .recipeContainer {
+  width: 50vw;
+  height: 70vh;
+  padding: 2em;
+  background-color: $color-tertiary;
   display: flex;
+}
+
+.recipeContainer--list {
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  grid-template-columns: repeat(auto-fit, minmax(6em, 1fr));
-  margin: 2em;
+  width: 40%;
+
+  margin-right: 0.5em;
+  background-color: rgb(249, 239, 233, 0.7);
+}
+
+.recipeContainer--preview {
+  width: 60%;
+  background-color: rgb(249, 239, 233, 0.7);
 }

@@ -5,7 +5,7 @@ export const loadNPCsAction = (data) => ({
   data,
 });
 
-export default (state = [], action) => {
+export default function (state = [], action) {
   switch (action.type) {
     case LOAD_NPCS: {
       return action.data;
@@ -14,4 +14,4 @@ export default (state = [], action) => {
       return state;
     }
   }
-};
+}

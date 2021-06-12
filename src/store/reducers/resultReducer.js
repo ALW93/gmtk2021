@@ -11,7 +11,7 @@ export const loadResults = (data) => ({
   data,
 });
 
-export default (state = {}, action) => {
+export default function (state = {}, action) {
   switch (action.type) {
     case ADD_RESULTS: {
       return action.data;
@@ -20,4 +20,4 @@ export default (state = {}, action) => {
       return state;
     }
   }
-};
+}

@@ -22,7 +22,7 @@ const NPCDialogue = ({ body, name }) => {
 
   return (
     <section className="dialogue-box" id="dialogue" onClick={forceEnd}>
-        <h3 className="name">{name}</h3>
+      <h3 className="name">{name}</h3>
       {body && !end ? (
         <Typist onTypingDone={endBody}>
           <p>{body}</p>

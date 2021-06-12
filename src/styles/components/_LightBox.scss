@@ -6,16 +6,15 @@
   width: 100%;
   height: 100%;
   left: 0;
+  top: 0;
 }
 
 .lightBoxContainer--Inner {
-  background-color: peachpuff;
-
-  width: 50%;
+  // background-color: $color-tertiary;
+  width: fit-content;
   margin: auto;
   top: 3em;
   text-align: center;
-  padding: 2em;
   border: 1px solid black;
   position: relative;
 }

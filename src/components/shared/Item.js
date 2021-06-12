@@ -3,10 +3,10 @@ import classNames from "classnames";
 import images from "../../images/images";
 
 import useSound from "use-sound";
-import softClick from "../../music/softclick.mp3"
+import softClick from "../../music/softclick.mp3";
 
-const Item = ({ id, type, name, onClick }) => {
-  const [playSoft] = useSound(softClick)
+const Item = ({ id, type, name, onClick, disabled = false }) => {
+  const [playSoft] = useSound(softClick);
 
   return (
     <div className="itemContainer">
@@ -16,11 +16,13 @@ const Item = ({ id, type, name, onClick }) => {
         data-id={id}
         data-name={name}
         onClick={onClick}
-        className={classNames("absoluteCenter")}
+        className={classNames("absoluteCenter", {
+          disabled: disabled,
+        })}
         onMouseEnter={playSoft}
       />
-      <div className="itemCard">
-        <p className={classNames({ hidden: type === "potion" })}>{name}</p>
+      <div className={classNames("itemCard", { hidden: type === "potion" })}>
+        <p>{name}</p>
       </div>
     </div>
   );

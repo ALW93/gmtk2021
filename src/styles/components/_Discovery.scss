@@ -5,7 +5,6 @@
 
   .discoveryBox {
     position: relative;
-    text-align: -webkit-center !important;
     margin: 0 auto;
     width: 90%;
     height: 14em;
@@ -13,6 +12,10 @@
     border: 2rem solid rgba(100, 50, 20, 0.05);
     text-align: center;
     background: cornsilk;
+
+    .itemContainer {
+      position: initial;
+    }
 
     img {
       height: 10em;

@@ -52,6 +52,10 @@
     font-family: $body-typewriter;
     // font: $font-size-large $body-casual;
     line-height: 3rem;
+    
+    .continue {
+      cursor: pointer;
+    }
   }
 
   .footer {

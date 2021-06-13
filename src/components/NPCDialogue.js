@@ -30,7 +30,7 @@ const NPCDialogue = ({ body, name, updateDialogue }) => {
       ) : (
         <p>{speech}</p>
       )}
-      <button onClick={updateDialogue}>Continue</button>
+      <button className="continue" onClick={updateDialogue}>Continue</button>
     </section>
   );
 };

@@ -14,7 +14,7 @@ import Ingredients from "./Ingredients";
 const Game = ({ musicPlaying, setMusicPlaying }) => {
   const dispatch = useDispatch();
   const npcs = useSelector((state) => state.npcs);
-  const [openDiscovery, setOpenDiscovery] = useState(false)
+  const [openDiscovery, setOpenDiscovery] = useState(false);
 
   useEffect(() => {
     const randomNpcId = getRandomNpc(npcs);
@@ -39,7 +39,7 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
     <div className="GameContainer grid">
       <aside>
         <Discovery open={openDiscovery} setOpen={setOpenDiscovery} />
-        <Ingredients addSelection={()=>console.log("eh")} />
+        <Ingredients addSelection={() => console.log("eh")} />
       </aside>
       <main className="main">
         <NPC />
@@ -48,10 +48,9 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
         <GameOptions />
         <Workbench setOpenDiscovery={setOpenDiscovery} />
       </aside>
+      {/* <a href='https://www.freepik.com/vectors/book'>Book vector created by upklyak - www.freepik.com</a> */}
     </div>
   );
 };
 
 export default Game;
-
-{/* <a href='https://www.freepik.com/vectors/book'>Book vector created by upklyak - www.freepik.com</a> */}

@@ -12,6 +12,7 @@ const NPC = () => {
   const [isMatchingPotion, setIsMatchingPotion] = useState(false);
   const [dialogue, setDialogue] = useState("");
   const [reaction, setReaction] = useState("standard");
+  const [isFinished, setIsFinished] = useState(false)
 
   useEffect(() => {
     // let ailmentWhichSelectedPotionCures;
@@ -30,6 +31,7 @@ const NPC = () => {
     if (potionId) {
       setDialogue(isMatchingPotion ? npc?.success : npc?.failure);
       setReaction(isMatchingPotion ? "happy" : "standard");
+      setIsFinished(true)
     } else {
       setDialogue(npc?.intro);
     }
@@ -48,7 +50,7 @@ const NPC = () => {
       <Line />
       <div className="imageContainer">
         <NPCPortrait id={npc.id} mode={reaction} />
-        <NPCDialogue body={dialogue} name={npc.name} />
+        <NPCDialogue body={dialogue} name={npc.name} isFinished={isFinished} setIsFinished={setIsFinished} />
       </div>
       <Line />
 

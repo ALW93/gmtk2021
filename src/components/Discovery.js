@@ -17,7 +17,7 @@ const Discovery = ({open, setOpen}) => {
     dispatch(updateNpc(getRandomNpc(npcs)))
   }
 
-  if (!open) return null;
+  if (!open || !potion) return null;
   return (
     <LightBox onExit={onContinue}>
       <article className="discoveryContainer">

@@ -11,7 +11,6 @@ const RecipeBook = ({ title, onClick, potionsById }) => {
   const data = loadSaveData();
   const unlocked = Object.keys(data);
   const [preview, setPreview] = useState({});
-  console.log(loadSaveData());
 
   const showPreview = (e) => {
     const potionId = e.target.dataset.id;

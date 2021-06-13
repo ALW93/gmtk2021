@@ -13,9 +13,7 @@ function RecipeBookButton() {
   return (
     <div className="RecipeBookContainer">
       {open && <RecipeBook onClick={toggleRecipeBook} title="Recipes" />}
-      <div>
-        <Button text="Recipe Book" onClick={toggleRecipeBook} />
-      </div>
+      <div className="recipeBookButton" onClick={toggleRecipeBook} />
     </div>
   );
 }

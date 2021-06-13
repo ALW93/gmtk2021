@@ -11,39 +11,41 @@ const Combiner = ({ selections = [], removeSelection }) => {
   useEffect(() => {
     switch (selections.length) {
       case 1:
-        setCauldronLiquidColor("rgba(231, 111, 81,1)")
+        setCauldronLiquidColor("rgba(231, 111, 81,.4)")
         break;
       case 2:
-        setCauldronLiquidColor("rgba(233, 196, 106,1)")
+        setCauldronLiquidColor("rgba(233, 196, 106,.4)")
         break;
       case 3:
-        setCauldronLiquidColor("rgba(42, 157, 143,1)")
+        setCauldronLiquidColor("rgba(42, 157, 143,.4)")
         break;
       default:
-        setCauldronLiquidColor("rgba(76, 72, 80, 1)")
+        setCauldronLiquidColor("rgba(76, 72, 80, .4)")
         break;
     }
   }, [selections.length])
 
   return (
-    <div 
+    <>
+
+  <div className="cauldronContainer">
+  <div className="cauldronLiquidContainer absoluteCenter" style={{ backgroundColor: cauldronLiquidColor }}/>
+  <div 
       className="combinerContainer" 
-      style={{
-        // background: `radial-gradient(${cauldronLiquidColor} 0%, ${cauldronLiquidColor} 20%, rgb(50,50,70) 100%)`,
-        backgroundColor: cauldronLiquidColor,
-      }}
-    >
-      {selections.map((selection, idx) => (
+    >   {selections.map((selection, idx) => (
           <Item
-            key={idx}
-            id={selection}
-            onClick={removeSelection}
-            type="ingredient"
-            name={ingredients[selection].name}
-          />
-      ))}
+              key={idx}
+              id={selection}
+              onClick={removeSelection}
+              type="ingredient"
+              name={ingredients[selection].name}
+            />
+        ))}
     </div>
-  );
+
+
+  </div>
+  </>);
 };
 
 const mapStateToProps = (state) => {

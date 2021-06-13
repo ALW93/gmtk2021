@@ -13,8 +13,8 @@ const Discovery = ({open, setOpen}) => {
 
   const onContinue = (e) => {
     setOpen(false)
-    dispatch(clearAllActive())
-    dispatch(updateNpc(getRandomNpc(npcs)))
+    // dispatch(clearAllActive())
+    // dispatch(updateNpc(getRandomNpc(npcs)))
   }
 
   if (!open || !potion) return null;

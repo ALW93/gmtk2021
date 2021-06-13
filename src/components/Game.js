@@ -38,6 +38,7 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
   return (
     <div className="GameContainer grid">
       <aside>
+        <GameOptions />
         <Discovery open={openDiscovery} setOpen={setOpenDiscovery} />
         <Ingredients addSelection={()=>console.log("eh")} />
       </aside>
@@ -45,7 +46,6 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
         <NPC />
       </main>
       <aside>
-        <GameOptions />
         <Workbench setOpenDiscovery={setOpenDiscovery} />
       </aside>
     </div>

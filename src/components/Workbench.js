@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { map } from "lodash";
+import images from '../images/images'
 
 import { matchRecipes } from "../utility/utility";
 import {
@@ -47,7 +48,7 @@ const Workbench = ({setOpenDiscovery}) => {
     const ingredients = map(selections, (item) => item);
     const potionId = matchRecipes(ingredients);
       // Also play the fail sound if the potion is the defaulted smelly potion
-      if (potions[potionId].name === "Smelly Potion(?)") {
+      if (potions[potionId].id === "smelly-potion") {
         playFail();
       } else {
         playDiscoverPotion();
@@ -76,7 +77,8 @@ const Workbench = ({setOpenDiscovery}) => {
       {/* </div> */}
 
       <div className="WorkbenchContainer--Bottom">
-        <button disabled={isBrewDisabled} onClick={calculateRecipe} className="brewButton">Brew!</button>
+        <button disabled={isBrewDisabled} onClick={calculateRecipe} className="brewButton"></button>
+
         <Combiner removeSelection={removeSelect} />
         <button onClick={clearRecipe} className="clearButton">Clear</button>
       </div>

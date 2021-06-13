@@ -6,7 +6,7 @@ import { clearAllActive, updateNpc } from "../store/reducers/activeReducer";
 import { getRandomNpc } from "../utility/utility";
 
 
-const NPCDialogue = ({ body, name, isFinished, setIsFinished }) => {
+const NPCDialogue = ({ body, name, updateDialogue, isFinished, setIsFinished }) => {
   const dispatch = useDispatch()
   const [end, setEnd] = useState(false);
   const [speech, setSpeech] = useState("");
@@ -36,12 +36,13 @@ const NPCDialogue = ({ body, name, isFinished, setIsFinished }) => {
     <section className="dialogue-box" id="dialogue" onClick={forceEnd}>
       <h3 className="name">{name}</h3>
       {body && !end ? (
-        <Typist onTypingDone={endBody}>
+        <Typist onTypingDone={endBody} avgTypingDelay={30}>
           <p>{body}</p>
         </Typist>
       ) : (
         <p>{speech}</p>
       )}
+      <button onClick={updateDialogue}>Continue</button>
     </section>
   );
 };

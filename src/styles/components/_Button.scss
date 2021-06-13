@@ -11,4 +11,8 @@
   background-color: $color-highlight;
   font: bold 2rem "Mate SC", serif;
   line-height: 1rem;
+
+  :disabled {
+    color: gray;
+  }
 }

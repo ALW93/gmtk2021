@@ -1,7 +1,11 @@
 .combinerContainer {
   display: flex;
-  width: 80%;
-  height: 70%;
-  margin: 1em auto;
-  padding: 5em 2em 4em 2em;
+  flex-wrap: wrap;
+  margin: 1rem auto;
+  justify-content: center;
+  background-color: $color-liquid;
+  border-radius: 50%;
+  border: 30px solid $color-cauldron;
+  width: 30rem;
+  height: 30rem;
 }

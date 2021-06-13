@@ -1,8 +1,9 @@
 import React from "react";
+import classNames from 'classnames'
 
-const Button = ({ text, onClick }) => {
+const Button = ({ text, onClick, disabled }) => {
   return (
-    <button onClick={onClick} className="buttonBase">
+    <button onClick={onClick} className={classNames("buttonBase", {disabled: disabled})} disabled={disabled}>
       {text}
     </button>
   );

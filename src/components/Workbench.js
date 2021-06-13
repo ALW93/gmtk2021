@@ -23,6 +23,7 @@ const Workbench = (props) => {
   const dispatch = useDispatch();
   const potions = useSelector((state) => state.potions);
   const selections = useSelector((state) => state.active.ingredients);
+  const [isBrewDisabled, setIsBrewDisabled] = useState(true)
   const [playWaterDrop] = useSound(waterDrop);
   const [playEmtpy] = useSound(empty);
   const [playFail] = useSound(failedPotion);
@@ -30,7 +31,7 @@ const Workbench = (props) => {
 
   const handleSelect = (e) => {
     if (selections.length === 3) {
-      alert("Error: Maximum selection reached");
+      setIsBrewDisabled(false)
       return;
     } else {
       dispatch(addIngredient(e.target.dataset.id));
@@ -87,7 +88,7 @@ const Workbench = (props) => {
       <div className="WorkbenchContainer--Bottom">
         <Combiner removeSelection={removeSelect} />
         <Button text="Clear" onClick={clearRecipe} />
-        <Button text="Brew" onClick={calculateRecipe} />
+        <Button text="Brew" disabled={isBrewDisabled} onClick={calculateRecipe} />
       </div>
     </div>
   );

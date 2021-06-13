@@ -6,6 +6,7 @@ import { get } from "lodash";
 
 const Combiner = ({ selections = [], removeSelection }) => {
   const ingredients = useSelector(state => state.ingredients)
+  const activePotion = useSelector((state) => state.active?.potion);
   const [cauldronLiquidColor, setCauldronLiquidColor] = useState("rgba(76, 72, 80, 0.5)")
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const Combiner = ({ selections = [], removeSelection }) => {
 
   return (
     <div 
-      className="combinerContainer" 
+      className={`combinerContainer ${activePotion ? 'disabled' : ''}`}
       style={{
         // background: `radial-gradient(${cauldronLiquidColor} 0%, ${cauldronLiquidColor} 20%, rgb(50,50,70) 100%)`,
         backgroundColor: cauldronLiquidColor,

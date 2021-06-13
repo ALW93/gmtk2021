@@ -16,7 +16,7 @@ const RecipeBook = ({ title, onClick, potionsById }) => {
   };
 
   return (
-    <LightBox onClick={onClick}>
+    <LightBox onExit={onClick}>
       <div className="recipeContainer">
         <div className="recipeContainer--list">
           <h1>{title}</h1>

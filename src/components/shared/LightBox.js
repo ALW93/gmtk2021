@@ -2,13 +2,13 @@ import React from "react";
 import { mdiClose } from "@mdi/js";
 import Icon from "@mdi/react";
 
-const LightBox = ({ onClick, children }) => {
+const LightBox = ({ onExit, children }) => {
   return (
     <div className="lightBoxContainer--Outer">
-      <div className="lightBoxContainer--Inner" onClick={onClick}>
+      <div className="lightBoxContainer--Inner">
         <Icon
           style={{ position: "absolute", right: "0" }}
-          onClick={onClick}
+          onClick={onExit}
           path={mdiClose}
           title="User Profile"
           size={2}

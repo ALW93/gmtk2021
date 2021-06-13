@@ -12,6 +12,7 @@ import {
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
+import Line from "./svgs/Line";
 import { updateSaveLog } from "../store/actions/potionsActions";
 
 import useSound from "use-sound";
@@ -76,6 +77,8 @@ const Workbench = (props) => {
 
   return (
     <div className="WorkbenchContainer">
+      <Line />
+
       {/* <Ingredients addSelection={handleSelect} />
       <div className="CombinerContainer"> */}
       {/* <div className="WorkbenchContainer--Top"> */}

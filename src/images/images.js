@@ -10,8 +10,11 @@ import unicornHornImg from "./ingredients/unicorn-horn.png";
 
 // NPCs
 import ghostyImg from "./npcs/ghosty_pic.png";
-import sadLoserImg from "./npcs/sad-loser.png";
-import wolfyImg from "./npcs/wolfy.png";
+import sadLoserImg from "./npcs/myra_pic.png";
+import wolfyImg from "./npcs/wolfy_pic.png";
+import ghostyHappy from "./npcs/ghosty_happy.png";
+import myraHappy from "./npcs/myra_happy.png";
+import wolfyHappy from "./npcs/wolfy_happy.png";
 
 // Potions
 import lovePotion from "./potions/love-potion.png";
@@ -29,7 +32,7 @@ const images = {
   "unicorn-horn": unicornHornImg,
   // "night-essence": nightEssenceImg,
   ghosty: ghostyImg,
-  "sad-loser": sadLoserImg,
+  myra: sadLoserImg,
   wolfy: wolfyImg,
   "love-potion": lovePotion,
   "shape-shift-potion": shapeShiftPotion,

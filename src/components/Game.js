@@ -10,17 +10,19 @@ import Discovery from "./Discovery";
 import { loadRecipeBook, loadResolvedNpcs } from "../store/reducers/saveReducer";
 import GameOptions from "./GameOptions/GameOptions";
 import Ingredients from "./Ingredients";
+import Congrats from "./Congrats";
 
 const Game = ({ musicPlaying, setMusicPlaying }) => {
   const dispatch = useDispatch();
   const npcs = useSelector((state) => state.npcs);
   const [openDiscovery, setOpenDiscovery] = useState(false)
+  const activeNpc = useSelector((state) => state.active.npc);
 
   useEffect(() => {
-    const randomNpcId = getRandomNpc(npcs);
+    const randomNpcId = getRandomNpc(npcs, Object.keys(loadResolvedNpcs() || {}));
     const initialActive = {
       npc: randomNpcId,
-      ailment: npcs[randomNpcId].ailment,
+      ailment: npcs[randomNpcId]?.ailment,
       ingredients: [],
       potion: "",
     };
@@ -43,7 +45,7 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
         <Ingredients addSelection={()=>console.log("eh")} />
       </aside>
       <main className="main">
-        <NPC />
+        {activeNpc !== null ? <NPC /> : <Congrats />}
       </main>
       <aside>
         <GameOptions />

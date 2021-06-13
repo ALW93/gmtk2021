@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { map } from "lodash";
 
 import { matchRecipes } from "../utility/utility";
-import activeReducer, {
+import {
   updatePotion,
   updateIngredients, clearIngredients,
 } from "../store/reducers/activeReducer";
@@ -20,9 +20,7 @@ import discoverPotion from "../music/discoverPotion.mp3";
 const Workbench = ({setOpenDiscovery}) => {
   const dispatch = useDispatch();
   const potions = useSelector((state) => state.potions);
-  const npcs = useSelector((state) => state.npcs);
   const activePotion = useSelector((state) => state.active?.potion);
-  const activeNPC = useSelector((state) => state.active?.npc);
   const selections = useSelector((state) => state.active.ingredients);
   const [isBrewDisabled, setIsBrewDisabled] = useState(true)
   const [playEmpty] = useSound(empty);

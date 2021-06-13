@@ -7,7 +7,7 @@ import { getRandomNpc } from "../utility/utility";
 import Workbench from "./Workbench";
 import NPC from "./NPC";
 import Discovery from "./Discovery";
-import { loadSaveData } from "../store/reducers/saveReducer";
+import { loadRecipeBook, loadResolvedNpcs } from "../store/reducers/saveReducer";
 import GameOptions from "./GameOptions/GameOptions";
 import Ingredients from "./Ingredients";
 
@@ -32,7 +32,8 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
     // function confirmExit() {
     //   return "show warning";
     // }
-    loadSaveData();
+    loadRecipeBook();
+    loadResolvedNpcs();
   }, []);
 
   return (

@@ -20,7 +20,9 @@ import discoverPotion from "../music/discoverPotion.mp3";
 const Workbench = ({setOpenDiscovery}) => {
   const dispatch = useDispatch();
   const potions = useSelector((state) => state.potions);
+  const npcs = useSelector((state) => state.npcs);
   const activePotion = useSelector((state) => state.active?.potion);
+  const activeNPC = useSelector((state) => state.active?.npc);
   const selections = useSelector((state) => state.active.ingredients);
   const [isBrewDisabled, setIsBrewDisabled] = useState(true)
   const [playEmpty] = useSound(empty);
@@ -62,7 +64,7 @@ const Workbench = ({setOpenDiscovery}) => {
         playDiscoverPotion();
       }
       dispatch(updatePotion(potionId));
-      dispatch(updateSaveLog(potions[potionId]));
+      dispatch(updateSaveLog({potion: potions[potionId]}));
       setOpenDiscovery(true);
   };
 

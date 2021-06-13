@@ -8,12 +8,14 @@ import images from "../images/images";
 import Item from "../components/shared/Item";
 
 const RecipeBook = ({ title, onClick, potionsById }) => {
-  const unlocked = Object.keys(loadSaveData());
+  const data = loadSaveData();
+  const unlocked = Object.keys(data);
   const [preview, setPreview] = useState({});
+  console.log(loadSaveData());
 
   const showPreview = (e) => {
     const potionId = e.target.dataset.id;
-    setPreview(potionsById[potionId]);
+    setPreview(data[potionId]);
   };
 
   return (
@@ -40,7 +42,12 @@ const RecipeBook = ({ title, onClick, potionsById }) => {
         </div>
         <div className="recipeContainer--preview">
           {preview && preview.name && (
-            <img src={images[preview.id]} alt={preview.name} />
+            <>
+              <img src={images[preview.id]} alt={preview.name} />
+              <h2>{preview.name}</h2>
+              <h3>Discovered On </h3>
+              <h4>Crafted # times</h4>
+            </>
           )}
         </div>
       </div>

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100vh;
 
   .imageContainer {
     display: flex;
@@ -34,7 +35,7 @@
     margin: $space-medium;
     height: 20rem;
     line-height: 2.5rem;
-    background: $color-bg-primary;
+    background-color: $color-bg-light-transp;
     color: $color-black;
     display: flex;
     align-items: center;

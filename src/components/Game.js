@@ -35,10 +35,7 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
         <NPC />
       </main>
       <aside>
-        <GameOptions
-          musicPlaying={musicPlaying}
-          setMusicPlaying={setMusicPlaying}
-        />
+        <GameOptions/>
         <Workbench />
       </aside>
     </div>

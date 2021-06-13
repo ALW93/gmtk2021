@@ -5,19 +5,31 @@
 
   .GameOptions {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 2rem;
+
+    .recipeBookButton {
+      width: 20rem;
+      height: 10rem;
+      background-image: url(../../images/gui/recipe-book-button.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+
+    &:hover {
+      background-image: url(../../images/gui/recipe-book-button-hvr.png);
+    }
+    }
 
     .optionButton {
       position: relative;
       width: 4rem;
       height: 4rem;
       margin: 0 1rem;
-      border-radius: 50%;
-      box-shadow: 2px 2px 0 white;
-      // background:rgba(247, 251, 255, 0.5);
+      
+      background-image: url(../../images/gui/back-button.png);
+      background-size: contain;
 
       a {
-        font-weight: bold;
         border: none;
       }
     }

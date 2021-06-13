@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import LightBox from "./shared/LightBox";
-import { loadSaveData } from "../store/reducers/saveReducer";
+import { loadRecipeBook } from "../store/reducers/saveReducer";
 import { potions } from "../data/data";
 import { connect } from "react-redux";
 import { get } from "lodash";
@@ -8,7 +8,7 @@ import images from "../images/images";
 import Item from "../components/shared/Item";
 
 const RecipeBook = ({ title, onClick, potionsById }) => {
-  const data = loadSaveData();
+  const data = loadRecipeBook();
   const unlocked = Object.keys(data);
   const [preview, setPreview] = useState({});
 

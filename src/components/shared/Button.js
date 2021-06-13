@@ -1,10 +1,10 @@
 import React from "react";
 import classNames from 'classnames'
 
-const Button = ({ text, onClick, disabled }) => {
+const Button = ({ text, onClick, disabled, className }) => {
 
   return (
-    <button onClick={onClick} className={classNames("buttonBase", {disabled: disabled})} disabled={disabled}>
+    <button onClick={onClick} className={classNames("buttonBase", className, {disabled: disabled})} disabled={disabled}>
       {text}
     </button>
   );

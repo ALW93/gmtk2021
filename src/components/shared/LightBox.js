@@ -7,7 +7,7 @@ const LightBox = ({ onExit, children }) => {
     <div className="lightBoxContainer--Outer">
       <div className="lightBoxContainer--Inner absoluteCenter">
         <Icon
-          style={{ position: "absolute", right: "1rem", top: "1rem", zIndex: "6" }}
+          style={{ position: "absolute", right: "1rem", top: "1rem", zIndex: "6",  }}
           onClick={onExit}
           path={mdiClose}
           title="User Profile"

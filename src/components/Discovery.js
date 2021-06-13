@@ -11,8 +11,7 @@ const Discovery = ({open, setOpen}) => {
     setOpen(false)
   }
 
-  if (!open) return null;
-
+  if (!open || !potion) return null;
   return (
     <LightBox onExit={onContinue}>
       <article className="discoveryContainer">

@@ -6,7 +6,7 @@ import rosePetalsImg from "./ingredients/rose-petals.png";
 import stardustImg from "./ingredients/stardust.png";
 import swampWaterImg from "./ingredients/swamp-water.png";
 import unicornHornImg from "./ingredients/unicorn-horn.png";
-// import nightEssenceImg from "./ingredients/night-essence.png";
+import nightEssenceImg from "./ingredients/night-essence.png";
 
 // NPCs
 import ghostyImg from "./npcs/ghosty_pic.png";
@@ -22,6 +22,20 @@ import shapeShiftPotion from "./potions/shape-shift-potion.png";
 import phoenixDown from "./potions/phoenix-down.png";
 import smellyPotion from "./potions/smelly-potion.png";
 
+// GUI
+import backButtonImg from './gui/back-button.png';
+import musicButtonImg from './gui/music-button.png';
+import continueButtonImg from './gui/continue-button.png';
+import xButtonImg from './gui/x-button.png';
+import shelfImg from './gui/shelf.png';
+import bgSquarePinkImg from './gui/bg-square-pink.png';
+import bgSquarePurpleImg from './gui/bg-square-purple.png';
+import brewButtonImg from './gui/brew-button.png'
+import brewButtonHvrImg from './gui/brew-button-hvr.png'
+import recipeBookButtonImg from './gui/recipe-book-button.png'
+import recipeBookButtonHvrImg from './gui/recipe-book-button-hvr.png'
+import cauldronImg from './gui/cauldron.png'
+
 const images = {
   "fairy-juice": fairyJuiceImg,
   "frog-kidney": frogKidneyImg,
@@ -30,7 +44,7 @@ const images = {
   stardust: stardustImg,
   "swamp-water": swampWaterImg,
   "unicorn-horn": unicornHornImg,
-  // "night-essence": nightEssenceImg,
+  "night-essence": nightEssenceImg,
   ghosty: ghostyImg,
   ghosty_happy: ghostyHappy,
   myra: sadLoserImg,
@@ -41,6 +55,19 @@ const images = {
   "shape-shift-potion": shapeShiftPotion,
   "phoenix-down": phoenixDown,
   "smelly-potion": smellyPotion,
+
+  "back-button": backButtonImg,
+  "music-button": musicButtonImg,
+  "continue-button": continueButtonImg,
+  "x-button": xButtonImg,
+  "shelf": shelfImg,
+  "bg-square-pink": bgSquarePinkImg,
+  "bg-square-purple": bgSquarePurpleImg,
+  "brew-button": brewButtonImg,
+  "brew-button-hvr": brewButtonHvrImg,
+  "recipe-book-button": recipeBookButtonImg,
+  "recipe-book-button-hvr": recipeBookButtonHvrImg,
+  "cauldron": cauldronImg,
 };
 
 export default images;

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Typist from "react-typist";
-import {useSelector} from "react-redux";
 
 const NPCDialogue = ({ body, name, updateDialogue }) => {
   const activePotion = useSelector((state) => state.active?.potion);
   const [end, setEnd] = useState(false);
   const [speech, setSpeech] = useState("");
+  const npcs = useSelector(state => state.npcs)
 
   const endBody = () => {
     setEnd(true);

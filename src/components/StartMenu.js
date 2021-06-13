@@ -42,6 +42,9 @@ const StartMenu = ({setMusicPlaying}) => {
           </Link>
         </div>
       </div>}
+      <footer>
+        <a href='https://www.freepik.com/vectors/book'>Book vector created by upklyak - www.freepik.com</a>
+      </footer>
     </div>
   );
 };

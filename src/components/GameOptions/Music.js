@@ -27,13 +27,12 @@ const Music = ({ musicPlaying, setMusicPlaying }) => {
   };
 
   return (
-    <div className="musicContainer">
-      <img
+    <div className="musicContainer" onClick={handleClick}>
+      {/* <img
         src={isPlaying ? mute : playButton}
-        onClick={handleClick}
         className="music"
         alt="music player"
-      />
+      /> */}
     </div>
   );
 };

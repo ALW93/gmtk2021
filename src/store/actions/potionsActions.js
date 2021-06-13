@@ -1,7 +1,9 @@
 import { addResults } from "../reducers/resultReducer";
-import { saveRecipe } from "../reducers/saveReducer";
+import { saveRecipe, saveNpc } from "../reducers/saveReducer";
 
-export const updateSaveLog = (results) => async (dispatch) => {
-  await saveRecipe(results);
-  return dispatch(addResults(results));
+export const updateSaveLog = ({potion, npc}) => async (dispatch) => {
+  await saveRecipe(potion);
+  saveNpc(npc);
+
+  // return dispatch(addResults(potion));
 };

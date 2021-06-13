@@ -10,11 +10,6 @@ const NPCDialogue = ({ body, name, updateDialogue }) => {
 
   const endBody = () => {
     setEnd(true);
-    if (isFinished) {
-      dispatch(clearAllActive())
-      dispatch(updateNpc(getRandomNpc(npcs)))
-      setIsFinished(false)
-    }
   };
 
   const forceEnd = () => {

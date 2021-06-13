@@ -86,7 +86,7 @@ const Workbench = ({setOpenDiscovery}) => {
       {/* </div> */}
 
       <div className="WorkbenchContainer--Bottom">
-        <button disabled={isBrewDisabled || activePotion} onClick={calculateRecipe} className={`brewButton ${isBrewDisabled || activePotion ? '' : 'active'}`}>Brew!</button>
+        <button disabled={isBrewDisabled || activePotion} onClick={calculateRecipe} className={`brewButton ${isBrewDisabled || activePotion ? '' : 'active'}`}></button>
         <Combiner removeSelection={removeSelect} />
         <button disabled={isBrewDisabled || activePotion} onClick={clearRecipe} className={`clearButton ${isBrewDisabled || activePotion ? '' : 'active'}`}>Clear</button>
       </div>

@@ -4,6 +4,7 @@ import { loadSaveData } from "../store/reducers/saveReducer";
 import { potions } from "../data/data";
 import { connect } from "react-redux";
 import { get } from "lodash";
+import images from "../images/images";
 import Item from "../components/shared/Item";
 
 const RecipeBook = ({ title, onClick, potionsById }) => {
@@ -30,7 +31,7 @@ const RecipeBook = ({ title, onClick, potionsById }) => {
                   type="potion"
                   name={potion.name}
                   disabled={!discovered}
-                  onClick={showPreview}
+                  onClick={discovered ? showPreview : undefined}
                 />
                 {discovered ? potion.name : "Undiscovered"}
               </span>
@@ -38,13 +39,8 @@ const RecipeBook = ({ title, onClick, potionsById }) => {
           })}
         </div>
         <div className="recipeContainer--preview">
-          {preview && (
-            <Item
-              key={preview.id}
-              id={preview.id}
-              type="potion"
-              name={preview.name}
-            />
+          {preview && preview.name && (
+            <img src={images[preview.id]} alt={preview.name} />
           )}
         </div>
       </div>

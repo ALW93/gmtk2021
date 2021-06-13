@@ -25,4 +25,9 @@
 .recipeContainer--preview {
   width: 60%;
   background-color: rgb(249, 239, 233, 0.7);
+
+  img {
+    border: 2px solid black;
+    width: 50%;
+  }
 }

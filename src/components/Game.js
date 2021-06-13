@@ -30,6 +30,7 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
     // function confirmExit() {
     //   return "show warning";
     // }
+    console.log("hitting start", loadSaveData());
     loadSaveData();
   }, []);
 

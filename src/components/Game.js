@@ -24,7 +24,7 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
     };
     loadSaveData();
     dispatch(loadAllActive(initialActive));
-  }, []);
+  }, [dispatch, npcs]);
 
   return (
     <div className="GameContainer grid">
@@ -35,7 +35,7 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
         <NPC />
       </main>
       <aside>
-        <GameOptions/>
+        <GameOptions />
         <Workbench />
       </aside>
     </div>

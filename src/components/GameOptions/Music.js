@@ -4,16 +4,16 @@ import song from "../../music/infados-by-kevin-macleod.mp3";
 import mute from "../../images/music/Mute_Icon.svg";
 import playButton from "../../images/music/Speaker_Icon.svg";
 
-const Music = ( {musicPlaying, setMusicPlaying} ) => {
+const Music = ({ musicPlaying, setMusicPlaying }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [play, { stop }] = useSound(song);
 
   useEffect(() => {
-    if(musicPlaying){
+    if (musicPlaying) {
       play();
       setIsPlaying(true);
     }
-  }, [musicPlaying])
+  }, [musicPlaying, play]);
 
   const handleClick = () => {
     if (!isPlaying && !musicPlaying) {

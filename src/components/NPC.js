@@ -19,7 +19,6 @@ const NPC = () => {
     //         ailmentWhichSelectedPotionCures = ailment.id;
     //     }
     // })
-    console.log('ailments', ailments, npc)
 
     if (potionId && potionId === ailments[npc.ailment].cure) {
         setIsMatchingPotion(true);
@@ -35,7 +34,6 @@ const NPC = () => {
   }, [npc, isMatchingPotion, potionId]);
 
     useEffect(() => {
-      console.log('hellooo', npcId, npc)
       setNpc(npcs[npcId])
     }, [npcId])
 

@@ -77,6 +77,8 @@ const Workbench = (props) => {
 
   return (
     <div className="WorkbenchContainer">
+      <Line />
+
       {/* <Ingredients addSelection={handleSelect} />
       <div className="CombinerContainer"> */}
       {/* <div className="WorkbenchContainer--Top"> */}
@@ -87,14 +89,11 @@ const Workbench = (props) => {
       <Ingredients addSelection={handleSelect} />
       {/* </div> */}
 
-      <Line />
-
       <div className="WorkbenchContainer--Bottom">
         <Combiner removeSelection={removeSelect} />
         <Button text="Clear" onClick={clearRecipe} />
         <Button text="Brew" onClick={calculateRecipe} />
       </div>
-      <Line />
     </div>
   );
 };

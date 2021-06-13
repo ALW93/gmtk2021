@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 
 const StartMenu = ({setMusicPlaying}) => {
   const [entryState, setEntryState] = useState('begin')
-  useEffect(() => {
-    const entryStatus = sessionStorage.getItem('entryStatus')
-    if(entryStatus === 'start'){
-      setEntryState(entryStatus)
-    }
-  }, [])
+  // useEffect(() => {
+  //   // const entryStatus = sessionStorage.getItem('entryStatus')
+  //   if(entryStatus === 'start'){
+  //     setEntryState(entryStatus)
+  //   }
+  // }, [])
 
-  const handleBegin = () => {
-    sessionStorage.setItem('entryStatus', 'start')
-    setEntryState('start')
-  }
+  // const handleBegin = () => {
+  //   sessionStorage.setItem('entryStatus', 'start')
+  //   setEntryState('start')
+  // }
 
   const handleClick = () => {
     setMusicPlaying(true)

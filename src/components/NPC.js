@@ -5,11 +5,14 @@ import NPCDialogue from "./NPCDialogue";
 import Line from "./svgs/Line";
 import {clearAllActive, clearIngredients, clearPotion, updateNpc} from "../store/reducers/activeReducer";
 import {getRandomNpc} from "../utility/utility";
+import {updateSaveLog} from "../store/actions/potionsActions";
+import {loadResolvedNpcs} from "../store/reducers/saveReducer";
 
 const NPC = () => {
   const dispatch = useDispatch();
   const { npcs, ailments } = useSelector((state) => state);
-  const potionId = useSelector((state) => state.active.potion);
+  const potions = useSelector((state) => state.potions);
+  const activePotion = useSelector((state) => state.active.potion);
   const npcId = useSelector((state) => state.active.npc);
   const [npc, setNpc] = useState(npcs[npcId]);
   const [isMatchingPotion, setIsMatchingPotion] = useState(false);
@@ -18,20 +21,26 @@ const NPC = () => {
   const [isFinished, setIsFinished] = useState(false)
 
   useEffect(() => {
-    if (potionId && potionId === ailments[npc.ailment].cure) {
+    if (activePotion && activePotion === ailments[npc.ailment].cure) {
       setIsMatchingPotion(true);
     }
-  }, [potionId, npc, ailments, npcId]);
+  }, [activePotion, npc, ailments, npcId]);
 
   useEffect(() => {
-    if (potionId) {
+    if (activePotion) {
       setDialogue(isMatchingPotion ? npc?.success : npc?.failure);
       setReaction(isMatchingPotion ? "happy" : "standard");
       setIsFinished(true)
     } else {
       setDialogue(npc?.intro);
     }
-  }, [npc, isMatchingPotion, potionId, npcId]);
+  }, [npc, isMatchingPotion, activePotion, npcId]);
+
+  useEffect(() => {
+    if (activePotion && activePotion !== 'smelly-potion') {
+      dispatch(updateSaveLog({npc: npcs[npc?.id]}));
+    }
+  }, [activePotion])
 
   useEffect(() => {
     const girl = npcs[npcId];
@@ -44,7 +53,7 @@ const NPC = () => {
   const updateDialogue = () => {
     if (isMatchingPotion) {
       dispatch(clearAllActive())
-      dispatch(updateNpc(getRandomNpc(npcs)))
+      dispatch(updateNpc(getRandomNpc(npcs, Object.keys(loadResolvedNpcs() || {}))))
       setIsMatchingPotion(false)
     } else {
       dispatch(clearIngredients());

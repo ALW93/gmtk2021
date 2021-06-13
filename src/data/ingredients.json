@@ -36,6 +36,7 @@
   },
   {
     "id": "night-essence",
-    "name": "Night Essence"
+    "name": "Night Essence",
+    "img-url": "images/ingredients/phoenix-feather.png"
   }
 ]

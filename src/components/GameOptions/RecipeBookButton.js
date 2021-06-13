@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import Button from "../shared/Button";
 import RecipeBook from "../RecipeBook";
 
-function RecipeBookButton(props) {
+function RecipeBookButton() {
   const [open, setOpen] = useState(false);
 
   const toggleRecipeBook = () => {
-    setOpen((prev) => !prev);
+    return open ? setOpen(false) : setOpen(true);
   };
 
   return (
@@ -18,6 +18,6 @@ function RecipeBookButton(props) {
       </div>
     </div>
   );
-};
+}
 
 export default RecipeBookButton;

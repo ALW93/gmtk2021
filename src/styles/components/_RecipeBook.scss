@@ -25,4 +25,16 @@
 .recipeContainer--preview {
   width: 60%;
   background-color: rgb(249, 239, 233, 0.7);
+
+  img {
+    width: 50%;
+    margin-top: 2em;
+  }
+
+  h2,
+  h3,
+  h4 {
+    color: $color-black;
+    margin: 1em;
+  }
 }

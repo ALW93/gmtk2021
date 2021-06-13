@@ -6,6 +6,7 @@ import { get } from "lodash";
 
 const Combiner = ({ selections = [], removeSelection }) => {
   const ingredients = useSelector(state => state.ingredients)
+  const activePotion = useSelector((state) => state.active?.potion);
   const [cauldronLiquidColor, setCauldronLiquidColor] = useState("rgba(76, 72, 80, 0.5)")
 
   useEffect(() => {
@@ -27,11 +28,10 @@ const Combiner = ({ selections = [], removeSelection }) => {
 
   return (
     <>
-
   <div className="cauldronContainer">
   <div className="cauldronLiquidContainer absoluteCenter" style={{ backgroundColor: cauldronLiquidColor }}/>
   <div 
-      className="combinerContainer" 
+      className={`combinerContainer ${activePotion ? 'disabled' : ''}`}
     >   {selections.map((selection, idx) => (
           <Item
               key={idx}
@@ -42,8 +42,6 @@ const Combiner = ({ selections = [], removeSelection }) => {
             />
         ))}
     </div>
-
-
   </div>
   </>);
 };

@@ -53,8 +53,9 @@
       font: 3rem $body-typewriter;
       transition: all 0.1s ease-in;
 
-      &:hover {
+      &.active:hover {
         opacity: 100%;
+        cursor: pointer;
       }
     }
   }

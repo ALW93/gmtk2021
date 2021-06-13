@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Typist from "react-typist";
 
-import { clearAllActive, updateNpc } from "../store/reducers/activeReducer";
-import { getRandomNpc } from "../utility/utility";
-
-
-const NPCDialogue = ({ body, name, updateDialogue, isFinished, setIsFinished }) => {
-  const dispatch = useDispatch()
+const NPCDialogue = ({ body, name, updateDialogue }) => {
+  const activePotion = useSelector((state) => state.active?.potion);
   const [end, setEnd] = useState(false);
   const [speech, setSpeech] = useState("");
   const npcs = useSelector(state => state.npcs)
@@ -42,7 +38,8 @@ const NPCDialogue = ({ body, name, updateDialogue, isFinished, setIsFinished }) 
       ) : (
         <p>{speech}</p>
       )}
-      <button onClick={updateDialogue}>Continue</button>
+      {activePotion && <button className="continue" onClick={updateDialogue}>Continue</button>
+      }
     </section>
   );
 };

@@ -24,10 +24,14 @@
     margin: 0 auto;
     padding: 5rem 6rem 8rem 5rem;
     // overflow: visible;
-
+      &.disabled {
+        pointer-events: none;
+        opacity: 70%;
+      }
 
     .ingredientContainer {
       margin: 0 auto;
+
     }
   }
 }

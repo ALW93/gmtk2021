@@ -47,7 +47,7 @@ const Workbench = ({setOpenDiscovery}) => {
     const ingredients = map(selections, (item) => item);
     const potionId = matchRecipes(ingredients);
       // Also play the fail sound if the potion is the defaulted smelly potion
-      if (potions[potionId].name === "Smelly Potion(?)") {
+      if (potions[potionId].id === "smelly-potion") {
         playFail();
       } else {
         playDiscoverPotion();

@@ -33,6 +33,14 @@ const Workbench = ({setOpenDiscovery}) => {
       }
     }, [selections.length])
 
+  useEffect(() => {
+    if (!activePotion) {
+      setIsBrewDisabled(true);
+    } else {
+      setIsBrewDisabled(false);
+    }
+  }, [activePotion])
+
   const removeSelect = (e) => {
     const idx = selections.indexOf(e.target.dataset.id);
     let newValues = [...selections];

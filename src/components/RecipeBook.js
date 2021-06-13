@@ -45,8 +45,8 @@ const RecipeBook = ({ title, onClick, potionsById }) => {
             <>
               <img src={images[preview.id]} alt={preview.name} />
               <h2>{preview.name}</h2>
-              <h3>Discovered On </h3>
-              <h4>Crafted # times</h4>
+              <h3>Unlocked on {preview.date}</h3>
+              <h4>Crafted {preview.count} times</h4>
             </>
           )}
         </div>

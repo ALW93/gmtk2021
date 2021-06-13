@@ -17,17 +17,18 @@ import { updateSaveLog } from "../store/actions/potionsActions";
 
 import useSound from "use-sound";
 import waterDrop from "../music/waterdrop.mp3";
+import wetDrop from "../music/wetDrop.mp3"
 import empty from "../music/empty.mp3";
-import failedPotion from "../music/failedPotion.mp3";
+import failedPotion2 from "../music/failedPotion2.mp3";
 import discoverPotion from "../music/discoverPotion.mp3";
 
 const Workbench = (props) => {
   const dispatch = useDispatch();
   const potions = useSelector((state) => state.potions);
   const selections = useSelector((state) => state.active.ingredients);
-  const [playWaterDrop] = useSound(waterDrop);
+  const [playWetDrop] = useSound(wetDrop);
   const [playEmtpy] = useSound(empty);
-  const [playFail] = useSound(failedPotion);
+  const [playFail] = useSound(failedPotion2);
   const [playDiscoverPotion] = useSound(discoverPotion);
 
   const handleSelect = (e) => {
@@ -36,7 +37,7 @@ const Workbench = (props) => {
       return;
     } else {
       dispatch(addIngredient(e.target.dataset.id));
-      playWaterDrop();
+      playWetDrop();
     }
   };
 

@@ -51,6 +51,11 @@ export const saveNpc = (result) => {
   localStorage.setItem("ResolvedNPCs", JSON.stringify(npc));
 }
 
+export const clearData = () => {
+  localStorage.setItem("RecipeBook", JSON.stringify({}));
+  localStorage.setItem("ResolvedNPCs", JSON.stringify({}));
+}
+
 export default function saveReducer(state = {}, action) {
   switch (action.type) {
     default: {

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { map } from "lodash";
 
 import { matchRecipes } from "../utility/utility";
-import activeReducer, {
+import {
   updatePotion,
   updateIngredients, clearIngredients,
 } from "../store/reducers/activeReducer";

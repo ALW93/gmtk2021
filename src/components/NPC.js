@@ -6,6 +6,7 @@ import Line from "./svgs/Line";
 import {clearAllActive, clearIngredients, clearPotion, updateNpc} from "../store/reducers/activeReducer";
 import {getRandomNpc} from "../utility/utility";
 import {updateSaveLog} from "../store/actions/potionsActions";
+import {loadResolvedNpcs} from "../store/reducers/saveReducer";
 
 const NPC = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const NPC = () => {
   }, [npc, isMatchingPotion, activePotion, npcId]);
 
   useEffect(() => {
-    if (activePotion !== 'smelly-potion') {
+    if (activePotion && activePotion !== 'smelly-potion') {
       dispatch(updateSaveLog({npc: npcs[npc?.id]}));
     }
   }, [activePotion])
@@ -50,7 +51,7 @@ const NPC = () => {
   const updateDialogue = () => {
     if (isMatchingPotion) {
       dispatch(clearAllActive())
-      dispatch(updateNpc(getRandomNpc(npcs)))
+      dispatch(updateNpc(getRandomNpc(npcs, Object.keys(loadResolvedNpcs() || {}))))
       setIsMatchingPotion(false)
     } else {
       dispatch(clearIngredients());

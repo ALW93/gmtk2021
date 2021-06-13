@@ -10,8 +10,9 @@
     justify-content: center;
 
     img {
-      // height: 50vh;
-      width: auto;
+      height: 50vh;
+      width: 50vh;
+      margin: 0 auto;
     }
   }
 
@@ -33,8 +34,11 @@
   .dialogue-box {
     position: relative;
     border-radius: 5px;
+
     border: 1px solid white;
     box-shadow: 5px 5px 0 white;
+    // border: 5px ridge white;
+
     padding: $space-medium $space-large;
     margin: 0 $space-large;
     height: 20rem;

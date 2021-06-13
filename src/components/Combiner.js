@@ -29,7 +29,6 @@ const Combiner = ({ selections = [], removeSelection }) => {
     <div 
       className="combinerContainer" 
       style={{
-        color: "red", 
         // background: `radial-gradient(${cauldronLiquidColor} 0%, ${cauldronLiquidColor} 20%, rgb(50,50,70) 100%)`,
         backgroundColor: cauldronLiquidColor,
       }}

@@ -12,17 +12,14 @@ const Discovery = ({open, setOpen}) => {
   const npcs = useSelector(state => state.npcs)
 
   const onContinue = (e) => {
+    setOpen(false)
     dispatch(clearAllActive())
     dispatch(updateNpc(getRandomNpc(npcs)))
   }
 
-  const handleClose = (e) => {
-    setOpen(false)
-  }
-
   if (!open) return null;
   return (
-    <LightBox onExit={handleClose}>
+    <LightBox onExit={onContinue}>
       <article className="discoveryContainer">
         {/* <Button text="x" onClick={handleClose}></Button> */}
         <p>You've concocted a...</p>

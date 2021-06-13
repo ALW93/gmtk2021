@@ -18,7 +18,7 @@ const NPCDialogue = ({ body, name }) => {
       setEnd(false);
     }
     setSpeech(body);
-  }, [body]);
+  }, [body, speech]);
 
   return (
     <section className="dialogue-box" id="dialogue" onClick={forceEnd}>

@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
+import useSound from "use-sound";
+import { useDispatch, useSelector } from "react-redux";
+
 import { ingredients } from "../data/data";
 import Item from "../components/shared/Item";
-import { useDispatch, useSelector } from "react-redux";
 import { addIngredient } from "../store/reducers/activeReducer";
+import wetDrop from "../music/wetDrop.mp3"
 
 const Ingredients = () => {
   const dispatch = useDispatch()
   const selections = useSelector(state => state.active.ingredients)
   const [disabled, setDisabled] = useState(false)
+  const [playWetDrop] = useSound(wetDrop);
 
   useEffect(() => {
     if (selections.length === 3) {
@@ -20,7 +24,7 @@ const Ingredients = () => {
   const handleAddSelection = (e) => {
     if (selections.length !== 3) {
       dispatch(addIngredient(e.target.dataset.id));
-      // playWaterDrop();
+      playWetDrop() // When selecting successfully
       if (selections.length === 2) {
         setDisabled(false)
       }

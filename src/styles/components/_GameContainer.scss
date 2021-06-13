@@ -6,21 +6,28 @@
   .GameOptions {
     display: flex;
     align-items: center;
+
     .optionButton {
       position: relative;
-      width: 5rem;
-      height: 5rem;
+      width: 4rem;
+      height: 4rem;
+      margin: 0 1rem;
       border-radius: 50%;
-      border: 2px solid white;
-    }
-    a {
-      border: none;
+      box-shadow: 2px 2px 0 white;
+      // background:rgba(247, 251, 255, 0.5);
+
+      a {
+        font-weight: bold;
+        border: none;
+      }
     }
   }
 
   .main {
     background-color: rgba(0,0,0, 0.626);
-    // background-color: rgba(247, 251, 255, 0.626);
+    background-color: rgba(247, 251, 255, 0.5);
+
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;

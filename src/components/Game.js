@@ -25,7 +25,7 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
       potion: "",
     };
     dispatch(loadAllActive(initialActive));
-  }, []);
+  }, [dispatch, npcs]);
 
   useEffect(() => {
     // window.onbeforeunload = confirmExit;
@@ -45,10 +45,7 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
         <NPC />
       </main>
       <aside>
-        <GameOptions
-          musicPlaying={musicPlaying}
-          setMusicPlaying={setMusicPlaying}
-        />
+        <GameOptions />
         <Workbench setOpenDiscovery={setOpenDiscovery} />
       </aside>
     </div>

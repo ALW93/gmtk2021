@@ -5,20 +5,16 @@ import { map } from "lodash";
 import { matchRecipes } from "../utility/utility";
 import {
   updatePotion,
-  addIngredient,
   updateIngredients,
 } from "../store/reducers/activeReducer";
 
-import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
-import Button from "./shared/Button";
 
 import { updateSaveLog } from "../store/actions/potionsActions";
 
 import useSound from "use-sound";
-import waterDrop from "../music/waterdrop.mp3";
 import empty from "../music/empty.mp3";
-import failedPotion from "../music/failedPotion.mp3";
+import failedPotion2 from "../music/failedPotion2.mp3";
 import discoverPotion from "../music/discoverPotion.mp3";
 
 const Workbench = ({setOpenDiscovery}) => {
@@ -26,9 +22,8 @@ const Workbench = ({setOpenDiscovery}) => {
   const potions = useSelector((state) => state.potions);
   const selections = useSelector((state) => state.active.ingredients);
   const [isBrewDisabled, setIsBrewDisabled] = useState(true)
-  const [playWaterDrop] = useSound(waterDrop);
   const [playEmpty] = useSound(empty);
-  const [playFail] = useSound(failedPotion);
+  const [playFail] = useSound(failedPotion2);
   const [playDiscoverPotion] = useSound(discoverPotion);
 
   useEffect(() => {

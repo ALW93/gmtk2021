@@ -1,11 +1,12 @@
 
 .shelfContainer {
   position: relative;
-  margin-top: 5rem;
+  margin-top: 10rem;
 
   h2 {
     position: absolute;
-    top: -4rem;
+    top: -4.5rem;
+    left: 2rem;
     margin: 0;
     color: white;
     font: 5rem $display-title-pencil;
@@ -20,9 +21,9 @@
     gap: 1.5em 0.6em;
     max-height: 40rem;
     width: 90%;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 5rem 6rem 8rem 5rem;
     // overflow: visible;
 
 

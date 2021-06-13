@@ -42,8 +42,10 @@ const StartMenu = ({setMusicPlaying}) => {
           </Link>
         </div>
       </div>}
-      <footer>
-        <a href='https://www.freepik.com/vectors/book'>Book vector created by upklyak - www.freepik.com</a>
+      <footer style={{position: "absolute", "bottom": 0}}>
+        <small>
+          <a href='https://www.freepik.com/vectors/book'>Background magic classroom vector created by upklyak - www.freepik.com</a>
+        </small>
       </footer>
     </div>
   );

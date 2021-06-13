@@ -1,4 +1,5 @@
 .Npc {
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -29,7 +30,7 @@
   .dialogue-box {
     position: relative;
     border-radius: 5px;
-    border: 1px solid white;
+    border: 5px ridge white;
     padding: $space-medium $space-large;
     margin: $space-medium;
     height: 20rem;

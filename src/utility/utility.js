@@ -13,10 +13,20 @@ export const matchRecipes = (ingredients) => {
   return match.id;
 };
 
-export function getRandomNpc(npcsData) {
+export function getRandomNpc(npcsData, resolvedNpcIds) {
   const npcs = Object.values(npcsData)
+
+  if (npcs?.length === resolvedNpcIds.length) {
+      return null;
+  }
+
   const npcIndex = Math.floor(Math.random() * npcs.length);
-  return npcs[npcIndex].id
+  const npc = npcs[npcIndex];
+
+  if (!resolvedNpcIds.includes(npc.id)) {
+    return npcs[npcIndex].id
+  }
+  return getRandomNpc(npcsData, resolvedNpcIds);
 }
 
 export function normalizeData(data) {

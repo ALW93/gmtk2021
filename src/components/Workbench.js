@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { map } from "lodash";
 
 import { matchRecipes } from "../utility/utility";
-import activeReducer, {
+import {
   updatePotion,
   updateIngredients, clearIngredients,
 } from "../store/reducers/activeReducer";
@@ -62,7 +62,7 @@ const Workbench = ({setOpenDiscovery}) => {
         playDiscoverPotion();
       }
       dispatch(updatePotion(potionId));
-      dispatch(updateSaveLog(potions[potionId]));
+      dispatch(updateSaveLog({potion: potions[potionId]}));
       setOpenDiscovery(true);
   };
 

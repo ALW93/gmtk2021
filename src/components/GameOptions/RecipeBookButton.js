@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import Button from "../shared/Button";
 import RecipeBook from "../RecipeBook";
 
 function RecipeBookButton() {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Typist from "react-typist";
+import Button from "./shared/Button";
 
 const NPCDialogue = ({ body, name, updateDialogue }) => {
   const activePotion = useSelector((state) => state.active?.potion);
@@ -33,8 +34,8 @@ const NPCDialogue = ({ body, name, updateDialogue }) => {
       ) : (
         <p>{speech}</p>
       )}
-      {activePotion && <button className="continue" onClick={updateDialogue}>Continue</button>
       }
+      {activePotion && <Button className="continue" onClick={updateDialogue} text="Continue"/>}
     </section>
   );
 };

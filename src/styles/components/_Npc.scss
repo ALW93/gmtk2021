@@ -34,10 +34,10 @@
   .dialogue-box {
     position: relative;
     border-radius: 5px;
-
     border: 1px solid white;
     box-shadow: 5px 5px 0 white;
     // border: 5px ridge white;
+    //flex-direction: column;
 
     padding: $space-medium $space-large;
     margin: 0 $space-large;
@@ -55,6 +55,9 @@
     
     .continue {
       cursor: pointer;
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
     }
   }
 

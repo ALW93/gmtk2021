@@ -1,8 +1,8 @@
 import React from "react";
 import classNames from "classnames";
-import images from "../../images/images";
-
 import useSound from "use-sound";
+
+import images from "../../images/images";
 import softClick from "../../music/softclick.mp3";
 
 const Item = ({ id, type, name, onClick, disabled = false }) => {

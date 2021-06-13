@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { map } from "lodash";
 
 import { matchRecipes } from "../utility/utility";
-import {
+import activeReducer, {
   updatePotion,
-  updateIngredients,
+  updateIngredients, clearIngredients,
 } from "../store/reducers/activeReducer";
 
 import Combiner from "./Combiner";
@@ -20,6 +20,7 @@ import discoverPotion from "../music/discoverPotion.mp3";
 const Workbench = ({setOpenDiscovery}) => {
   const dispatch = useDispatch();
   const potions = useSelector((state) => state.potions);
+  const activePotion = useSelector((state) => state.active?.potion);
   const selections = useSelector((state) => state.active.ingredients);
   const [isBrewDisabled, setIsBrewDisabled] = useState(true)
   const [playEmpty] = useSound(empty);
@@ -27,7 +28,7 @@ const Workbench = ({setOpenDiscovery}) => {
   const [playDiscoverPotion] = useSound(discoverPotion);
 
   useEffect(() => {
-      if (selections.length === 2) {
+      if (selections.length && selections.length !== 3) {
         setIsBrewDisabled(false)
       }
     }, [selections.length])
@@ -59,7 +60,7 @@ const Workbench = ({setOpenDiscovery}) => {
 
   //clear ingredients button
   const clearRecipe = () => {
-    dispatch(updateIngredients([]));
+    dispatch(clearIngredients());
   };
 
   return (
@@ -76,9 +77,9 @@ const Workbench = ({setOpenDiscovery}) => {
       {/* </div> */}
 
       <div className="WorkbenchContainer--Bottom">
-        <button disabled={isBrewDisabled} onClick={calculateRecipe} className="brewButton">Brew!</button>
+        <button disabled={isBrewDisabled || activePotion} onClick={calculateRecipe} className={`brewButton ${isBrewDisabled || activePotion ? '' : 'active'}`}>Brew!</button>
         <Combiner removeSelection={removeSelect} />
-        <button onClick={clearRecipe} className="clearButton">Clear</button>
+        <button disabled={isBrewDisabled || activePotion} onClick={clearRecipe} className={`clearButton ${isBrewDisabled || activePotion ? '' : 'active'}`}>Clear</button>
       </div>
     </div>
   );

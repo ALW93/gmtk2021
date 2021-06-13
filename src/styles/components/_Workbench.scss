@@ -31,9 +31,11 @@
       font: 10rem $display-cursive;
       margin: 0 auto;
       transition: all 0.1s ease-in;
+      opacity: 50%;
 
-      &:hover {
+      &.active:hover {
         transform: scale(1.1);
+        opacity: 100%;
       }
     }
 
@@ -46,7 +48,7 @@
       font: 3rem $body-typewriter;
       transition: all 0.1s ease-in;
 
-      &:hover {
+      &.active:hover {
         opacity: 100%;
       }
     }

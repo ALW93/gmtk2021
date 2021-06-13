@@ -6,7 +6,7 @@ export default function BackToMenuButton() {
   return (
     // the background image scaling is off, but will come back to it.
         <div className="optionButton">
-          <Link to={"/"} className="link">
+          <Link to={"/"} className="link absoluteCenter">
             {"<"}
           </Link>
     </div>

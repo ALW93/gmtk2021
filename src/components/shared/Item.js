@@ -9,7 +9,7 @@ const Item = ({ id, type, name, onClick, disabled = false }) => {
   const [playSoft] = useSound(softClick);
 
   return (
-    <div className="itemContainer">
+    <div className="itemContainer ingredientContainer" key={id}>
       <img
         src={images[id]}
         alt={name}

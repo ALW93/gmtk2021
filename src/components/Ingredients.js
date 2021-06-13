@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { ingredients } from "../data/data";
 import Item from "../components/shared/Item";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addIngredient } from "../store/reducers/activeReducer";
 
-const Ingredients = ({ addSelection }) => {
+const Ingredients = () => {
+  const dispatch = useDispatch()
   const selections = useSelector(state => state.active.ingredients)
   const [disabled, setDisabled] = useState(false)
 
   useEffect(() => {
-    console.log('selections', selections, disabled)
     if (selections.length === 3) {
       setDisabled(true)
     } else {
@@ -16,19 +17,30 @@ const Ingredients = ({ addSelection }) => {
     }
   }, [selections])
 
+  const handleAddSelection = (e) => {
+    if (selections.length !== 3) {
+      dispatch(addIngredient(e.target.dataset.id));
+      // playWaterDrop();
+      if (selections.length === 2) {
+        setDisabled(false)
+      }
+    }
+  }
+
   return (
-    <div className="ingredientsContainer">
-      {ingredients.map((ingredient) => (
-        <div className="ingredientContainer" key={ingredient.id}>
-          <Item
-            id={ingredient.id}
-            onClick={addSelection}
-            type="ingredient"
-            name={ingredient.name}
-            disabled={disabled}
-          />
-        </div>
-      ))}
+    <div className="shelfContainer">
+      <h2>Pick Three:</h2>
+      <div className="ingredientsContainer">
+        {ingredients.map((ingredient) => (
+            <Item
+              id={ingredient.id}
+              onClick={handleAddSelection}
+              type="ingredient"
+              name={ingredient.name}
+              disabled={disabled}
+            />
+        ))}
+      </div>
     </div>
   );
 };

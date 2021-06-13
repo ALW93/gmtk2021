@@ -1,25 +1,36 @@
 .discoveryContainer {
-  margin: 1em auto;
-  width: 100%;
   text-align: center;
+  position: relative;
+  height: 35rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 2rem double rgba(100, 50, 20, 0.05);
+  text-align: center;
+  background: $color-bg-light-transp;
+  font-family: $body-typewriter;
+
+  h3 {
+    margin: 0;
+    font: bold 4rem $display-cursive;
+  }
 
   .discoveryBox {
-    position: relative;
-    margin: 0 auto;
-    width: 90%;
-    height: 14em;
-    border-radius: 3em;
-    border: 2rem solid rgba(100, 50, 20, 0.05);
-    text-align: center;
-    background: cornsilk;
-
-    .itemContainer {
-      position: initial;
-    }
-
+    background-color: transparent;
+    border: none;
+    height: 25rem;
+    width: 30rem;
+    
     img {
-      height: 10em;
-      width: 10em;
+      margin-top: 5rem;
+      height: 20rem;
+      width: 20rem;
+      
     }
   }
+
+  .itemContainer {
+    position: initial;
+  }
+
 }

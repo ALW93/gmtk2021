@@ -1,43 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearAllActive, updateNpc } from "../store/reducers/activeReducer";
 import { getRandomNpc } from "../utility/utility";
+
+import LightBox from './shared/LightBox'
 import Item from "./shared/Item";
 
-const Discovery = () => {
+const Discovery = ({open, setOpen}) => {
   const dispatch = useDispatch();
   const potion = useSelector((state) => state.potions[state.active?.potion]);
   const npcs = useSelector(state => state.npcs)
 
   const onContinue = (e) => {
-    // TODO Refresh new NPC, wipe selections and discovered potion
     dispatch(clearAllActive())
     dispatch(updateNpc(getRandomNpc(npcs)))
   }
 
-  if (!potion)
-    return (
-      <div className="discoveryContainer">
-        <p>Conceiving a concoction...</p>
-        <div className="discoveryBox" />
-      </div>
-    );
+  const handleClose = (e) => {
+    setOpen(false)
+  }
 
+  if (!open) return null;
   return (
-    <div className="discoveryContainer">
-      <p>You've concocted a...</p>
-      <button className="discoveryBox">
-        <Item
-          id={potion.id}
-          type="potion"
-          name={potion.name}
-          onClick={onContinue}
-        />
-      </button>
-      <p>{potion.name}!</p>
-      <p>Congrats!</p>
-    </div>
-  );
+    <LightBox onExit={handleClose}>
+      <article className="discoveryContainer">
+        {/* <Button text="x" onClick={handleClose}></Button> */}
+        <p>You've concocted a...</p>
+        <button className="discoveryBox absoluteCenter">
+          <Item
+            id={potion.id}
+            type="potion"
+            name={potion.name}
+            onClick={onContinue}
+          />
+        </button>
+        <h3>{potion.name}!</h3>
+      </article>
+  
+    </LightBox>
+  )
 };
 
 export default Discovery;

@@ -6,10 +6,11 @@
 
   .imageContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
     img {
-      height: 50vh;
+      // height: 50vh;
       width: auto;
     }
   }
@@ -17,22 +18,25 @@
   .name {
     position: absolute;
     z-index: 1;
-    top: -4rem;
+    top: -6rem;
     left: 1rem;
     width: max-content;
     margin: 1rem;
-    border-radius: 20px;
-    background: $color-bg-secondary;
-    font-size: $font-size-xlarge;
-    padding: $space-large;
+    border-radius: 50%;
+    background: $color-bg-primary;
+    box-shadow: 5px 5px 0 $color-highlight;
+    font: 5rem $body-fancy;
+    color: $color-highlight;
+    padding: 0 $space-large $space-small 0;
   }
 
   .dialogue-box {
     position: relative;
     border-radius: 5px;
     border: 1px solid white;
+    box-shadow: 5px 5px 0 white;
     padding: $space-medium $space-large;
-    margin: $space-medium;
+    margin: 0 $space-large;
     height: 20rem;
     line-height: 2.5rem;
     background-color: $color-bg-light-transp;
@@ -41,6 +45,9 @@
     align-items: center;
     overflow-y: auto;
     overflow: visible;
+    font-family: $body-typewriter;
+    // font: $font-size-large $body-casual;
+    line-height: 3rem;
   }
 
   .footer {

@@ -9,16 +9,15 @@ const Combiner = ({ selections = [], removeSelection }) => {
   const [cauldronLiquidColor, setCauldronLiquidColor] = useState("rgba(76, 72, 80, 0.5)")
 
   useEffect(() => {
-    console.log("selections colors", cauldronLiquidColor, selections)
     switch (selections.length) {
       case 1:
-        setCauldronLiquidColor("rgba(231, 111, 81,0.8)")
+        setCauldronLiquidColor("rgba(231, 111, 81,1)")
         break;
       case 2:
-        setCauldronLiquidColor("rgba(233, 196, 106,0.8)")
+        setCauldronLiquidColor("rgba(233, 196, 106,1)")
         break;
       case 3:
-        setCauldronLiquidColor("rgba(42, 157, 143,0.8)")
+        setCauldronLiquidColor("rgba(42, 157, 143,1)")
         break;
       default:
         setCauldronLiquidColor("rgba(76, 72, 80, 1)")
@@ -27,7 +26,14 @@ const Combiner = ({ selections = [], removeSelection }) => {
   }, [selections.length])
 
   return (
-    <div className="combinerContainer" style={{color: "red", backgroundColor: cauldronLiquidColor}}>
+    <div 
+      className="combinerContainer" 
+      style={{
+        color: "red", 
+        // background: `radial-gradient(${cauldronLiquidColor} 0%, ${cauldronLiquidColor} 20%, rgb(50,50,70) 100%)`,
+        backgroundColor: cauldronLiquidColor,
+      }}
+    >
       {selections.map((selection, idx) => (
           <Item
             key={idx}

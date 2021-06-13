@@ -1,18 +1,20 @@
 .GameContainer {
   background-image: url(../../images/background/witch-academy.jpg);
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
 
   .GameOptions {
     display: flex;
-    justify-content: space-around;
-    color: brown;
-    background: cornsilk;
-    
-    a {
-      width: 1rem;
+    align-items: center;
+    .optionButton {
+      position: relative;
+      width: 5rem;
+      height: 5rem;
       border-radius: 50%;
-      border: 2px solid black;
-      color: red;
+      border: 2px solid white;
+    }
+    a {
+      border: none;
     }
   }
 

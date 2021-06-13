@@ -5,9 +5,9 @@ import Icon from "@mdi/react";
 const LightBox = ({ onExit, children }) => {
   return (
     <div className="lightBoxContainer--Outer">
-      <div className="lightBoxContainer--Inner">
+      <div className="lightBoxContainer--Inner absoluteCenter">
         <Icon
-          style={{ position: "absolute", right: "0" }}
+          style={{ position: "absolute", right: "1rem", top: "1rem", zIndex: "6" }}
           onClick={onExit}
           path={mdiClose}
           title="User Profile"

@@ -21,6 +21,34 @@
   .WorkbenchContainer--Bottom {
     text-align: center;
     height: 50%;
-    border: 1px solid $color-black;
+    // border: 1px solid $color-black;
+    
+    .brewButton {
+      display: block;
+      border: none;
+      color: white;
+      background-color: transparent;
+      font: 10rem $display-cursive;
+      margin: 0 auto;
+      transition: all 0.1s ease-in;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .clearButton {
+      margin: 2rem;
+      opacity: 50%;
+      color: white;
+      border: none;
+      background-color: transparent;
+      font: 3rem $body-typewriter;
+      transition: all 0.1s ease-in;
+
+      &:hover {
+        opacity: 100%;
+      }
+    }
   }
 }

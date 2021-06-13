@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 import NPCDialogue from "./NPCDialogue";
 import images from "../images/images";
+import Line from "./svgs/Line";
 
 const NPC = () => {
   const {npcs, ailments} = useSelector(state => state);
@@ -41,10 +42,13 @@ const NPC = () => {
 
   return (
     <div className="Npc">
+      <Line />
       <div className="imageContainer">
         <img src={images[npc.id]} alt={npc.name} />
-      </div>
       <NPCDialogue body={dialogue} name={npc.name} />
+      </div>
+      <Line />
+
     </div>
   );
 };

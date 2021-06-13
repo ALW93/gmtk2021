@@ -5,6 +5,11 @@
   justify-content: center;
   // border: 30px solid $color-cauldron;
   width: 70%;
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 50%;
+  }
 }
 
     .cauldronContainer {

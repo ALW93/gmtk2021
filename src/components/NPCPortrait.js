@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import images from "../images/images";
 
 const NPCPortrait = ({ id, mode }) => {

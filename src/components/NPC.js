@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import NPCPortrait from "./NPCPortrait";
 import NPCDialogue from "./NPCDialogue";
-import images from "../images/images";
 
 const NPC = () => {
   const { npcs, ailments } = useSelector((state) => state);
@@ -37,7 +36,7 @@ const NPC = () => {
 
   useEffect(() => {
     setNpc(npcs[npcId]);
-  }, [npcId]);
+  }, [npcId, npcs]);
 
   if (!npc) return null;
 

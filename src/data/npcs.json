@@ -10,8 +10,8 @@
     "failure": "Oh... th-thanks... That's... nice, I guess... (If it's nice or not doesn't matter much when you're dead though...)"
   },
   {
-    "id": "sad-loser", 
-    "name": "Sad Loser",
+    "id": "myra",
+    "name": "Myra",
     "ailment": "lovesickness",
     "imgUrl": "images/npcs/sad-loser.png",
     "intro": "My desolate heart has been broken into a million pieces, and it shall never be repaired... unless... you're my last hope. Do you have something that can help me?",

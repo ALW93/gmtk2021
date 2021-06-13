@@ -36,6 +36,7 @@
       &.active:hover {
         transform: scale(1.1);
         opacity: 100%;
+        cursor: pointer;
       }
     }
 
@@ -50,6 +51,7 @@
 
       &.active:hover {
         opacity: 100%;
+        cursor: pointer;
       }
     }
   }

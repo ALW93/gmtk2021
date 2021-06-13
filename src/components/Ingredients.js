@@ -10,6 +10,7 @@ import wetDrop from "../music/wetDrop.mp3"
 const Ingredients = () => {
   const dispatch = useDispatch()
   const selections = useSelector(state => state.active.ingredients)
+  const activePotion = useSelector((state) => state.active?.potion);
   const [disabled, setDisabled] = useState(false)
   const [playWetDrop] = useSound(wetDrop);
 
@@ -34,7 +35,7 @@ const Ingredients = () => {
   return (
     <div className="shelfContainer">
       <h2>Pick Three:</h2>
-      <div className="ingredientsContainer">
+      <div className={`ingredientsContainer ${activePotion ? 'disabled' : ''}`}>
         {ingredients.map((ingredient) => (
             <Item
               id={ingredient.id}

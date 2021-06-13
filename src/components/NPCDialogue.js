@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Typist from "react-typist";
+import {useSelector} from "react-redux";
 
 const NPCDialogue = ({ body, name, updateDialogue }) => {
+  const activePotion = useSelector((state) => state.active?.potion);
   const [end, setEnd] = useState(false);
   const [speech, setSpeech] = useState("");
 
@@ -30,7 +32,8 @@ const NPCDialogue = ({ body, name, updateDialogue }) => {
       ) : (
         <p>{speech}</p>
       )}
-      <button onClick={updateDialogue}>Continue</button>
+      {activePotion && <button className="continue" onClick={updateDialogue}>Continue</button>
+      }
     </section>
   );
 };

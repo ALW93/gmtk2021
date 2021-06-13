@@ -13,11 +13,12 @@ const Discovery = ({open, setOpen}) => {
 
   const onContinue = (e) => {
     setOpen(false)
-    dispatch(clearAllActive())
-    dispatch(updateNpc(getRandomNpc(npcs)))
+    // dispatch(clearAllActive())
+    // dispatch(updateNpc(getRandomNpc(npcs)))
   }
 
   if (!open) return null;
+
   return (
     <LightBox onExit={onContinue}>
       <article className="discoveryContainer">

@@ -4,15 +4,19 @@ const CLEAR_ALL_ACTIVE = "CLEAR_ALL_ACTIVE"
 const UPDATE_INGREDIENTS = "UPDATE_INGREDIENTS"
 const ADD_INGREDIENT = "ADD_INGREDIENT"
 const CLEAR_INGREDIENT = "CLEAR_INGREDIENT"
+const CLEAR_INGREDIENTS = "CLEAR_INGREDIENTS"
 const UPDATE_POTION = "UPDATE_POTION"
+const CLEAR_POTION = "CLEAR_POTION"
 
 export const loadAllActive = (data) => ({ type: LOAD_ALL_ACTIVE, data,});
 export const clearAllActive = (data) => ({type: CLEAR_ALL_ACTIVE, data})
 export const updateNpc = (data) => ({type: UPDATE_NPC, data})
 export const updateIngredients = (data) => ({type: UPDATE_INGREDIENTS, data})
+export const clearIngredients = (data) => ({type: CLEAR_INGREDIENTS, data})
 export const addIngredient = (data) => ({type: ADD_INGREDIENT, data})
 export const clearIngredient = (data) => ({type: CLEAR_INGREDIENT, data})
 export const updatePotion = (data) => ({type: UPDATE_POTION, data})
+export const clearPotion = (data) => ({type: CLEAR_POTION, data})
 
 const initialState = {
   npc: "",
@@ -20,8 +24,6 @@ const initialState = {
   ingredients: [],
   potion: "",
 }
-
-
 
 export default function activeReducer(state = initialState, action) {
   switch (action.type) {
@@ -37,6 +39,9 @@ export default function activeReducer(state = initialState, action) {
     case UPDATE_INGREDIENTS:
       return {...state, ingredients: action.data}
 
+    case CLEAR_INGREDIENTS:
+      return {...state, ingredients: []}
+
     case ADD_INGREDIENT: 
       return {...state, ingredients: [...state.ingredients, action.data]};
 
@@ -48,7 +53,10 @@ export default function activeReducer(state = initialState, action) {
 
     case UPDATE_POTION:
       return {...state, potion: action.data};
-      
+
+    case CLEAR_POTION:
+      return {...state, potion: ""};
+
     default: {
       return state;
     }

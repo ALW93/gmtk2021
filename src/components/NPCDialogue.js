@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Typist from "react-typist";
 
-const NPCDialogue = ({ body, name }) => {
+const NPCDialogue = ({ body, name, updateDialogue }) => {
   const [end, setEnd] = useState(false);
   const [speech, setSpeech] = useState("");
 
@@ -24,12 +24,13 @@ const NPCDialogue = ({ body, name }) => {
     <section className="dialogue-box" id="dialogue" onClick={forceEnd}>
       <h3 className="name">{name}</h3>
       {body && !end ? (
-        <Typist onTypingDone={endBody}>
+        <Typist onTypingDone={endBody} avgTypingDelay={30}>
           <p>{body}</p>
         </Typist>
       ) : (
         <p>{speech}</p>
       )}
+      <button onClick={updateDialogue}>Continue</button>
     </section>
   );
 };

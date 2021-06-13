@@ -23,7 +23,7 @@ const NPC = () => {
     if (potionId && potionId === ailments[npc.ailment].cure) {
       setIsMatchingPotion(true);
     }
-  }, [potionId, npc, ailments]);
+  }, [potionId, npc, ailments, npcId]);
 
   useEffect(() => {
     if (potionId) {
@@ -32,10 +32,12 @@ const NPC = () => {
     } else {
       setDialogue(npc?.intro);
     }
-  }, [npc, isMatchingPotion, potionId]);
+  }, [npc, isMatchingPotion, potionId, npcId]);
 
   useEffect(() => {
-    setNpc(npcs[npcId]);
+    const girl = npcs[npcId];
+    setNpc(girl);
+    setReaction("standard");
   }, [npcId, npcs]);
 
   if (!npc) return null;

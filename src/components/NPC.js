@@ -35,7 +35,6 @@ const NPC = () => {
   }, [npc, isMatchingPotion, potionId, npcId]);
 
   useEffect(() => {
-    console.log("NEW  NPC", npcId);
     const girl = npcs[npcId];
     setNpc(girl);
     setReaction("standard");

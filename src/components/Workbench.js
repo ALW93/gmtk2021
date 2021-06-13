@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { map } from "lodash";
 
 import { matchRecipes } from "../utility/utility";
-import { updatePotion } from "../store/reducers/activeReducer";
 import {
+  updatePotion,
   addIngredient,
   updateIngredients,
 } from "../store/reducers/activeReducer";
@@ -12,12 +12,14 @@ import {
 import Ingredients from "./Ingredients";
 import Combiner from "./Combiner";
 import Button from "./shared/Button";
+import Line from "./svgs/Line";
+import { updateSaveLog } from "../store/actions/potionsActions";
 
 import useSound from "use-sound";
-import waterDrop from "../music/waterdrop.mp3"
-import empty from "../music/empty.mp3"
-import failedPotion from "../music/failedPotion.mp3"
-import discoverPotion from "../music/discoverPotion.mp3"
+import waterDrop from "../music/waterdrop.mp3";
+import empty from "../music/empty.mp3";
+import failedPotion from "../music/failedPotion.mp3";
+import discoverPotion from "../music/discoverPotion.mp3";
 
 const Workbench = (props) => {
   const dispatch = useDispatch();
@@ -60,18 +62,19 @@ console.log("isBrewDisabled", isBrewDisabled)
     const ingredients = map(selections, (item) => item);
     const potionId = matchRecipes(ingredients);
     if (!potionId) {
-      playFail()
+      playFail();
       alert("Well, I guess you could call this a potion...");
       dispatch(updatePotion(potionId));
     } else {
       // Also play the fail sound if the potion is the defaulted smelly potion
-      if(potions[potionId].name === 'Smelly Potion(?)'){
-        playFail()
+      if (potions[potionId].name === "Smelly Potion(?)") {
+        playFail();
       } else {
-        playDiscoverPotion()
+        playDiscoverPotion();
       }
       alert(`Discovered ${potions[potionId].name}`);
       dispatch(updatePotion(potionId));
+      dispatch(updateSaveLog(potions[potionId]));
     }
   };
 
@@ -82,14 +85,16 @@ console.log("isBrewDisabled", isBrewDisabled)
 
   return (
     <div className="WorkbenchContainer">
+      <Line />
+
       {/* <Ingredients addSelection={handleSelect} />
       <div className="CombinerContainer"> */}
       {/* <div className="WorkbenchContainer--Top"> */}
-        {/* <nav className="WorkbenchNav">
+      {/* <nav className="WorkbenchNav">
           {open && <RecipeBook onClick={toggleRecipeBook} title="Recipes" />}
           <Button text="Recipe Book" onClick={toggleRecipeBook} />
         </nav> */}
-        <Ingredients addSelection={handleSelect} />
+      <Ingredients addSelection={handleSelect} />
       {/* </div> */}
 
       <div className="WorkbenchContainer--Bottom">

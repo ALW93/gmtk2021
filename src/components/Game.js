@@ -22,15 +22,8 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
       ingredients: [],
       potion: "",
     };
-    dispatch(loadAllActive(initialActive));
-  }, []);
-
-  useEffect(() => {
-    // window.onbeforeunload = confirmExit;
-    // function confirmExit() {
-    //   return "show warning";
-    // }
     loadSaveData();
+    dispatch(loadAllActive(initialActive));
   }, []);
 
   return (
@@ -42,10 +35,7 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
         <NPC />
       </main>
       <aside>
-        <GameOptions
-          musicPlaying={musicPlaying}
-          setMusicPlaying={setMusicPlaying}
-        />
+        <GameOptions/>
         <Workbench />
       </aside>
     </div>

@@ -38,7 +38,7 @@
 .startMenuOptions {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
 .link {
@@ -55,4 +55,10 @@
     display: flex;
     justify-content: center;
     margin-top: 20vh;
+}
+
+.footer {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
 }

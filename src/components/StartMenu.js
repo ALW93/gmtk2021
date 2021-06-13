@@ -34,15 +34,15 @@ const StartMenu = ({setMusicPlaying}) => {
           <Link to={"/game"} className="link" onClick={handleClick}>
               Play
           </Link>
-          <Link to={"/tutorial"} className="link">
-            Tutorial
-          </Link>
-          <Link to={"/credits"} className="link">
-            Credits
-          </Link>
+          {/*<Link to={"/tutorial"} className="link">*/}
+          {/*  Tutorial*/}
+          {/*</Link>*/}
+          {/*<Link to={"/credits"} className="link">*/}
+          {/*  Credits*/}
+          {/*</Link>*/}
         </div>
       </div>}
-      <footer>
+      <footer className="footer">
         <a href='https://www.freepik.com/vectors/book'>Book vector created by upklyak - www.freepik.com</a>
       </footer>
     </div>

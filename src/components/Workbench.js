@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
 import { map } from "lodash";
 
 import { matchRecipes } from "../utility/utility";
@@ -25,17 +25,23 @@ const Workbench = (props) => {
   const selections = useSelector((state) => state.active.ingredients);
   const [isBrewDisabled, setIsBrewDisabled] = useState(true)
   const [playWaterDrop] = useSound(waterDrop);
-  const [playEmtpy] = useSound(empty);
+  const [playEmpty] = useSound(empty);
   const [playFail] = useSound(failedPotion);
   const [playDiscoverPotion] = useSound(discoverPotion);
-
+console.log("isBrewDisabled", isBrewDisabled)
   const handleSelect = (e) => {
+    console.log('selections', selections, isBrewDisabled)
     if (selections.length === 3) {
-      setIsBrewDisabled(false)
       return;
     } else {
       dispatch(addIngredient(e.target.dataset.id));
       playWaterDrop();
+      console.log("length", selections)
+      if (selections.length === 2) {
+        console.log("there are three")
+        setIsBrewDisabled(false)
+        console.log("after", isBrewDisabled)
+      }
     }
   };
 
@@ -45,8 +51,9 @@ const Workbench = (props) => {
     if (idx > -1) {
       newValues.splice(idx, 1);
     }
-    playEmtpy();
+    playEmpty();
     dispatch(updateIngredients(newValues));
+    setIsBrewDisabled(true)
   };
 
   const calculateRecipe = () => {

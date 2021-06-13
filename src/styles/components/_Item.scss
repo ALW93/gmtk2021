@@ -4,6 +4,7 @@
   width: 5em;
   height: 5em;
   margin: 0.5em;
+  overflow: visible;
 
   .itemCard {
     position: relative;
@@ -11,7 +12,7 @@
     border: 2px ridge rgb(255, 255, 255);
     background-color: rgb(188, 182, 175);
     max-height: 2em;
-    p {
+  p {
       width: 100%;
       text-align: center;
     }
@@ -28,7 +29,7 @@
     width: 4.5em;
     background-color: rgb(0, 0, 0, 0.8);
     border-radius: 100%;
-  }
+}
 }
 
 .hidden {

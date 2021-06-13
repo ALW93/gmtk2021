@@ -1,21 +1,25 @@
 .discoveryContainer {
   margin: 1em auto;
   width: 100%;
+  text-align: center;
 
   .discoveryBox {
     position: relative;
     margin: 0 auto;
-    width: 14em;
+    width: 90%;
     height: 14em;
     border-radius: 3em;
-    border: 2rem solid rgba(100,50,20,0.05);
+    border: 2rem solid rgba(100, 50, 20, 0.05);
     text-align: center;
     background: cornsilk;
-    
+
+    .itemContainer {
+      position: initial;
+    }
+
     img {
       height: 10em;
       width: 10em;
-
     }
   }
 }

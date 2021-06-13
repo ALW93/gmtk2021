@@ -14,7 +14,7 @@ const initial = {
   ailments: normalizeData(ailments),
 };
 
-let middleware = [thunk, logger];
+let middleware = [thunk];
 
 if (process.env.NODE_ENV === "production") {
   middleware = [thunk];

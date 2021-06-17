@@ -19,7 +19,7 @@ const Item = ({ id, type, name, onClick, disabled = false }) => {
         className={classNames("absoluteCenter", {
           disabled: disabled,
         })}
-        onMouseEnter={playSoft}
+        // onMouseEnter={playSoft}
       />
       <div className={classNames("itemCard", { hidden: type === "potion" })}>
         <p>{name}</p>

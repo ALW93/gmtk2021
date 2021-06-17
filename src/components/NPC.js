@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import NPCPortrait from "./NPCPortrait";
 import NPCDialogue from "./NPCDialogue";
 import Line from "./svgs/Line";
-import {clearAllActive, clearIngredients, clearPotion, updateNpc} from "../store/reducers/activeReducer";
+import {clearAllActive, clearIngredients, clearPotion, incrementCount, updateNpc} from "../store/reducers/activeReducer";
 import {getRandomNpc} from "../utility/utility";
 import {updateSaveLog} from "../store/actions/potionsActions";
 import {loadResolvedNpcs} from "../store/reducers/saveReducer";
@@ -11,14 +11,12 @@ import {loadResolvedNpcs} from "../store/reducers/saveReducer";
 const NPC = () => {
   const dispatch = useDispatch();
   const { npcs, ailments } = useSelector((state) => state);
-  const potions = useSelector((state) => state.potions);
   const activePotion = useSelector((state) => state.active.potion);
   const npcId = useSelector((state) => state.active.npc);
   const [npc, setNpc] = useState(npcs[npcId]);
   const [isMatchingPotion, setIsMatchingPotion] = useState(false);
   const [dialogue, setDialogue] = useState("");
   const [reaction, setReaction] = useState("standard");
-  const [isFinished, setIsFinished] = useState(false)
 
   useEffect(() => {
     if (activePotion && activePotion === ailments[npc.ailment].cure) {
@@ -27,12 +25,21 @@ const NPC = () => {
   }, [activePotion, npc, ailments, npcId]);
 
   useEffect(() => {
-    if (activePotion) {
-      setDialogue(isMatchingPotion ? npc?.success : npc?.failure);
-      setReaction(isMatchingPotion ? "happy" : "standard");
-      setIsFinished(true)
-    } else {
+    if (!activePotion) {
       setDialogue(npc?.intro);
+
+    } else {
+
+      if (isMatchingPotion) {
+        setDialogue(npc.success)
+        setReaction("happy")
+        dispatch(incrementCount('requestsFulfilled'))
+      dispatch(incrementCount('potionsBrewed'))
+    } else {
+        setDialogue(npc.failure)
+        setReaction("standard")
+      dispatch(incrementCount('potionsBrewed'))
+    }
     }
   }, [npc, isMatchingPotion, activePotion, npcId]);
 

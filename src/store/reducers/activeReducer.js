@@ -7,6 +7,7 @@ const CLEAR_INGREDIENT = "CLEAR_INGREDIENT"
 const CLEAR_INGREDIENTS = "CLEAR_INGREDIENTS"
 const UPDATE_POTION = "UPDATE_POTION"
 const CLEAR_POTION = "CLEAR_POTION"
+const INCREMENT_COUNT = "INCREMENT_COUNT"
 
 export const loadAllActive = (data) => ({ type: LOAD_ALL_ACTIVE, data,});
 export const clearAllActive = (data) => ({type: CLEAR_ALL_ACTIVE, data})
@@ -17,21 +18,31 @@ export const addIngredient = (data) => ({type: ADD_INGREDIENT, data})
 export const clearIngredient = (data) => ({type: CLEAR_INGREDIENT, data})
 export const updatePotion = (data) => ({type: UPDATE_POTION, data})
 export const clearPotion = (data) => ({type: CLEAR_POTION, data})
+export const incrementCount = (countType) => ({type: INCREMENT_COUNT, countType})
 
 const initialState = {
   npc: "",
   ailment: "",
   ingredients: [],
   potion: "",
+  count: {
+    requestsFulfilled: 0,
+    potionsDiscovered: 0,
+    potionsBrewed: 0,
+  }
 }
 
 export default function activeReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_ALL_ACTIVE: 
-      return action.data;
+      return {...state, ...action.data};
 
     case CLEAR_ALL_ACTIVE:
       return initialState;
+
+    case INCREMENT_COUNT:
+      const newCount = state.count[action.countType] ? state.count[action.countType] + 1 : 1;
+      return {...state, count: {...state.count, [action.countType]: newCount } };
 
     case UPDATE_NPC: 
       return {...state, npc: action.data};

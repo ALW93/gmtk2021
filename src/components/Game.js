@@ -25,6 +25,7 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
       ailment: npcs[randomNpcId]?.ailment,
       ingredients: [],
       potion: "",
+      count: {},
     };
     dispatch(loadAllActive(initialActive));
   }, [dispatch, npcs]);

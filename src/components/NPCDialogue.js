@@ -7,7 +7,6 @@ const NPCDialogue = ({ body, name, updateDialogue }) => {
   const activePotion = useSelector((state) => state.active?.potion);
   const [end, setEnd] = useState(false);
   const [speech, setSpeech] = useState("");
-  const npcs = useSelector(state => state.npcs)
 
   const endBody = () => {
     setEnd(true);
@@ -34,10 +33,9 @@ const NPCDialogue = ({ body, name, updateDialogue }) => {
       ) : (
         <p>{speech}</p>
       )}
-      }
       {activePotion && <Button className="continue" onClick={updateDialogue} text="Continue"/>}
     </section>
   );
-};
+}
 
 export default NPCDialogue;

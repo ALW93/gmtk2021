@@ -35,10 +35,10 @@
       background-repeat: no-repeat;
       width: 20rem;
       height: 10rem;
-      cursor: pointer;
 
-      &:hover {
+      &.active:hover {
         // transform: scale(1.1);
+        cursor: pointer;
         background-image: url(../../images/gui/brew-button-hvr.png);
       }
     }
@@ -53,7 +53,6 @@
       background-color: transparent;
       font: 3rem $body-typewriter;
       transition: all 0.1s ease-in;
-      cursor: pointer;
 
       &.active:hover {
         opacity: 100%;

@@ -24,17 +24,20 @@
     // border: 1px solid $color-black;
     
     .brewButton {
+      z-index: 3;
+      // float: left;
+      width: 16rem;
+      height: 10rem;
+      margin: 0 auto;
       border: none;
       color: white;
-      background-color: transparent;
       font: 10rem $display-cursive;
-      margin: 0 auto;
-      transition: all 0.1s ease-in;
+      background-color: transparent;
       background-image: url(../../images/gui/brew-button.png);
-      background-size: 25rem;
+      background-size: contain;
       background-repeat: no-repeat;
-      width: 20rem;
-      height: 10rem;
+      transition: all 0.1s ease-in;
+  
 
       &.active:hover {
         // transform: scale(1.1);
@@ -51,7 +54,7 @@
       color: white;
       border: none;
       background-color: transparent;
-      font: 3rem $body-typewriter;
+      font: 2rem $body-typewriter;
       transition: all 0.1s ease-in;
 
       &.active:hover {

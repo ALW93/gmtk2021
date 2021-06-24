@@ -1,32 +1,42 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import images from '../images/images';
 
 
 export default function Tallyboard() {
 
-  const happyCustomers = useSelector(state => state.active.score.customers)
+  const {
+    requestsFulfilled, 
+    potionsDiscovered, 
+    potionsBrewed
+  } = useSelector(state => state.active.count)
 
   return (
-    <aside>
-      <h2>Achievements!</h2>
+    <aside className="tallyBoardContainer">
+      <h2>Achievements</h2>
 
-      <h3>Happy Customers</h3>
-        {happyCustomers.map(customer => (
-          <img src="../images/images/gui/heart.png" alt="heart" />
-        ))}
-      
+      <Tally type="Happy Customers" count={requestsFulfilled} tallyType="tally-heart" />
+      <Tally type="Potions Discovered" count={potionsDiscovered} tallyType="tally-star" />
+      <Tally type="Total Potions Made" count={potionsBrewed} tallyType="tally-potion" />
 
     </aside>
   )
 }
 
-function Tally(type, count, markerType) {
-  return (
-    <section>
+function Tally({type, count, tallyType}) {
+  const range = n => [...Array(n).keys()]
 
-    <h3>{type}</h3>
-    {[...Array(count)].map(_ => (
-      <img src={`../../images/gui/${markerType}.png`} alt={markerType} />)
+
+  return (
+    <section style={{padding: "10px"}}>
+
+    <h3>{type}:</h3>
+
+    {count === 0 && <div style={{height: "25px"}} />}
+    
+    {range(count).map(_ => (
+      <img src={images[tallyType]} height="25px" alt={tallyType} />
+    )
     )}
 
     </section>

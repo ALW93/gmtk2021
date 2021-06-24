@@ -1,28 +1,31 @@
 import { get } from "lodash";
 
 export const loadRecipeBook = () => {
-//   const savedSession = localStorage.getItem("RecipeBook");
-//   if (!savedSession) {
-//     return localStorage.setItem("RecipeBook", JSON.stringify({}));
-//   }
-//   const saveData = JSON.parse(savedSession);
-//   return saveData;
+  const savedSession = localStorage.getItem("RecipeBook");
+  if (!savedSession) {
+    return localStorage.setItem("RecipeBook", JSON.stringify({}));
+  }
+  const saveData = JSON.parse(savedSession);
+  return saveData;
 };
 
 export const saveRecipe = (result) => {
-  // if (!result) return {};
-  // const recipeBook = loadRecipeBook();
-  // const recipeToUpdate = get(recipeBook, result.id, undefined);
-  // if (!recipeToUpdate) {
-  //   recipeBook[result.id] = {
-  //     ...result,
-  //     date: new Date().toISOString().slice(0, 10),
-  //     count: 1,
-  //   };
-  // } else {
-  //   recipeBook[result.id].count += 1;
-  // }
-  // localStorage.setItem("RecipeBook", JSON.stringify(recipeBook));
+  
+  if (!result) return {};
+  const recipeBook = loadRecipeBook();
+  const recipeToUpdate = get(recipeBook, result.id, undefined);
+  console.log("recipeBook", recipeBook, "recipeToUpdate", recipeToUpdate)
+  if (!recipeToUpdate) {
+    recipeBook[result.id] = {
+      ...result,
+      date: new Date().toISOString().slice(0, 10),
+      count: 1,
+    };
+  } else {
+    recipeBook[result.id].count += 1;
+  }
+  localStorage.setItem("RecipeBook", JSON.stringify(recipeBook));
+  return !recipeToUpdate;
 };
 
 export const loadResolvedNpcs = () => {

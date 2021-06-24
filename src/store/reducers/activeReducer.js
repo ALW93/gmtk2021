@@ -38,10 +38,10 @@ export default function activeReducer(state = initialState, action) {
       return {...state, ...action.data};
 
     case CLEAR_ALL_ACTIVE:
-      return initialState;
+      return {...initialState, count: state.count};
 
     case INCREMENT_COUNT:
-      const newCount = state.count[action.countType] ? state.count[action.countType] + 1 : 1;
+      const newCount = state.count[action.countType] + 1;
       return {...state, count: {...state.count, [action.countType]: newCount } };
 
     case UPDATE_NPC: 

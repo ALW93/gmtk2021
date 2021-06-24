@@ -36,6 +36,11 @@ import recipeBookButtonImg from './gui/recipe-book-button.png'
 import recipeBookButtonHvrImg from './gui/recipe-book-button-hvr.png'
 import cauldronImg from './gui/cauldron.png'
 
+// Tally Marks
+import heartTallyImg from './gui/tally-heart.png'
+import starTallyImg from './gui/tally-star.png'
+import potionTallyImg from './gui/tally-potion.png'
+
 const images = {
   "fairy-juice": fairyJuiceImg,
   "frog-kidney": frogKidneyImg,
@@ -45,12 +50,14 @@ const images = {
   "swamp-water": swampWaterImg,
   "unicorn-horn": unicornHornImg,
   "night-essence": nightEssenceImg,
+
   ghosty: ghostyImg,
   ghosty_happy: ghostyHappy,
   myra: sadLoserImg,
   myra_happy: myraHappy,
   wolfy: wolfyImg,
   wolfy_happy: wolfyHappy,
+
   "love-potion": lovePotion,
   "shape-shift-potion": shapeShiftPotion,
   "phoenix-down": phoenixDown,
@@ -68,6 +75,9 @@ const images = {
   "recipe-book-button": recipeBookButtonImg,
   "recipe-book-button-hvr": recipeBookButtonHvrImg,
   "cauldron": cauldronImg,
+  "tally-heart": heartTallyImg,
+  "tally-star": starTallyImg,
+  "tally-potion": potionTallyImg,
 };
 
 export default images;

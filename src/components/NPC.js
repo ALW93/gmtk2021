@@ -5,7 +5,7 @@ import NPCDialogue from "./NPCDialogue";
 import Line from "./svgs/Line";
 import {clearAllActive, clearIngredients, clearPotion, incrementCount, updateNpc} from "../store/reducers/activeReducer";
 import {getRandomNpc} from "../utility/utility";
-import {updateSaveLog} from "../store/actions/potionsActions";
+import {updateSaveLogNpc} from "../store/actions/potionsActions";
 import {loadResolvedNpcs} from "../store/reducers/saveReducer";
 
 const NPC = () => {
@@ -14,38 +14,43 @@ const NPC = () => {
   const activePotion = useSelector((state) => state.active.potion);
   const npcId = useSelector((state) => state.active.npc);
   const [npc, setNpc] = useState(npcs[npcId]);
-  const [isMatchingPotion, setIsMatchingPotion] = useState(false);
+  const [isMatchingPotion, setIsMatchingPotion] = useState();
   const [dialogue, setDialogue] = useState("");
   const [reaction, setReaction] = useState("standard");
 
   useEffect(() => {
     if (activePotion && activePotion === ailments[npc.ailment].cure) {
       setIsMatchingPotion(true);
+    } else if (activePotion) {
+      setIsMatchingPotion(false);
     }
   }, [activePotion, npc, ailments, npcId]);
 
   useEffect(() => {
     if (!activePotion) {
       setDialogue(npc?.intro);
-
     } else {
-
       if (isMatchingPotion) {
         setDialogue(npc.success)
         setReaction("happy")
-        dispatch(incrementCount('requestsFulfilled'))
-      dispatch(incrementCount('potionsBrewed'))
-    } else {
-        setDialogue(npc.failure)
-        setReaction("standard")
+      } else {
+          setDialogue(npc.failure)
+          setReaction("standard")
+      }
+    }
+  }, [npc, activePotion, isMatchingPotion, npcId]);
+
+  useEffect(() => {
+    console.log("activePotion", isMatchingPotion)
+    if (isMatchingPotion === false || isMatchingPotion === true) {
+      if (isMatchingPotion) dispatch(incrementCount('requestsFulfilled'))
       dispatch(incrementCount('potionsBrewed'))
     }
-    }
-  }, [npc, isMatchingPotion, activePotion, npcId]);
+  }, [isMatchingPotion])
 
   useEffect(() => {
     if (activePotion && activePotion !== 'smelly-potion') {
-      dispatch(updateSaveLog({npc: npcs[npc?.id]}));
+      dispatch(updateSaveLogNpc({npc: npcs[npc?.id]}));
     }
   }, [activePotion])
 
@@ -61,12 +66,12 @@ const NPC = () => {
     if (isMatchingPotion) {
       dispatch(clearAllActive())
       dispatch(updateNpc(getRandomNpc(npcs, Object.keys(loadResolvedNpcs() || {}))))
-      setIsMatchingPotion(false)
     } else {
       dispatch(clearIngredients());
       dispatch(clearPotion());
       setDialogue(npc?.intro)
     }
+    setIsMatchingPotion()
   }
 
   return (

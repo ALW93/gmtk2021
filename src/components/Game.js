@@ -11,6 +11,7 @@ import { loadRecipeBook, loadResolvedNpcs } from "../store/reducers/saveReducer"
 import GameOptions from "./GameOptions/GameOptions";
 import Ingredients from "./Ingredients";
 import Congrats from "./Congrats";
+import Tallyboard from "./TallyBoard";
 
 const Game = ({ musicPlaying, setMusicPlaying }) => {
   const dispatch = useDispatch();
@@ -23,9 +24,6 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
     const initialActive = {
       npc: randomNpcId,
       ailment: npcs[randomNpcId]?.ailment,
-      ingredients: [],
-      potion: "",
-      count: {},
     };
     dispatch(loadAllActive(initialActive));
   }, [dispatch, npcs]);
@@ -45,12 +43,13 @@ const Game = ({ musicPlaying, setMusicPlaying }) => {
         <GameOptions />
         <Discovery open={openDiscovery} setOpen={setOpenDiscovery} />
         <Ingredients addSelection={()=>console.log("eh")} />
+        <Workbench setOpenDiscovery={setOpenDiscovery} />
       </aside>
       <main className="main">
         {activeNpc !== null ? <NPC /> : <Congrats />}
       </main>
       <aside>
-        <Workbench setOpenDiscovery={setOpenDiscovery} />
+        <Tallyboard />
       </aside>
     </div>
   );

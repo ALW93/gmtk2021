@@ -11,7 +11,7 @@ import {
 
 import Combiner from "./Combiner";
 
-import { updateSaveLog } from "../store/actions/potionsActions";
+import { updateSaveLogPotion } from "../store/actions/potionsActions";
 
 import useSound from "use-sound";
 import empty from "../music/empty.mp3";
@@ -65,7 +65,7 @@ const Workbench = ({setOpenDiscovery}) => {
         playDiscoverPotion();
       }
       dispatch(updatePotion(potionId));
-      dispatch(updateSaveLog({potion: potions[potionId]}));
+      dispatch(updateSaveLogPotion({potion: potions[potionId]}));
       setOpenDiscovery(true);
   };
 
